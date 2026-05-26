@@ -4,6 +4,14 @@
 #include <iomanip>
 #include <iostream>
 
+namespace {
+
+int pointsForRank(int rank) {
+    return 1 << rank;
+}
+
+}  // namespace
+
 Board::Board() = default;
 
 int Board::at(int row, int col) const {
@@ -28,6 +36,10 @@ bool Board::setCell(int row, int col, int value) {
     }
     ref(row, col) = value;
     return true;
+}
+
+void Board::setScore(int score) {
+    score_ = std::max(0, score);
 }
 
 bool Board::spawn(Cell cell, int value) {
@@ -115,7 +127,7 @@ std::array<int, Board::Size> Board::mergedLine(const std::array<int, Size>& line
         if (i + 1 < compactCount && compact[static_cast<std::size_t>(i)] == compact[static_cast<std::size_t>(i + 1)]) {
             const int merged = compact[static_cast<std::size_t>(i)] + 1;
             result[static_cast<std::size_t>(resultCount++)] = merged;
-            gainedScore += merged;
+            gainedScore += pointsForRank(merged);
             ++i;
         } else {
             result[static_cast<std::size_t>(resultCount++)] = compact[static_cast<std::size_t>(i)];
@@ -182,7 +194,7 @@ std::vector<Cell> Board::emptyCells() const {
 
 void Board::print(std::ostream& out) const {
     out << "\nScore: " << score_ << " | Max: " << highestTile() << "\n";
-    out << "    1   2   3   4\n";
+    out << "    a   b   c   d\n";
     out << "  +---+---+---+---+\n";
     for (int row = 0; row < Size; ++row) {
         out << row + 1 << " |";

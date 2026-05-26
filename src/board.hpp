@@ -22,6 +22,7 @@ public:
 
     int at(int row, int col) const;
     bool setCell(int row, int col, int value);
+    void setScore(int score);
     bool isInside(int row, int col) const;
     bool isEmpty(int row, int col) const;
 

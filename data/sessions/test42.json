@@ -1,0 +1,94 @@
+{
+  "moves": 8,
+  "score": 44,
+  "cells": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    1,
+    4
+  ],
+  "map": [
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      1,
+      4
+    ]
+  ],
+  "observations": [
+    {
+      "value": 2,
+      "moves": 1,
+      "highest": 1
+    },
+    {
+      "value": 1,
+      "moves": 2,
+      "highest": 2
+    },
+    {
+      "value": 1,
+      "moves": 3,
+      "highest": 2
+    },
+    {
+      "value": 1,
+      "moves": 4,
+      "highest": 2
+    },
+    {
+      "value": 2,
+      "moves": 5,
+      "highest": 3
+    },
+    {
+      "value": 1,
+      "moves": 6,
+      "highest": 3
+    },
+    {
+      "value": 1,
+      "moves": 7,
+      "highest": 3
+    },
+    {
+      "value": 1,
+      "moves": 8,
+      "highest": 3
+    }
+  ],
+  "spawns": {
+    "1": 6,
+    "2": 2
+  }
+}

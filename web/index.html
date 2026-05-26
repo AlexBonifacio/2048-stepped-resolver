@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2048 ranks</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <section class="hud">
+        <div>
+          <p class="label">Session</p>
+          <h1 id="sessionName">try2</h1>
+        </div>
+        <div class="stats" aria-label="Statistiques">
+          <div>
+            <span>Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span>Coups</span>
+            <strong id="moves">0</strong>
+          </div>
+          <div>
+            <span>Max</span>
+            <strong id="highest">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="board-shell">
+        <div id="board" class="board" aria-label="Grille 2048" role="grid"></div>
+      </section>
+
+      <section class="controls">
+        <input id="newSessionName" type="text" autocomplete="off" placeholder="nouvelle session">
+        <button id="newSessionButton" type="button" title="Creer une session vide">Nouvelle</button>
+        <button id="undoButton" type="button" title="Retour arriere">↶ Retour</button>
+        <button id="saveButton" type="button" title="Sauvegarder la session">Sauvegarder</button>
+        <button id="reloadButton" type="button" title="Recharger depuis le JSON">Recharger</button>
+      </section>
+
+      <p id="status" class="status"></p>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
