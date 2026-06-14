@@ -177,6 +177,68 @@ void testEvaluatorPrefersAnchoredHighestTile() {
     assert(evaluateBoard(anchored) > evaluateBoard(loose));
 }
 
+void testEvaluatorPrefersSnakeWeightedChain() {
+    Board snake;
+    snake.setCell(2, 0, 1);
+    snake.setCell(2, 1, 2);
+    snake.setCell(2, 2, 3);
+    snake.setCell(2, 3, 4);
+    snake.setCell(3, 0, 8);
+    snake.setCell(3, 1, 7);
+    snake.setCell(3, 2, 6);
+    snake.setCell(3, 3, 5);
+
+    Board scattered;
+    scattered.setCell(0, 0, 8);
+    scattered.setCell(0, 1, 1);
+    scattered.setCell(1, 0, 2);
+    scattered.setCell(1, 1, 7);
+    scattered.setCell(2, 0, 3);
+    scattered.setCell(2, 1, 6);
+    scattered.setCell(3, 0, 4);
+    scattered.setCell(3, 1, 5);
+
+    assert(evaluateBoard(snake) > evaluateBoard(scattered));
+}
+
+void testEvaluatorPenalizesDeadBoard() {
+    Board dead;
+    const int deadCells[Board::CellCount] = {
+        6, 8, 9, 10,
+        2, 4, 7, 6,
+        4, 3, 6, 5,
+        2, 1, 2, 1,
+    };
+    for (int index = 0; index < Board::CellCount; ++index) {
+        dead.setCell(index / Board::Size, index % Board::Size, deadCells[index]);
+    }
+    assert(!dead.hasAnyMove());
+
+    Board live;
+    live.setCell(0, 0, 1);
+    live.setCell(0, 1, 1);
+    assert(live.hasAnyMove());
+
+    assert(evaluateBoard(live) > evaluateBoard(dead));
+}
+
+void testExpectimaxAvoidsImmediateDeadSpawnTrap() {
+    Board board;
+    const int cells[Board::CellCount] = {
+        6, 8, 9, 10,
+        2, 4, 7, 6,
+        4, 3, 6, 5,
+        2, 0, 1, 2,
+    };
+    for (int index = 0; index < Board::CellCount; ++index) {
+        board.setCell(index / Board::Size, index % Board::Size, cells[index]);
+    }
+
+    const auto suggestion = suggestMove(board, {{1, 0.77}, {2, 0.15}, {3, 0.05}, {4, 0.02}, {5, 0.01}}, 3, Board::CellCount);
+    assert(suggestion.has_value());
+    assert(suggestion->direction == Direction::Down);
+}
+
 }  // namespace
 
 int main() {
@@ -190,5 +252,8 @@ int main() {
     testStatPersistence();
     testContextualSpawnModel();
     testEvaluatorPrefersAnchoredHighestTile();
+    testEvaluatorPrefersSnakeWeightedChain();
+    testEvaluatorPenalizesDeadBoard();
+    testExpectimaxAvoidsImmediateDeadSpawnTrap();
     return 0;
 }

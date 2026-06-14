@@ -7,7 +7,7 @@ TEST_OBJ := tests/test_board.o $(LIB_SRC:.cpp=.o)
 BIN := 2048-ranks
 TEST_BIN := test-2048-ranks
 
-.PHONY: all clean run run-game run-test test web
+.PHONY: all clean run run-game run-test test web package-windows
 
 all: $(BIN)
 
@@ -33,8 +33,11 @@ run-test: $(BIN)
 test: $(TEST_BIN)
 	./$(TEST_BIN)
 
-web:
-	python3 web/server.py
+web: $(BIN)
+	python3 web/server.py $(WEB_ARGS)
+
+package-windows:
+	python3 tools/package_windows.py $(WINDOWS_PACKAGE_ARGS)
 
 $(TEST_BIN): $(TEST_OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $^

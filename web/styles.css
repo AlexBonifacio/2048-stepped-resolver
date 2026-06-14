@@ -67,12 +67,120 @@ button:disabled {
 .app {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr auto auto;
+  grid-template-rows: auto 1fr auto auto auto auto auto;
   align-items: center;
   width: min(720px, calc(100vw - 32px));
   margin: 0 auto;
   padding: 28px 0;
   gap: 18px;
+}
+
+.suggestion {
+  display: grid;
+  grid-template-columns: minmax(116px, auto) 1fr auto;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  border-top: 2px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.ranking {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ranking li {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 9px;
+  background: rgba(255, 250, 242, 0.66);
+}
+
+.ranking strong,
+.ranking span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking strong {
+  color: var(--ink);
+  font-size: 0.86rem;
+  text-transform: uppercase;
+}
+
+.ranking span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.suggestion span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.suggestion strong {
+  display: block;
+  margin-top: 2px;
+  color: var(--accent);
+  font-size: 2rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.suggestion p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.suggestion p.warn {
+  color: var(--danger);
+}
+
+.context-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(130px, 1fr)) repeat(2, auto);
+  width: 100%;
+  gap: 10px;
+}
+
+.context-controls input {
+  width: 100%;
+}
+
+.outcome-controls {
+  display: grid;
+  grid-template-columns: minmax(100px, 130px) 1fr auto auto;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.outcome-controls input {
+  width: 100%;
+}
+
+.outcome-controls p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 800;
 }
 
 .hud {
@@ -219,7 +327,7 @@ h1 {
 
 @media (max-width: 620px) {
   .app {
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
     justify-content: center;
     padding: 18px 0;
   }
@@ -235,5 +343,22 @@ h1 {
 
   .board-shell {
     width: min(94vw, 520px);
+  }
+
+  .suggestion {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .ranking {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .context-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .outcome-controls {
+    grid-template-columns: 1fr;
   }
 }

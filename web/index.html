@@ -33,10 +33,35 @@
         <div id="board" class="board" aria-label="Grille 2048" role="grid"></div>
       </section>
 
+      <section class="suggestion" aria-label="Suggestion IA">
+        <div>
+          <span>Coup</span>
+          <strong id="suggestionDirection">...</strong>
+        </div>
+        <p id="suggestionMeta">Calcul en attente</p>
+        <button id="suggestionRefreshButton" type="button" title="Recalculer le coup conseille">Recalculer</button>
+        <ol id="suggestionRanking" class="ranking"></ol>
+      </section>
+
+      <section class="context-controls" aria-label="Contexte de partie">
+        <input id="contextScore" type="number" min="0" step="1" inputmode="numeric" placeholder="score actuel">
+        <input id="contextMoves" type="number" min="0" step="1" inputmode="numeric" placeholder="coups estimes">
+        <button id="estimateMovesButton" type="button" title="Estimer les coups depuis le score">Estimer coups</button>
+        <button id="applyContextButton" type="button" title="Appliquer score et coups au JSON">Appliquer contexte</button>
+      </section>
+
+      <section class="outcome-controls" aria-label="Resultat de partie">
+        <input id="outcomeTarget" type="number" min="1" step="1" inputmode="numeric" placeholder="cible max">
+        <p id="outcomeStatus">En cours</p>
+        <button id="markOutcomeButton" type="button" title="Marquer la partie comme terminee">Marquer fin</button>
+        <button id="reopenOutcomeButton" type="button" title="Remettre la partie en cours">Reouvrir</button>
+      </section>
+
       <section class="controls">
         <input id="newSessionName" type="text" autocomplete="off" placeholder="nouvelle session">
         <button id="newSessionButton" type="button" title="Creer une session vide">Nouvelle</button>
         <button id="undoButton" type="button" title="Retour arriere">↶ Retour</button>
+        <button id="commitSpawnButton" type="button" title="Valider la tuile apparue">Valider tuile</button>
         <button id="saveButton" type="button" title="Sauvegarder la session">Sauvegarder</button>
         <button id="reloadButton" type="button" title="Recharger depuis le JSON">Recharger</button>
       </section>

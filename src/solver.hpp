@@ -42,9 +42,21 @@ struct HybridOptions {
     unsigned int seed = 0x2048;
 };
 
+struct TargetOptions {
+    int rollouts = 200;
+    int maxMoves = 120;
+    int targetRank = 13;
+    unsigned int seed = 0x2048;
+};
+
 std::optional<SpawnSuggestion> suggestSpawn(const Board& board, int value);
 std::optional<MoveSuggestion> suggestMove(const Board& board);
 std::optional<MoveSuggestion> suggestMove(const Board& board, const std::vector<SpawnProbability>& spawnModel, int depth);
 std::optional<MoveSuggestion> suggestMove(const Board& board, const std::vector<SpawnProbability>& spawnModel, int depth, int chanceCells);
+std::vector<MoveAnalysis> analyzeExpectimaxMoves(const Board& board, const std::vector<SpawnProbability>& spawnModel, int depth, int chanceCells);
+std::optional<MoveSuggestion> suggestOptimisticMove(const Board& board, const std::vector<SpawnProbability>& spawnModel, int depth, int chanceCells);
+std::vector<MoveAnalysis> analyzeOptimisticMoves(const Board& board, const std::vector<SpawnProbability>& spawnModel, int depth, int chanceCells);
 std::optional<MoveSuggestion> suggestHybridMove(const Board& board, const std::vector<SpawnProbability>& spawnModel, const HybridOptions& options);
 std::vector<MoveAnalysis> analyzeHybridMoves(const Board& board, const std::vector<SpawnProbability>& spawnModel, const HybridOptions& options);
+std::optional<MoveSuggestion> suggestTargetMove(const Board& board, const std::vector<SpawnProbability>& spawnModel, const TargetOptions& options);
+std::vector<MoveAnalysis> analyzeTargetMoves(const Board& board, const std::vector<SpawnProbability>& spawnModel, const TargetOptions& options);
