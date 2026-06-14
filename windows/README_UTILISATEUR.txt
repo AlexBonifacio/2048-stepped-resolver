@@ -12,6 +12,11 @@ Pour lancer:
 4. Garde la fenetre noire ouverte pendant toute la partie.
 5. Pour arreter, ferme la fenetre noire.
 
+Tu n'as pas besoin de g++ pour utiliser cette version.
+Le dossier doit seulement contenir le fichier:
+
+2048-ranks.exe
+
 Si Windows affiche une alerte:
 
 - Autorise l'application sur le reseau prive/local.
@@ -26,6 +31,7 @@ Si le fichier dit que 2048-ranks.exe est introuvable:
 
 - Le zip n'est pas complet.
 - Demande une version Windows complete.
+- Ce n'est pas a l'utilisateur final de compiler ce fichier.
 
 Les parties sont sauvegardees dans:
 

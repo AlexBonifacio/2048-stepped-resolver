@@ -1,0 +1,39 @@
+name: Build Windows package
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  package-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build solver with MSVC
+        shell: cmd
+        run: |
+          for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath`) do set VS_PATH=%%i
+          call "%VS_PATH%\VC\Auxiliary\Build\vcvars64.bat"
+          cl /nologo /EHsc /std:c++17 /O2 /MT /Fe:2048-ranks.exe src\board.cpp src\evaluator.cpp src\main.cpp src\move.cpp src\solver.cpp src\stat.cpp
+
+      - name: Add embedded Python runtime
+        shell: pwsh
+        run: |
+          Invoke-WebRequest "https://www.python.org/ftp/python/3.12.4/python-3.12.4-embed-amd64.zip" -OutFile python-embed.zip
+          Expand-Archive python-embed.zip -DestinationPath python
+
+      - name: Build package
+        shell: pwsh
+        run: python tools/package_windows.py --solver-exe 2048-ranks.exe
+
+      - name: Upload Windows zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2048-ranks-windows
+          path: dist/2048-ranks-windows.zip

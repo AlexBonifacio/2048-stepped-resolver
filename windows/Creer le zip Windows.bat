@@ -8,6 +8,8 @@ set "PY_CMD="
 where g++ >nul 2>nul
 if errorlevel 1 (
   echo g++ est introuvable.
+  echo Ce script sert a fabriquer le zip Windows, pas a lancer le jeu.
+  echo Les utilisateurs finaux n'ont pas besoin de g++ si le zip contient deja 2048-ranks.exe.
   echo Installe MSYS2/MinGW ou compile 2048-ranks.exe autrement.
   pause
   exit /b 1

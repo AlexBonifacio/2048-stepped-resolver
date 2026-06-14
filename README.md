@@ -78,6 +78,10 @@ Le zip final doit contenir:
 
 Le launcher cherche d'abord `python/python.exe` dans le dossier. S'il n'existe pas, il utilise Python installe sur Windows.
 
+Important: `g++` n'est pas requis pour les utilisateurs finaux. Il est seulement requis pour creer `2048-ranks.exe` avant de construire le zip.
+
+Si tu ne veux pas installer `g++` sur ton PC, le workflow GitHub `Build Windows package` peut fabriquer le zip automatiquement dans les artefacts GitHub Actions.
+
 ## Options du programme
 
 `--session NOM`  
