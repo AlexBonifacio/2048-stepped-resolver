@@ -1,0 +1,7626 @@
+{
+  "moves": 695,
+  "score": 14800,
+  "cells": [
+    6,
+    8,
+    9,
+    10,
+    2,
+    4,
+    7,
+    6,
+    4,
+    3,
+    6,
+    5,
+    2,
+    1,
+    2,
+    1
+  ],
+  "map": [
+    [
+      6,
+      8,
+      9,
+      10
+    ],
+    [
+      2,
+      4,
+      7,
+      6
+    ],
+    [
+      4,
+      3,
+      6,
+      5
+    ],
+    [
+      2,
+      1,
+      2,
+      1
+    ]
+  ],
+  "observations": [
+    {
+      "value": 1,
+      "moves": 14,
+      "highest": 5
+    },
+    {
+      "value": 1,
+      "moves": 15,
+      "highest": 5
+    },
+    {
+      "value": 1,
+      "moves": 16,
+      "highest": 5
+    },
+    {
+      "value": 1,
+      "moves": 17,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 18,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 19,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 20,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 21,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 22,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 23,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 24,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 25,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 26,
+      "highest": 6
+    },
+    {
+      "value": 2,
+      "moves": 27,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 28,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 29,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 30,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 31,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 32,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 33,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 34,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 35,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 36,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 37,
+      "highest": 6
+    },
+    {
+      "value": 2,
+      "moves": 38,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 39,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 40,
+      "highest": 6
+    },
+    {
+      "value": 2,
+      "moves": 41,
+      "highest": 6
+    },
+    {
+      "value": 2,
+      "moves": 42,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 43,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 44,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 45,
+      "highest": 6
+    },
+    {
+      "value": 1,
+      "moves": 46,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 47,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 48,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 49,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 50,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 51,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 52,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 53,
+      "highest": 7
+    },
+    {
+      "value": 2,
+      "moves": 54,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 55,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 56,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 57,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 58,
+      "highest": 7
+    },
+    {
+      "value": 2,
+      "moves": 59,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 60,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 61,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 62,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 63,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 64,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 65,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 66,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 67,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 68,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 69,
+      "highest": 7
+    },
+    {
+      "value": 2,
+      "moves": 70,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 71,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 72,
+      "highest": 7
+    },
+    {
+      "value": 2,
+      "moves": 73,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 74,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 75,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 76,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 77,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 78,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 79,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 80,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 81,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 82,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 83,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 84,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 85,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 86,
+      "highest": 7
+    },
+    {
+      "value": 2,
+      "moves": 87,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 88,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 89,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 90,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 91,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 92,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 93,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 94,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 95,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 96,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 97,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 98,
+      "highest": 7
+    },
+    {
+      "value": 2,
+      "moves": 99,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 100,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 101,
+      "highest": 7
+    },
+    {
+      "value": 2,
+      "moves": 102,
+      "highest": 7
+    },
+    {
+      "value": 2,
+      "moves": 103,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 104,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 105,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 106,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 107,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 108,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 109,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 110,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 111,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 112,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 113,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 114,
+      "highest": 7
+    },
+    {
+      "value": 3,
+      "moves": 115,
+      "highest": 7
+    },
+    {
+      "value": 1,
+      "moves": 116,
+      "highest": 8
+    },
+    {
+      "value": 3,
+      "moves": 117,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 118,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 119,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 120,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 121,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 122,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 123,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 124,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 125,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 126,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 127,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 128,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 129,
+      "highest": 8
+    },
+    {
+      "value": 4,
+      "moves": 130,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 131,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 132,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 133,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 134,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 135,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 136,
+      "highest": 8
+    },
+    {
+      "value": 3,
+      "moves": 137,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 138,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 139,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 140,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 141,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 142,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 143,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 144,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 145,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 146,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 147,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 148,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 149,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 150,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 151,
+      "highest": 8
+    },
+    {
+      "value": 4,
+      "moves": 152,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 153,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 154,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 155,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 156,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 157,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 158,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 159,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 160,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 161,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 162,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 163,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 164,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 165,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 166,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 167,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 168,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 169,
+      "highest": 8
+    },
+    {
+      "value": 3,
+      "moves": 170,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 171,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 172,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 173,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 174,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 175,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 176,
+      "highest": 8
+    },
+    {
+      "value": 3,
+      "moves": 177,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 178,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 179,
+      "highest": 8
+    },
+    {
+      "value": 3,
+      "moves": 180,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 181,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 182,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 183,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 184,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 185,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 186,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 187,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 188,
+      "highest": 8
+    },
+    {
+      "value": 2,
+      "moves": 189,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 190,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 191,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 192,
+      "highest": 8
+    },
+    {
+      "value": 3,
+      "moves": 193,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 194,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 195,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 196,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 197,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 198,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 199,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 200,
+      "highest": 8
+    },
+    {
+      "value": 1,
+      "moves": 201,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 202,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 203,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 204,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 205,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 206,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 207,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 208,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 209,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 210,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 211,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 212,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 213,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 214,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 215,
+      "highest": 9
+    },
+    {
+      "value": 3,
+      "moves": 216,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 217,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 218,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 219,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 220,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 221,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 222,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 223,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 224,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 225,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 226,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 227,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 228,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 229,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 230,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 231,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 232,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 233,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 234,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 235,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 236,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 237,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 238,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 239,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 240,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 241,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 242,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 243,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 244,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 245,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 246,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 247,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 248,
+      "highest": 9
+    },
+    {
+      "value": 3,
+      "moves": 249,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 250,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 251,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 252,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 253,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 254,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 255,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 256,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 257,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 258,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 259,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 260,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 261,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 262,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 263,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 264,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 265,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 266,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 267,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 268,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 269,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 270,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 271,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 272,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 273,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 274,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 275,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 276,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 277,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 278,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 279,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 280,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 281,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 282,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 283,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 284,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 285,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 286,
+      "highest": 9
+    },
+    {
+      "value": 3,
+      "moves": 287,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 288,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 289,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 290,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 291,
+      "highest": 9
+    },
+    {
+      "value": 4,
+      "moves": 292,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 293,
+      "highest": 9
+    },
+    {
+      "value": 3,
+      "moves": 294,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 295,
+      "highest": 9
+    },
+    {
+      "value": 4,
+      "moves": 296,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 297,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 298,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 299,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 300,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 301,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 302,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 303,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 304,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 305,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 306,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 307,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 308,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 309,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 310,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 311,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 312,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 313,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 314,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 315,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 316,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 317,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 318,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 319,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 320,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 321,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 322,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 323,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 324,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 325,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 326,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 327,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 328,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 329,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 330,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 331,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 332,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 333,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 334,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 335,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 336,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 337,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 338,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 339,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 340,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 341,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 342,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 343,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 344,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 345,
+      "highest": 9
+    },
+    {
+      "value": 3,
+      "moves": 346,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 347,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 348,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 349,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 350,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 351,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 352,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 353,
+      "highest": 9
+    },
+    {
+      "value": 4,
+      "moves": 354,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 355,
+      "highest": 9
+    },
+    {
+      "value": 3,
+      "moves": 356,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 357,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 358,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 359,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 360,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 361,
+      "highest": 9
+    },
+    {
+      "value": 4,
+      "moves": 362,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 363,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 364,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 365,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 366,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 367,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 368,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 369,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 370,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 371,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 372,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 373,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 374,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 375,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 376,
+      "highest": 9
+    },
+    {
+      "value": 2,
+      "moves": 377,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 378,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 379,
+      "highest": 9
+    },
+    {
+      "value": 1,
+      "moves": 380,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 381,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 382,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 383,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 384,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 385,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 386,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 387,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 388,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 389,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 390,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 391,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 392,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 393,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 394,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 395,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 396,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 397,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 398,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 399,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 400,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 401,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 402,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 403,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 404,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 405,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 406,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 407,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 408,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 409,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 410,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 411,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 412,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 413,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 414,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 415,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 416,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 417,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 418,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 419,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 420,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 421,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 422,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 423,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 424,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 425,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 426,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 427,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 428,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 429,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 430,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 431,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 432,
+      "highest": 10
+    },
+    {
+      "value": 5,
+      "moves": 433,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 434,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 435,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 436,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 437,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 438,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 439,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 440,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 441,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 442,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 443,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 444,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 445,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 446,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 447,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 448,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 449,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 450,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 451,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 452,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 453,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 454,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 455,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 456,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 457,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 458,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 459,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 460,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 461,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 462,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 463,
+      "highest": 10
+    },
+    {
+      "value": 5,
+      "moves": 464,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 465,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 466,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 467,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 468,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 469,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 470,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 471,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 472,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 473,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 474,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 475,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 476,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 477,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 478,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 479,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 480,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 481,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 482,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 483,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 484,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 485,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 486,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 487,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 488,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 489,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 490,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 491,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 492,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 493,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 494,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 495,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 496,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 497,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 498,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 499,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 500,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 501,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 502,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 503,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 504,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 505,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 506,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 507,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 508,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 509,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 510,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 511,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 512,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 513,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 514,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 515,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 516,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 517,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 518,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 519,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 520,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 521,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 522,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 523,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 524,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 525,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 526,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 527,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 528,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 529,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 530,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 531,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 532,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 533,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 534,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 535,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 536,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 537,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 538,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 539,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 540,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 541,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 542,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 543,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 544,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 545,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 546,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 547,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 548,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 549,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 550,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 551,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 552,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 553,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 554,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 555,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 556,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 557,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 558,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 559,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 560,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 561,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 562,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 563,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 564,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 565,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 566,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 567,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 568,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 569,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 570,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 571,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 572,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 573,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 574,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 575,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 576,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 577,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 578,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 579,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 580,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 581,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 582,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 583,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 584,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 585,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 586,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 587,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 588,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 589,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 590,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 591,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 592,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 593,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 594,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 595,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 596,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 597,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 598,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 599,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 600,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 601,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 602,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 603,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 604,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 605,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 606,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 607,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 608,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 609,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 610,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 611,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 612,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 613,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 614,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 615,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 616,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 617,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 618,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 619,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 620,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 621,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 622,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 623,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 624,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 625,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 626,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 627,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 628,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 629,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 630,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 631,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 632,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 633,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 634,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 635,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 636,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 637,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 638,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 639,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 640,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 641,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 642,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 643,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 644,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 645,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 646,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 647,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 648,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 649,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 650,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 651,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 652,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 653,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 654,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 655,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 656,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 657,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 658,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 659,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 660,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 661,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 662,
+      "highest": 10
+    },
+    {
+      "value": 3,
+      "moves": 663,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 664,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 665,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 666,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 667,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 668,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 669,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 670,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 671,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 672,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 673,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 674,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 675,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 676,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 677,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 678,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 679,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 680,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 681,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 682,
+      "highest": 10
+    },
+    {
+      "value": 5,
+      "moves": 683,
+      "highest": 10
+    },
+    {
+      "value": 5,
+      "moves": 684,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 685,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 686,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 687,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 688,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 689,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 690,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 691,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 692,
+      "highest": 10
+    },
+    {
+      "value": 4,
+      "moves": 693,
+      "highest": 10
+    },
+    {
+      "value": 2,
+      "moves": 694,
+      "highest": 10
+    },
+    {
+      "value": 1,
+      "moves": 695,
+      "highest": 10
+    }
+  ],
+  "spawns": {
+    "1": 525,
+    "2": 105,
+    "3": 30,
+    "4": 18,
+    "5": 4
+  },
+  "solved": [
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 318,
+      "after_moves": 319,
+      "score": 5792,
+      "highest": 9,
+      "gained": 8,
+      "before": [0, 0, 0, 0, 0, 1, 2, 2, 1, 4, 1, 4, 3, 6, 8, 9],
+      "after": [0, 0, 0, 0, 0, 0, 1, 3, 1, 4, 1, 4, 3, 6, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 319,
+      "after_moves": 320,
+      "score": 5800,
+      "highest": 9,
+      "gained": 0,
+      "before": [0, 0, 0, 2, 0, 0, 1, 3, 1, 4, 1, 4, 3, 6, 8, 9],
+      "after": [2, 0, 0, 0, 1, 3, 0, 0, 1, 4, 1, 4, 3, 6, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 320,
+      "after_moves": 321,
+      "score": 5800,
+      "highest": 9,
+      "gained": 8,
+      "before": [2, 0, 0, 0, 1, 3, 1, 0, 1, 4, 1, 4, 3, 6, 8, 9],
+      "after": [0, 0, 0, 0, 2, 3, 0, 0, 2, 4, 2, 4, 3, 6, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 321,
+      "after_moves": 322,
+      "score": 5808,
+      "highest": 9,
+      "gained": 0,
+      "before": [0, 1, 0, 0, 2, 3, 0, 0, 2, 4, 2, 4, 3, 6, 8, 9],
+      "after": [1, 0, 0, 0, 2, 3, 0, 0, 2, 4, 2, 4, 3, 6, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 322,
+      "after_moves": 323,
+      "score": 5808,
+      "highest": 9,
+      "gained": 8,
+      "before": [1, 2, 0, 0, 2, 3, 0, 0, 2, 4, 2, 4, 3, 6, 8, 9],
+      "after": [0, 2, 0, 0, 1, 3, 0, 0, 3, 4, 2, 4, 3, 6, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 323,
+      "after_moves": 324,
+      "score": 5816,
+      "highest": 9,
+      "gained": 0,
+      "before": [1, 2, 0, 0, 1, 3, 0, 0, 3, 4, 2, 4, 3, 6, 8, 9],
+      "after": [0, 0, 1, 2, 0, 0, 1, 3, 3, 4, 2, 4, 3, 6, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 324,
+      "after_moves": 325,
+      "score": 5816,
+      "highest": 9,
+      "gained": 20,
+      "before": [0, 0, 1, 2, 0, 1, 1, 3, 3, 4, 2, 4, 3, 6, 8, 9],
+      "after": [0, 0, 0, 2, 0, 1, 2, 3, 0, 4, 2, 4, 4, 6, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 325,
+      "after_moves": 326,
+      "score": 5836,
+      "highest": 9,
+      "gained": 8,
+      "before": [0, 0, 2, 2, 0, 1, 2, 3, 0, 4, 2, 4, 4, 6, 8, 9],
+      "after": [0, 0, 0, 3, 0, 1, 2, 3, 0, 4, 2, 4, 4, 6, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 326,
+      "after_moves": 327,
+      "score": 5844,
+      "highest": 9,
+      "gained": 24,
+      "before": [0, 0, 2, 3, 0, 1, 2, 3, 0, 4, 2, 4, 4, 6, 8, 9],
+      "after": [0, 0, 0, 0, 0, 1, 2, 4, 0, 4, 3, 4, 4, 6, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 327,
+      "after_moves": 328,
+      "score": 5868,
+      "highest": 9,
+      "gained": 4,
+      "before": [0, 0, 0, 0, 1, 1, 2, 4, 0, 4, 3, 4, 4, 6, 8, 9],
+      "after": [0, 0, 0, 0, 0, 2, 2, 4, 0, 4, 3, 4, 4, 6, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 328,
+      "after_moves": 329,
+      "score": 5872,
+      "highest": 9,
+      "gained": 8,
+      "before": [0, 0, 0, 0, 1, 2, 2, 4, 0, 4, 3, 4, 4, 6, 8, 9],
+      "after": [0, 0, 0, 0, 0, 1, 3, 4, 0, 4, 3, 4, 4, 6, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 329,
+      "after_moves": 330,
+      "score": 5880,
+      "highest": 9,
+      "gained": 48,
+      "before": [0, 0, 0, 2, 0, 1, 3, 4, 0, 4, 3, 4, 4, 6, 8, 9],
+      "after": [0, 0, 0, 0, 0, 1, 0, 2, 0, 4, 4, 5, 4, 6, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 330,
+      "after_moves": 331,
+      "score": 5928,
+      "highest": 9,
+      "gained": 32,
+      "before": [0, 0, 1, 0, 0, 1, 0, 2, 0, 4, 4, 5, 4, 6, 8, 9],
+      "after": [0, 0, 0, 1, 0, 0, 1, 2, 0, 0, 5, 5, 4, 6, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 331,
+      "after_moves": 332,
+      "score": 5960,
+      "highest": 9,
+      "gained": 64,
+      "before": [0, 0, 0, 1, 0, 0, 1, 2, 0, 1, 5, 5, 4, 6, 8, 9],
+      "after": [1, 0, 0, 0, 1, 2, 0, 0, 1, 6, 0, 0, 4, 6, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 332,
+      "after_moves": 333,
+      "score": 6024,
+      "highest": 9,
+      "gained": 132,
+      "before": [1, 0, 0, 1, 1, 2, 0, 0, 1, 6, 0, 0, 4, 6, 8, 9],
+      "after": [0, 0, 0, 0, 1, 0, 0, 0, 2, 2, 0, 1, 4, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 333,
+      "after_moves": 334,
+      "score": 6156,
+      "highest": 9,
+      "gained": 8,
+      "before": [1, 0, 0, 0, 1, 0, 0, 0, 2, 2, 0, 1, 4, 7, 8, 9],
+      "after": [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3, 1, 4, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 334,
+      "after_moves": 335,
+      "score": 6164,
+      "highest": 9,
+      "gained": 4,
+      "before": [0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3, 1, 4, 7, 8, 9],
+      "after": [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 3, 2, 4, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 335,
+      "after_moves": 336,
+      "score": 6168,
+      "highest": 9,
+      "gained": 0,
+      "before": [1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 3, 2, 4, 7, 8, 9],
+      "after": [0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3, 2, 4, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 336,
+      "after_moves": 337,
+      "score": 6168,
+      "highest": 9,
+      "gained": 4,
+      "before": [0, 0, 0, 1, 0, 0, 2, 1, 0, 1, 3, 2, 4, 7, 8, 9],
+      "after": [0, 0, 0, 0, 0, 0, 2, 2, 0, 1, 3, 2, 4, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 337,
+      "after_moves": 338,
+      "score": 6172,
+      "highest": 9,
+      "gained": 8,
+      "before": [1, 0, 0, 0, 0, 0, 2, 2, 0, 1, 3, 2, 4, 7, 8, 9],
+      "after": [0, 0, 0, 0, 0, 0, 2, 0, 1, 1, 3, 3, 4, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 338,
+      "after_moves": 339,
+      "score": 6180,
+      "highest": 9,
+      "gained": 20,
+      "before": [0, 0, 0, 0, 1, 0, 2, 0, 1, 1, 3, 3, 4, 7, 8, 9],
+      "after": [0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 2, 4, 4, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 339,
+      "after_moves": 340,
+      "score": 6200,
+      "highest": 9,
+      "gained": 4,
+      "before": [0, 0, 0, 0, 1, 0, 1, 2, 0, 0, 2, 4, 4, 7, 8, 9],
+      "after": [0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 2, 4, 4, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 340,
+      "after_moves": 341,
+      "score": 6204,
+      "highest": 9,
+      "gained": 8,
+      "before": [0, 0, 0, 1, 0, 0, 2, 2, 0, 0, 2, 4, 4, 7, 8, 9],
+      "after": [0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 3, 4, 4, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 341,
+      "after_moves": 342,
+      "score": 6212,
+      "highest": 9,
+      "gained": 0,
+      "before": [0, 0, 0, 1, 0, 0, 0, 2, 0, 1, 3, 4, 4, 7, 8, 9],
+      "after": [1, 0, 0, 0, 2, 0, 0, 0, 1, 3, 4, 0, 4, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 342,
+      "after_moves": 343,
+      "score": 6212,
+      "highest": 9,
+      "gained": 0,
+      "before": [1, 0, 0, 0, 2, 1, 0, 0, 1, 3, 4, 0, 4, 7, 8, 9],
+      "after": [0, 0, 0, 1, 0, 0, 2, 1, 0, 1, 3, 4, 4, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 343,
+      "after_moves": 344,
+      "score": 6212,
+      "highest": 9,
+      "gained": 4,
+      "before": [0, 0, 0, 1, 0, 0, 2, 1, 1, 1, 3, 4, 4, 7, 8, 9],
+      "after": [1, 0, 0, 0, 2, 1, 0, 0, 2, 3, 4, 0, 4, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 344,
+      "after_moves": 345,
+      "score": 6216,
+      "highest": 9,
+      "gained": 4,
+      "before": [1, 0, 0, 1, 2, 1, 0, 0, 2, 3, 4, 0, 4, 7, 8, 9],
+      "after": [2, 0, 0, 0, 2, 1, 0, 0, 2, 3, 4, 0, 4, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 345,
+      "after_moves": 346,
+      "score": 6220,
+      "highest": 9,
+      "gained": 12,
+      "before": [2, 1, 0, 0, 2, 1, 0, 0, 2, 3, 4, 0, 4, 7, 8, 9],
+      "after": [0, 0, 0, 0, 2, 2, 0, 0, 3, 3, 4, 0, 4, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 346,
+      "after_moves": 347,
+      "score": 6232,
+      "highest": 9,
+      "gained": 24,
+      "before": [0, 0, 0, 3, 2, 2, 0, 0, 3, 3, 4, 0, 4, 7, 8, 9],
+      "after": [3, 0, 0, 0, 3, 0, 0, 0, 4, 4, 0, 0, 4, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 347,
+      "after_moves": 348,
+      "score": 6256,
+      "highest": 9,
+      "gained": 48,
+      "before": [3, 0, 1, 0, 3, 0, 0, 0, 4, 4, 0, 0, 4, 7, 8, 9],
+      "after": [0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 1, 0, 5, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 348,
+      "after_moves": 349,
+      "score": 6304,
+      "highest": 9,
+      "gained": 32,
+      "before": [0, 0, 0, 0, 0, 0, 0, 1, 4, 4, 1, 0, 5, 7, 8, 9],
+      "after": [0, 0, 0, 0, 1, 0, 0, 0, 5, 1, 0, 0, 5, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 349,
+      "after_moves": 350,
+      "score": 6336,
+      "highest": 9,
+      "gained": 64,
+      "before": [0, 0, 0, 0, 1, 0, 1, 0, 5, 1, 0, 0, 5, 7, 8, 9],
+      "after": [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 350,
+      "after_moves": 351,
+      "score": 6400,
+      "highest": 9,
+      "gained": 4,
+      "before": [0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 351,
+      "after_moves": 352,
+      "score": 6404,
+      "highest": 9,
+      "gained": 0,
+      "before": [1, 0, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 6, 7, 8, 9],
+      "after": [0, 0, 0, 0, 1, 0, 0, 0, 2, 1, 0, 1, 6, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 352,
+      "after_moves": 353,
+      "score": 6404,
+      "highest": 9,
+      "gained": 4,
+      "before": [0, 0, 0, 1, 1, 0, 0, 0, 2, 1, 0, 1, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 1, 0, 0, 0, 2, 2, 0, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 353,
+      "after_moves": 354,
+      "score": 6408,
+      "highest": 9,
+      "gained": 12,
+      "before": [1, 0, 0, 0, 1, 0, 0, 1, 2, 2, 0, 0, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 354,
+      "after_moves": 355,
+      "score": 6420,
+      "highest": 9,
+      "gained": 0,
+      "before": [1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 4, 0, 6, 7, 8, 9],
+      "after": [0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 3, 4, 6, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 355,
+      "after_moves": 356,
+      "score": 6420,
+      "highest": 9,
+      "gained": 4,
+      "before": [0, 0, 1, 1, 0, 0, 0, 2, 0, 0, 3, 4, 6, 7, 8, 9],
+      "after": [2, 0, 0, 0, 2, 0, 0, 0, 3, 4, 0, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 356,
+      "after_moves": 357,
+      "score": 6424,
+      "highest": 9,
+      "gained": 8,
+      "before": [2, 3, 0, 0, 2, 0, 0, 0, 3, 4, 0, 0, 6, 7, 8, 9],
+      "after": [0, 0, 0, 0, 3, 3, 0, 0, 3, 4, 0, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 357,
+      "after_moves": 358,
+      "score": 6432,
+      "highest": 9,
+      "gained": 16,
+      "before": [0, 0, 0, 0, 3, 3, 0, 1, 3, 4, 0, 0, 6, 7, 8, 9],
+      "after": [0, 0, 0, 0, 0, 3, 0, 0, 4, 4, 0, 1, 6, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 358,
+      "after_moves": 359,
+      "score": 6448,
+      "highest": 9,
+      "gained": 32,
+      "before": [0, 0, 1, 0, 0, 3, 0, 0, 4, 4, 0, 1, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 3, 0, 0, 0, 5, 1, 0, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 359,
+      "after_moves": 360,
+      "score": 6480,
+      "highest": 9,
+      "gained": 4,
+      "before": [1, 0, 0, 0, 3, 1, 0, 0, 5, 1, 0, 0, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 3, 0, 0, 0, 5, 2, 0, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 360,
+      "after_moves": 361,
+      "score": 6484,
+      "highest": 9,
+      "gained": 0,
+      "before": [1, 0, 0, 0, 3, 0, 0, 1, 5, 2, 0, 0, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 3, 0, 0, 0, 5, 2, 0, 1, 6, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 361,
+      "after_moves": 362,
+      "score": 6484,
+      "highest": 9,
+      "gained": 4,
+      "before": [1, 0, 0, 0, 3, 0, 0, 0, 5, 2, 1, 1, 6, 7, 8, 9],
+      "after": [0, 0, 0, 1, 0, 0, 0, 3, 0, 5, 2, 2, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 362,
+      "after_moves": 363,
+      "score": 6488,
+      "highest": 9,
+      "gained": 0,
+      "before": [0, 4, 0, 1, 0, 0, 0, 3, 0, 5, 2, 2, 6, 7, 8, 9],
+      "after": [0, 0, 0, 1, 0, 4, 0, 3, 0, 5, 2, 2, 6, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 363,
+      "after_moves": 364,
+      "score": 6488,
+      "highest": 9,
+      "gained": 8,
+      "before": [0, 0, 0, 1, 0, 4, 2, 3, 0, 5, 2, 2, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 4, 2, 3, 0, 5, 3, 0, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 364,
+      "after_moves": 365,
+      "score": 6496,
+      "highest": 9,
+      "gained": 0,
+      "before": [1, 0, 0, 0, 4, 2, 3, 0, 5, 3, 0, 1, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 4, 2, 0, 0, 5, 3, 3, 1, 6, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 365,
+      "after_moves": 366,
+      "score": 6496,
+      "highest": 9,
+      "gained": 16,
+      "before": [1, 0, 0, 0, 4, 2, 1, 0, 5, 3, 3, 1, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 4, 2, 1, 0, 5, 4, 1, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 366,
+      "after_moves": 367,
+      "score": 6512,
+      "highest": 9,
+      "gained": 4,
+      "before": [1, 1, 0, 0, 4, 2, 1, 0, 5, 4, 1, 0, 6, 7, 8, 9],
+      "after": [0, 0, 0, 2, 0, 4, 2, 1, 0, 5, 4, 1, 6, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 367,
+      "after_moves": 368,
+      "score": 6516,
+      "highest": 9,
+      "gained": 0,
+      "before": [1, 0, 0, 2, 0, 4, 2, 1, 0, 5, 4, 1, 6, 7, 8, 9],
+      "after": [1, 2, 0, 0, 4, 2, 1, 0, 5, 4, 1, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 368,
+      "after_moves": 369,
+      "score": 6516,
+      "highest": 9,
+      "gained": 12,
+      "before": [1, 2, 0, 0, 4, 2, 1, 1, 5, 4, 1, 0, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 4, 3, 0, 0, 5, 4, 2, 1, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 369,
+      "after_moves": 370,
+      "score": 6528,
+      "highest": 9,
+      "gained": 4,
+      "before": [1, 0, 0, 1, 4, 3, 0, 0, 5, 4, 2, 1, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 4, 3, 0, 0, 5, 4, 2, 2, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 370,
+      "after_moves": 371,
+      "score": 6532,
+      "highest": 9,
+      "gained": 8,
+      "before": [1, 0, 0, 0, 4, 3, 2, 0, 5, 4, 2, 2, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 4, 3, 0, 0, 5, 4, 3, 2, 6, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 371,
+      "after_moves": 372,
+      "score": 6540,
+      "highest": 9,
+      "gained": 0,
+      "before": [1, 0, 0, 0, 4, 3, 2, 0, 5, 4, 3, 2, 6, 7, 8, 9],
+      "after": [0, 0, 0, 1, 0, 4, 3, 2, 5, 4, 3, 2, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 372,
+      "after_moves": 373,
+      "score": 6540,
+      "highest": 9,
+      "gained": 56,
+      "before": [0, 0, 0, 1, 1, 4, 3, 2, 5, 4, 3, 2, 6, 7, 8, 9],
+      "after": [0, 0, 0, 0, 1, 0, 0, 1, 5, 5, 4, 3, 6, 7, 8, 9]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 373,
+      "after_moves": 374,
+      "score": 6596,
+      "highest": 9,
+      "gained": 68,
+      "before": [0, 0, 0, 1, 1, 0, 0, 1, 5, 5, 4, 3, 6, 7, 8, 9],
+      "after": [1, 0, 0, 0, 2, 0, 0, 0, 6, 4, 3, 0, 6, 7, 8, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 374,
+      "after_moves": 375,
+      "score": 6664,
+      "highest": 9,
+      "gained": 128,
+      "before": [1, 0, 2, 0, 2, 0, 0, 0, 6, 4, 3, 0, 6, 7, 8, 9],
+      "after": [0, 0, 0, 0, 1, 0, 2, 0, 2, 4, 3, 0, 7, 7, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 375,
+      "after_moves": 376,
+      "score": 6792,
+      "highest": 9,
+      "gained": 256,
+      "before": [0, 0, 0, 0, 1, 0, 2, 1, 2, 4, 3, 0, 7, 7, 8, 9],
+      "after": [0, 0, 0, 0, 0, 1, 2, 1, 0, 2, 4, 3, 0, 8, 8, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 376,
+      "after_moves": 377,
+      "score": 7048,
+      "highest": 9,
+      "gained": 512,
+      "before": [0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 4, 3, 0, 8, 8, 9],
+      "after": [0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 4, 3, 0, 0, 9, 9]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 377,
+      "after_moves": 378,
+      "score": 7560,
+      "highest": 9,
+      "gained": 4,
+      "before": [0, 0, 0, 1, 0, 1, 2, 1, 0, 2, 4, 3, 2, 0, 9, 9],
+      "after": [0, 0, 0, 0, 0, 0, 2, 2, 0, 1, 4, 3, 2, 2, 9, 9]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 378,
+      "after_moves": 379,
+      "score": 7564,
+      "highest": 9,
+      "gained": 1040,
+      "before": [0, 0, 1, 0, 0, 0, 2, 2, 0, 1, 4, 3, 2, 2, 9, 9],
+      "after": [0, 0, 0, 1, 0, 0, 0, 3, 0, 1, 4, 3, 0, 0, 3, 10]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 379,
+      "after_moves": 380,
+      "score": 8604,
+      "highest": 10,
+      "gained": 20,
+      "before": [0, 0, 0, 1, 0, 0, 0, 3, 0, 1, 4, 3, 0, 1, 3, 10],
+      "after": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 4, 0, 2, 3, 10]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 380,
+      "after_moves": 381,
+      "score": 8624,
+      "highest": 10,
+      "gained": 0,
+      "before": [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 4, 4, 0, 2, 3, 10],
+      "after": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 4, 1, 2, 3, 10]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 381,
+      "after_moves": 382,
+      "score": 8624,
+      "highest": 10,
+      "gained": 32,
+      "before": [0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 4, 4, 1, 2, 3, 10],
+      "after": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 5, 1, 2, 3, 10]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 382,
+      "after_moves": 383,
+      "score": 8656,
+      "highest": 10,
+      "gained": 0,
+      "before": [0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 2, 5, 1, 2, 3, 10],
+      "after": [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 2, 5, 1, 2, 3, 10]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 383,
+      "after_moves": 384,
+      "score": 8656,
+      "highest": 10,
+      "gained": 4,
+      "before": [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 5, 1, 2, 3, 10],
+      "after": [0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 2, 5, 1, 2, 3, 10]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 384,
+      "after_moves": 385,
+      "score": 8660,
+      "highest": 10,
+      "gained": 12,
+      "before": [0, 0, 0, 0, 1, 0, 0, 1, 0, 2, 2, 5, 1, 2, 3, 10],
+      "after": [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 3, 5, 1, 2, 3, 10]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 385,
+      "after_moves": 386,
+      "score": 8672,
+      "highest": 10,
+      "gained": 8,
+      "before": [0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 3, 5, 1, 2, 3, 10],
+      "after": [0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 5, 1, 2, 3, 10]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 386,
+      "after_moves": 387,
+      "score": 8680,
+      "highest": 10,
+      "gained": 16,
+      "before": [0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 3, 5, 1, 2, 3, 10],
+      "after": [0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 5, 1, 2, 4, 10]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 387,
+      "after_moves": 388,
+      "score": 8696,
+      "highest": 10,
+      "gained": 0,
+      "before": [0, 0, 1, 0, 0, 0, 0, 3, 3, 0, 0, 5, 1, 2, 4, 10],
+      "after": [0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 3, 5, 1, 2, 4, 10]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 388,
+      "after_moves": 389,
+      "score": 8696,
+      "highest": 10,
+      "gained": 4,
+      "before": [0, 1, 0, 1, 0, 0, 0, 3, 0, 0, 3, 5, 1, 2, 4, 10],
+      "after": [0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 3, 5, 1, 2, 4, 10]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 389,
+      "after_moves": 390,
+      "score": 8700,
+      "highest": 10,
+      "gained": 0,
+      "before": [0, 0, 0, 2, 0, 1, 0, 3, 0, 0, 3, 5, 1, 2, 4, 10],
+      "after": [0, 0, 0, 2, 0, 0, 0, 3, 0, 1, 3, 5, 1, 2, 4, 10]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 390,
+      "after_moves": 391,
+      "score": 8700,
+      "highest": 10,
+      "gained": 0,
+      "before": [0, 0, 0, 2, 0, 4, 0, 3, 0, 1, 3, 5, 1, 2, 4, 10],
+      "after": [2, 0, 0, 0, 4, 3, 0, 0, 1, 3, 5, 0, 1, 2, 4, 10]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 391,
+      "after_moves": 392,
+      "score": 8700,
+      "highest": 10,
+      "gained": 20,
+      "before": [2, 1, 0, 0, 4, 3, 0, 0, 1, 3, 5, 0, 1, 2, 4, 10],
+      "after": [2, 1, 5, 10, 4, 4, 4, 0, 2, 2, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 392,
+      "after_moves": 393,
+      "score": 8720,
+      "highest": 10,
+      "gained": 40,
+      "before": [2, 1, 5, 10, 4, 4, 4, 0, 2, 2, 0, 0, 0, 0, 0, 1],
+      "after": [2, 1, 5, 10, 5, 4, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 393,
+      "after_moves": 394,
+      "score": 8760,
+      "highest": 10,
+      "gained": 4,
+      "before": [2, 1, 5, 10, 5, 4, 0, 0, 3, 0, 0, 0, 1, 0, 1, 0],
+      "after": [2, 1, 5, 10, 0, 0, 5, 4, 0, 0, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 394,
+      "after_moves": 395,
+      "score": 8764,
+      "highest": 10,
+      "gained": 64,
+      "before": [2, 1, 5, 10, 0, 0, 5, 4, 0, 0, 0, 3, 0, 0, 1, 2],
+      "after": [2, 1, 6, 10, 0, 0, 1, 4, 0, 0, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 395,
+      "after_moves": 396,
+      "score": 8828,
+      "highest": 10,
+      "gained": 4,
+      "before": [2, 1, 6, 10, 0, 0, 1, 4, 0, 0, 0, 3, 0, 0, 1, 2],
+      "after": [2, 1, 6, 10, 0, 0, 2, 4, 0, 0, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 396,
+      "after_moves": 397,
+      "score": 8832,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 1, 6, 10, 0, 0, 2, 4, 0, 0, 1, 3, 0, 0, 0, 2],
+      "after": [2, 1, 6, 10, 2, 4, 0, 0, 1, 3, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 397,
+      "after_moves": 398,
+      "score": 8832,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 1, 6, 10, 2, 4, 0, 0, 1, 3, 0, 0, 2, 0, 1, 0],
+      "after": [2, 1, 6, 10, 0, 0, 2, 4, 0, 0, 1, 3, 0, 0, 2, 1]
+    },
+    {
+      "direction": "down",
+      "source": "human",
+      "moves": 398,
+      "after_moves": 399,
+      "score": 8832,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 1, 6, 10, 1, 0, 2, 4, 0, 0, 1, 3, 0, 0, 2, 1],
+      "after": [0, 0, 6, 10, 0, 0, 2, 4, 2, 0, 1, 3, 1, 1, 2, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 399,
+      "after_moves": 400,
+      "score": 8832,
+      "highest": 10,
+      "gained": 0,
+      "before": [0, 2, 6, 10, 0, 0, 2, 4, 2, 0, 1, 3, 1, 1, 2, 1],
+      "after": [2, 2, 6, 10, 1, 1, 2, 4, 0, 0, 1, 3, 0, 0, 2, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 400,
+      "after_moves": 401,
+      "score": 8832,
+      "highest": 10,
+      "gained": 16,
+      "before": [2, 2, 6, 10, 1, 1, 2, 4, 0, 1, 1, 3, 0, 0, 2, 1],
+      "after": [0, 3, 6, 10, 0, 2, 2, 4, 0, 0, 2, 3, 0, 0, 2, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 401,
+      "after_moves": 402,
+      "score": 8848,
+      "highest": 10,
+      "gained": 8,
+      "before": [0, 3, 6, 10, 0, 2, 2, 4, 1, 0, 2, 3, 0, 0, 2, 1],
+      "after": [0, 3, 6, 10, 0, 0, 3, 4, 0, 1, 2, 3, 0, 0, 2, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 402,
+      "after_moves": 403,
+      "score": 8856,
+      "highest": 10,
+      "gained": 8,
+      "before": [0, 3, 6, 10, 1, 0, 3, 4, 0, 1, 2, 3, 0, 0, 2, 1],
+      "after": [1, 3, 6, 10, 0, 1, 3, 4, 0, 0, 3, 3, 0, 0, 0, 1]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 403,
+      "after_moves": 404,
+      "score": 8864,
+      "highest": 10,
+      "gained": 16,
+      "before": [1, 3, 6, 10, 0, 1, 3, 4, 2, 0, 3, 3, 0, 0, 0, 1],
+      "after": [1, 3, 6, 10, 1, 3, 4, 0, 2, 4, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 404,
+      "after_moves": 405,
+      "score": 8880,
+      "highest": 10,
+      "gained": 20,
+      "before": [1, 3, 6, 10, 1, 3, 4, 0, 2, 4, 0, 0, 1, 0, 1, 0],
+      "after": [2, 4, 6, 10, 2, 4, 4, 0, 1, 0, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 405,
+      "after_moves": 406,
+      "score": 8900,
+      "highest": 10,
+      "gained": 44,
+      "before": [2, 4, 6, 10, 2, 4, 4, 0, 1, 0, 1, 0, 1, 0, 0, 0],
+      "after": [3, 5, 6, 10, 2, 0, 4, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 406,
+      "after_moves": 407,
+      "score": 8944,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 5, 6, 10, 2, 0, 4, 0, 0, 0, 1, 0, 0, 0, 2, 0],
+      "after": [3, 5, 6, 10, 2, 4, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 407,
+      "after_moves": 408,
+      "score": 8944,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 5, 6, 10, 2, 4, 0, 0, 1, 0, 0, 0, 2, 1, 0, 0],
+      "after": [3, 5, 6, 10, 0, 0, 2, 4, 0, 0, 0, 1, 0, 0, 2, 1]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 408,
+      "after_moves": 409,
+      "score": 8944,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 5, 6, 10, 0, 0, 2, 4, 1, 0, 0, 1, 0, 0, 2, 1],
+      "after": [3, 5, 6, 10, 2, 4, 0, 0, 2, 0, 0, 0, 2, 1, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 409,
+      "after_moves": 410,
+      "score": 8948,
+      "highest": 10,
+      "gained": 8,
+      "before": [3, 5, 6, 10, 2, 4, 1, 0, 2, 0, 0, 0, 2, 1, 0, 0],
+      "after": [3, 5, 6, 10, 3, 4, 1, 0, 2, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 410,
+      "after_moves": 411,
+      "score": 8956,
+      "highest": 10,
+      "gained": 16,
+      "before": [3, 5, 6, 10, 3, 4, 1, 0, 2, 1, 0, 0, 0, 4, 0, 0],
+      "after": [4, 5, 6, 10, 2, 4, 1, 0, 0, 1, 0, 0, 0, 4, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 411,
+      "after_moves": 412,
+      "score": 8972,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 5, 6, 10, 2, 4, 1, 2, 0, 1, 0, 0, 0, 4, 0, 0],
+      "after": [4, 5, 6, 10, 2, 4, 1, 2, 0, 0, 0, 1, 0, 0, 0, 4]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 412,
+      "after_moves": 413,
+      "score": 8972,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 5, 6, 10, 2, 4, 1, 2, 0, 0, 0, 1, 0, 0, 1, 4],
+      "after": [4, 5, 6, 10, 2, 4, 1, 2, 1, 0, 0, 0, 1, 4, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 413,
+      "after_moves": 414,
+      "score": 8972,
+      "highest": 10,
+      "gained": 36,
+      "before": [4, 5, 6, 10, 2, 4, 1, 2, 1, 0, 0, 0, 1, 4, 0, 1],
+      "after": [4, 5, 6, 10, 2, 5, 1, 2, 2, 0, 0, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 414,
+      "after_moves": 415,
+      "score": 9008,
+      "highest": 10,
+      "gained": 72,
+      "before": [4, 5, 6, 10, 2, 5, 1, 2, 2, 1, 0, 1, 0, 0, 0, 0],
+      "after": [4, 6, 6, 10, 3, 1, 1, 2, 0, 0, 0, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 415,
+      "after_moves": 416,
+      "score": 9080,
+      "highest": 10,
+      "gained": 132,
+      "before": [4, 6, 6, 10, 3, 1, 1, 2, 0, 0, 3, 1, 0, 0, 0, 0],
+      "after": [0, 4, 7, 10, 0, 3, 2, 2, 0, 0, 3, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 416,
+      "after_moves": 417,
+      "score": 9212,
+      "highest": 10,
+      "gained": 0,
+      "before": [0, 4, 7, 10, 0, 3, 2, 2, 1, 0, 3, 1, 0, 0, 0, 0],
+      "after": [1, 4, 7, 10, 0, 3, 2, 2, 0, 0, 3, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 417,
+      "after_moves": 418,
+      "score": 9212,
+      "highest": 10,
+      "gained": 8,
+      "before": [1, 4, 7, 10, 0, 3, 2, 2, 0, 0, 3, 1, 1, 0, 0, 0],
+      "after": [1, 4, 7, 10, 0, 0, 3, 3, 0, 0, 3, 1, 0, 0, 0, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 418,
+      "after_moves": 419,
+      "score": 9220,
+      "highest": 10,
+      "gained": 20,
+      "before": [1, 4, 7, 10, 0, 0, 3, 3, 0, 0, 3, 1, 0, 0, 1, 1],
+      "after": [1, 4, 7, 10, 0, 0, 0, 4, 0, 0, 3, 1, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 419,
+      "after_moves": 420,
+      "score": 9240,
+      "highest": 10,
+      "gained": 0,
+      "before": [1, 4, 7, 10, 0, 0, 0, 4, 0, 0, 3, 1, 0, 0, 1, 2],
+      "after": [1, 4, 7, 10, 0, 0, 3, 4, 0, 0, 1, 1, 0, 0, 0, 2]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 420,
+      "after_moves": 421,
+      "score": 9240,
+      "highest": 10,
+      "gained": 4,
+      "before": [1, 4, 7, 10, 0, 0, 3, 4, 0, 1, 1, 1, 0, 0, 0, 2],
+      "after": [1, 4, 7, 10, 3, 4, 0, 0, 2, 1, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 421,
+      "after_moves": 422,
+      "score": 9244,
+      "highest": 10,
+      "gained": 40,
+      "before": [1, 4, 7, 10, 3, 4, 1, 0, 2, 1, 0, 0, 2, 0, 0, 0],
+      "after": [1, 5, 7, 10, 3, 1, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 422,
+      "after_moves": 423,
+      "score": 9284,
+      "highest": 10,
+      "gained": 4,
+      "before": [1, 5, 7, 10, 3, 1, 1, 0, 3, 0, 0, 2, 0, 0, 0, 0],
+      "after": [1, 5, 7, 10, 0, 0, 3, 2, 0, 0, 3, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 423,
+      "after_moves": 424,
+      "score": 9288,
+      "highest": 10,
+      "gained": 0,
+      "before": [1, 5, 7, 10, 1, 0, 3, 2, 0, 0, 3, 2, 0, 0, 0, 0],
+      "after": [1, 5, 7, 10, 0, 1, 3, 2, 0, 0, 3, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 424,
+      "after_moves": 425,
+      "score": 9288,
+      "highest": 10,
+      "gained": 24,
+      "before": [1, 5, 7, 10, 0, 1, 3, 2, 0, 0, 3, 2, 0, 0, 1, 0],
+      "after": [1, 5, 7, 10, 0, 1, 4, 3, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 425,
+      "after_moves": 426,
+      "score": 9312,
+      "highest": 10,
+      "gained": 0,
+      "before": [1, 5, 7, 10, 0, 1, 4, 3, 0, 0, 1, 0, 1, 0, 0, 0],
+      "after": [1, 5, 7, 10, 1, 4, 3, 0, 1, 0, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 426,
+      "after_moves": 427,
+      "score": 9312,
+      "highest": 10,
+      "gained": 8,
+      "before": [1, 5, 7, 10, 1, 4, 3, 0, 1, 1, 0, 0, 1, 0, 0, 0],
+      "after": [2, 5, 7, 10, 2, 4, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 427,
+      "after_moves": 428,
+      "score": 9320,
+      "highest": 10,
+      "gained": 4,
+      "before": [2, 5, 7, 10, 2, 4, 3, 0, 0, 1, 0, 1, 0, 0, 0, 0],
+      "after": [2, 5, 7, 10, 2, 4, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 428,
+      "after_moves": 429,
+      "score": 9324,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 5, 7, 10, 2, 4, 3, 0, 2, 0, 0, 0, 0, 0, 2, 0],
+      "after": [2, 5, 7, 10, 2, 4, 3, 0, 2, 0, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 429,
+      "after_moves": 430,
+      "score": 9324,
+      "highest": 10,
+      "gained": 16,
+      "before": [2, 5, 7, 10, 2, 4, 3, 0, 2, 0, 0, 0, 2, 1, 0, 0],
+      "after": [3, 5, 7, 10, 3, 4, 3, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 430,
+      "after_moves": 431,
+      "score": 9340,
+      "highest": 10,
+      "gained": 16,
+      "before": [3, 5, 7, 10, 3, 4, 3, 0, 0, 1, 0, 0, 0, 0, 2, 0],
+      "after": [4, 5, 7, 10, 0, 4, 3, 0, 0, 1, 2, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 431,
+      "after_moves": 432,
+      "score": 9356,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 5, 7, 10, 0, 4, 3, 0, 0, 1, 2, 0, 0, 1, 0, 0],
+      "after": [4, 5, 7, 10, 4, 3, 0, 0, 1, 2, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 432,
+      "after_moves": 433,
+      "score": 9356,
+      "highest": 10,
+      "gained": 36,
+      "before": [4, 5, 7, 10, 4, 3, 0, 0, 1, 2, 1, 0, 1, 0, 0, 0],
+      "after": [5, 5, 7, 10, 2, 3, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 433,
+      "after_moves": 434,
+      "score": 9392,
+      "highest": 10,
+      "gained": 64,
+      "before": [5, 5, 7, 10, 2, 3, 1, 0, 0, 2, 0, 0, 0, 5, 0, 0],
+      "after": [0, 6, 7, 10, 0, 2, 3, 1, 0, 0, 0, 2, 0, 0, 0, 5]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 434,
+      "after_moves": 435,
+      "score": 9456,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 7, 10, 0, 2, 3, 1, 0, 0, 0, 2, 0, 0, 0, 5],
+      "after": [3, 6, 7, 10, 2, 3, 1, 0, 2, 0, 0, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 435,
+      "after_moves": 436,
+      "score": 9456,
+      "highest": 10,
+      "gained": 8,
+      "before": [3, 6, 7, 10, 2, 3, 1, 0, 2, 0, 0, 0, 5, 0, 0, 1],
+      "after": [3, 6, 7, 10, 3, 3, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 436,
+      "after_moves": 437,
+      "score": 9464,
+      "highest": 10,
+      "gained": 16,
+      "before": [3, 6, 7, 10, 3, 3, 1, 1, 5, 0, 0, 0, 4, 0, 0, 0],
+      "after": [4, 6, 7, 10, 5, 3, 1, 1, 4, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 437,
+      "after_moves": 438,
+      "score": 9480,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 6, 7, 10, 5, 3, 1, 1, 4, 0, 0, 1, 0, 0, 0, 0],
+      "after": [4, 6, 7, 10, 5, 3, 1, 2, 4, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 438,
+      "after_moves": 439,
+      "score": 9484,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 6, 7, 10, 5, 3, 1, 2, 4, 0, 1, 0, 0, 0, 0, 0],
+      "after": [4, 6, 7, 10, 5, 3, 2, 2, 4, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 439,
+      "after_moves": 440,
+      "score": 9488,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 6, 7, 10, 5, 3, 2, 2, 4, 1, 0, 0, 0, 0, 0, 0],
+      "after": [4, 6, 7, 10, 5, 3, 3, 0, 4, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 440,
+      "after_moves": 441,
+      "score": 9496,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 6, 7, 10, 5, 3, 3, 0, 4, 1, 0, 0, 0, 0, 1, 0],
+      "after": [4, 6, 7, 10, 5, 3, 3, 0, 4, 1, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 441,
+      "after_moves": 442,
+      "score": 9496,
+      "highest": 10,
+      "gained": 20,
+      "before": [4, 6, 7, 10, 5, 3, 3, 0, 4, 1, 1, 0, 2, 0, 0, 0],
+      "after": [4, 6, 7, 10, 0, 0, 5, 4, 0, 0, 4, 2, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 442,
+      "after_moves": 443,
+      "score": 9516,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 6, 7, 10, 0, 0, 5, 4, 0, 0, 4, 2, 0, 0, 1, 2],
+      "after": [4, 6, 7, 10, 0, 0, 5, 4, 0, 0, 4, 3, 0, 0, 1, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 443,
+      "after_moves": 444,
+      "score": 9524,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 6, 7, 10, 0, 0, 5, 4, 1, 0, 4, 3, 0, 0, 1, 0],
+      "after": [4, 6, 7, 10, 5, 4, 0, 0, 1, 4, 3, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 444,
+      "after_moves": 445,
+      "score": 9524,
+      "highest": 10,
+      "gained": 36,
+      "before": [4, 6, 7, 10, 5, 4, 0, 0, 1, 4, 3, 0, 1, 0, 0, 1],
+      "after": [4, 6, 7, 10, 5, 5, 3, 1, 2, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 445,
+      "after_moves": 446,
+      "score": 9560,
+      "highest": 10,
+      "gained": 64,
+      "before": [4, 6, 7, 10, 5, 5, 3, 1, 2, 0, 0, 0, 0, 0, 1, 0],
+      "after": [4, 6, 7, 10, 0, 6, 3, 1, 0, 0, 0, 2, 0, 0, 0, 1]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 446,
+      "after_moves": 447,
+      "score": 9624,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 6, 7, 10, 1, 6, 3, 1, 0, 0, 0, 2, 0, 0, 0, 1],
+      "after": [4, 6, 7, 10, 1, 6, 3, 1, 2, 0, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 447,
+      "after_moves": 448,
+      "score": 9624,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 6, 7, 10, 1, 6, 3, 1, 2, 0, 0, 0, 1, 0, 2, 0],
+      "after": [4, 6, 7, 10, 1, 6, 3, 1, 0, 0, 0, 2, 0, 0, 1, 2]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 448,
+      "after_moves": 449,
+      "score": 9624,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 6, 7, 10, 1, 6, 3, 1, 1, 0, 0, 2, 0, 0, 1, 2],
+      "after": [4, 6, 7, 10, 1, 6, 3, 1, 1, 2, 0, 0, 1, 2, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 449,
+      "after_moves": 450,
+      "score": 9624,
+      "highest": 10,
+      "gained": 140,
+      "before": [4, 6, 7, 10, 1, 6, 3, 1, 1, 2, 0, 0, 1, 2, 1, 0],
+      "after": [4, 7, 7, 10, 2, 3, 3, 1, 1, 0, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 450,
+      "after_moves": 451,
+      "score": 9764,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 7, 10, 2, 3, 3, 1, 1, 0, 1, 0, 0, 0, 1, 0],
+      "after": [4, 7, 7, 10, 2, 3, 3, 1, 1, 0, 2, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 451,
+      "after_moves": 452,
+      "score": 9768,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 7, 10, 2, 3, 3, 1, 1, 0, 2, 0, 1, 0, 0, 0],
+      "after": [4, 7, 7, 10, 2, 3, 3, 1, 2, 0, 2, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 452,
+      "after_moves": 453,
+      "score": 9772,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 7, 10, 2, 3, 3, 1, 2, 0, 2, 0, 0, 0, 1, 0],
+      "after": [4, 7, 7, 10, 3, 3, 3, 1, 0, 0, 2, 0, 0, 0, 1, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 453,
+      "after_moves": 454,
+      "score": 9780,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 7, 10, 3, 3, 3, 1, 0, 0, 2, 1, 0, 0, 1, 0],
+      "after": [4, 7, 7, 10, 3, 3, 3, 2, 0, 0, 2, 0, 0, 0, 1, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 454,
+      "after_moves": 455,
+      "score": 9784,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 7, 10, 3, 3, 3, 2, 0, 0, 2, 0, 4, 0, 1, 0],
+      "after": [4, 7, 7, 10, 3, 3, 3, 2, 4, 0, 2, 0, 0, 0, 1, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 455,
+      "after_moves": 456,
+      "score": 9784,
+      "highest": 10,
+      "gained": 272,
+      "before": [4, 7, 7, 10, 3, 3, 3, 2, 4, 1, 2, 0, 0, 0, 1, 0],
+      "after": [0, 4, 8, 10, 0, 3, 4, 2, 0, 4, 1, 2, 0, 0, 0, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 456,
+      "after_moves": 457,
+      "score": 10056,
+      "highest": 10,
+      "gained": 8,
+      "before": [0, 4, 8, 10, 0, 3, 4, 2, 3, 4, 1, 2, 0, 0, 0, 1],
+      "after": [3, 4, 8, 10, 0, 3, 4, 3, 0, 4, 1, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 457,
+      "after_moves": 458,
+      "score": 10064,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 4, 8, 10, 0, 3, 4, 3, 0, 4, 1, 1, 0, 0, 0, 1],
+      "after": [3, 4, 8, 10, 3, 4, 3, 0, 4, 2, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 458,
+      "after_moves": 459,
+      "score": 10068,
+      "highest": 10,
+      "gained": 48,
+      "before": [3, 4, 8, 10, 3, 4, 3, 1, 4, 2, 0, 0, 1, 0, 0, 0],
+      "after": [4, 5, 8, 10, 4, 2, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 459,
+      "after_moves": 460,
+      "score": 10116,
+      "highest": 10,
+      "gained": 36,
+      "before": [4, 5, 8, 10, 4, 2, 3, 1, 1, 0, 0, 0, 1, 0, 0, 0],
+      "after": [5, 5, 8, 10, 2, 2, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 460,
+      "after_moves": 461,
+      "score": 10152,
+      "highest": 10,
+      "gained": 72,
+      "before": [5, 5, 8, 10, 2, 2, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+      "after": [0, 6, 8, 10, 0, 3, 3, 1, 0, 0, 0, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 461,
+      "after_moves": 462,
+      "score": 10224,
+      "highest": 10,
+      "gained": 4,
+      "before": [0, 6, 8, 10, 0, 3, 3, 1, 0, 1, 0, 1, 0, 0, 0, 0],
+      "after": [0, 6, 8, 10, 0, 3, 3, 2, 0, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 462,
+      "after_moves": 463,
+      "score": 10228,
+      "highest": 10,
+      "gained": 20,
+      "before": [0, 6, 8, 10, 0, 3, 3, 2, 0, 1, 1, 0, 0, 0, 0, 0],
+      "after": [0, 6, 8, 10, 0, 0, 4, 2, 0, 0, 0, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 463,
+      "after_moves": 464,
+      "score": 10248,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 8, 10, 0, 0, 4, 2, 0, 0, 0, 2, 0, 0, 0, 0],
+      "after": [3, 6, 8, 10, 4, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 464,
+      "after_moves": 465,
+      "score": 10248,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 8, 10, 4, 2, 0, 0, 2, 0, 0, 0, 0, 5, 0, 0],
+      "after": [3, 6, 8, 10, 4, 2, 0, 0, 2, 0, 0, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 465,
+      "after_moves": 466,
+      "score": 10248,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 8, 10, 4, 2, 0, 0, 2, 0, 0, 0, 5, 1, 0, 0],
+      "after": [3, 6, 8, 10, 4, 2, 0, 0, 2, 1, 0, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 466,
+      "after_moves": 467,
+      "score": 10248,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 6, 8, 10, 4, 2, 0, 0, 2, 1, 1, 0, 5, 0, 0, 0],
+      "after": [3, 6, 8, 10, 4, 2, 0, 0, 2, 2, 0, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 467,
+      "after_moves": 468,
+      "score": 10252,
+      "highest": 10,
+      "gained": 8,
+      "before": [3, 6, 8, 10, 4, 2, 0, 0, 2, 2, 0, 1, 5, 0, 0, 0],
+      "after": [3, 6, 8, 10, 4, 2, 0, 0, 3, 1, 0, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 468,
+      "after_moves": 469,
+      "score": 10260,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 8, 10, 4, 2, 0, 0, 3, 1, 0, 0, 5, 0, 0, 1],
+      "after": [3, 6, 8, 10, 4, 2, 0, 0, 3, 1, 0, 0, 5, 1, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 469,
+      "after_moves": 470,
+      "score": 10260,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 6, 8, 10, 4, 2, 0, 0, 3, 1, 0, 1, 5, 1, 0, 0],
+      "after": [3, 6, 8, 10, 4, 2, 0, 1, 3, 2, 0, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 470,
+      "after_moves": 471,
+      "score": 10264,
+      "highest": 10,
+      "gained": 8,
+      "before": [3, 6, 8, 10, 4, 2, 0, 1, 3, 2, 0, 0, 5, 0, 0, 2],
+      "after": [3, 6, 8, 10, 4, 3, 0, 1, 3, 0, 0, 2, 5, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 471,
+      "after_moves": 472,
+      "score": 10272,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 8, 10, 4, 3, 0, 1, 3, 0, 0, 2, 5, 0, 1, 0],
+      "after": [3, 6, 8, 10, 4, 3, 1, 1, 3, 0, 0, 2, 5, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 472,
+      "after_moves": 473,
+      "score": 10272,
+      "highest": 10,
+      "gained": 12,
+      "before": [3, 6, 8, 10, 4, 3, 1, 1, 3, 0, 2, 2, 5, 0, 0, 0],
+      "after": [3, 6, 8, 10, 4, 3, 2, 0, 3, 3, 0, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 473,
+      "after_moves": 474,
+      "score": 10284,
+      "highest": 10,
+      "gained": 24,
+      "before": [3, 6, 8, 10, 4, 3, 2, 0, 3, 3, 0, 0, 5, 0, 2, 0],
+      "after": [3, 6, 8, 10, 4, 4, 3, 0, 3, 0, 0, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 474,
+      "after_moves": 475,
+      "score": 10308,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 8, 10, 4, 4, 3, 0, 3, 0, 0, 0, 5, 0, 1, 0],
+      "after": [3, 6, 8, 10, 4, 4, 3, 0, 3, 0, 1, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 475,
+      "after_moves": 476,
+      "score": 10308,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 6, 8, 10, 4, 4, 3, 0, 3, 0, 1, 0, 5, 0, 1, 0],
+      "after": [3, 6, 8, 10, 4, 4, 3, 0, 3, 0, 2, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 476,
+      "after_moves": 477,
+      "score": 10312,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 8, 10, 4, 4, 3, 0, 3, 0, 2, 0, 5, 0, 0, 1],
+      "after": [3, 6, 8, 10, 4, 4, 3, 1, 3, 0, 2, 0, 5, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 477,
+      "after_moves": 478,
+      "score": 10312,
+      "highest": 10,
+      "gained": 32,
+      "before": [3, 6, 8, 10, 4, 4, 3, 1, 3, 0, 2, 0, 5, 0, 1, 0],
+      "after": [3, 6, 8, 10, 5, 3, 1, 0, 3, 2, 0, 0, 5, 1, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 478,
+      "after_moves": 479,
+      "score": 10344,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 6, 8, 10, 5, 3, 1, 1, 3, 2, 0, 0, 5, 1, 0, 0],
+      "after": [3, 6, 8, 10, 0, 5, 3, 2, 0, 0, 3, 2, 0, 0, 5, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 479,
+      "after_moves": 480,
+      "score": 10348,
+      "highest": 10,
+      "gained": 24,
+      "before": [3, 6, 8, 10, 0, 5, 3, 2, 0, 0, 3, 2, 0, 2, 5, 1],
+      "after": [3, 6, 8, 10, 0, 5, 4, 3, 0, 2, 5, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 480,
+      "after_moves": 481,
+      "score": 10372,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 8, 10, 4, 5, 4, 3, 0, 2, 5, 1, 0, 0, 0, 0],
+      "after": [3, 6, 8, 10, 4, 5, 4, 3, 2, 5, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 481,
+      "after_moves": 482,
+      "score": 10372,
+      "highest": 10,
+      "gained": 64,
+      "before": [3, 6, 8, 10, 4, 5, 4, 3, 2, 5, 1, 0, 0, 0, 0, 1],
+      "after": [3, 6, 8, 10, 4, 6, 4, 3, 2, 0, 1, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 482,
+      "after_moves": 483,
+      "score": 10436,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 6, 8, 10, 4, 6, 4, 3, 2, 0, 1, 1, 0, 0, 1, 0],
+      "after": [3, 6, 8, 10, 4, 6, 4, 3, 0, 0, 2, 2, 0, 0, 0, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 483,
+      "after_moves": 484,
+      "score": 10440,
+      "highest": 10,
+      "gained": 12,
+      "before": [3, 6, 8, 10, 4, 6, 4, 3, 0, 0, 2, 2, 1, 0, 0, 1],
+      "after": [3, 6, 8, 10, 4, 6, 4, 3, 0, 0, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 484,
+      "after_moves": 485,
+      "score": 10452,
+      "highest": 10,
+      "gained": 8,
+      "before": [3, 6, 8, 10, 4, 6, 4, 3, 0, 0, 0, 3, 2, 0, 0, 2],
+      "after": [3, 6, 8, 10, 4, 6, 4, 3, 0, 0, 0, 3, 0, 0, 0, 3]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 485,
+      "after_moves": 486,
+      "score": 10460,
+      "highest": 10,
+      "gained": 144,
+      "before": [3, 6, 8, 10, 4, 6, 4, 3, 0, 0, 0, 3, 1, 0, 0, 3],
+      "after": [3, 7, 8, 10, 4, 0, 4, 4, 1, 0, 0, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 486,
+      "after_moves": 487,
+      "score": 10604,
+      "highest": 10,
+      "gained": 32,
+      "before": [3, 7, 8, 10, 4, 0, 4, 4, 1, 2, 0, 3, 0, 0, 0, 0],
+      "after": [3, 7, 8, 10, 0, 0, 4, 5, 0, 1, 2, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 487,
+      "after_moves": 488,
+      "score": 10636,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 7, 8, 10, 0, 0, 4, 5, 2, 1, 2, 3, 0, 0, 0, 0],
+      "after": [3, 7, 8, 10, 2, 1, 4, 5, 0, 0, 2, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 488,
+      "after_moves": 489,
+      "score": 10636,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 7, 8, 10, 2, 1, 4, 5, 0, 0, 2, 3, 1, 0, 0, 0],
+      "after": [3, 7, 8, 10, 2, 1, 4, 5, 2, 3, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 489,
+      "after_moves": 490,
+      "score": 10636,
+      "highest": 10,
+      "gained": 8,
+      "before": [3, 7, 8, 10, 2, 1, 4, 5, 2, 3, 0, 0, 1, 1, 0, 0],
+      "after": [3, 7, 8, 10, 3, 1, 4, 5, 1, 3, 0, 0, 0, 1, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 490,
+      "after_moves": 491,
+      "score": 10644,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 7, 8, 10, 3, 1, 4, 5, 1, 3, 0, 1, 0, 1, 0, 0],
+      "after": [3, 7, 8, 10, 3, 1, 4, 5, 0, 1, 3, 1, 0, 0, 0, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 491,
+      "after_moves": 492,
+      "score": 10644,
+      "highest": 10,
+      "gained": 24,
+      "before": [3, 7, 8, 10, 3, 1, 4, 5, 0, 1, 3, 1, 2, 0, 0, 1],
+      "after": [4, 7, 8, 10, 2, 2, 4, 5, 0, 0, 3, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 492,
+      "after_moves": 493,
+      "score": 10668,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 8, 10, 2, 2, 4, 5, 0, 0, 3, 2, 0, 0, 0, 1],
+      "after": [4, 7, 8, 10, 3, 4, 5, 0, 3, 2, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 493,
+      "after_moves": 494,
+      "score": 10676,
+      "highest": 10,
+      "gained": 24,
+      "before": [4, 7, 8, 10, 3, 4, 5, 0, 3, 2, 0, 0, 1, 2, 0, 0],
+      "after": [4, 7, 8, 10, 4, 4, 5, 0, 1, 3, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 494,
+      "after_moves": 495,
+      "score": 10700,
+      "highest": 10,
+      "gained": 32,
+      "before": [4, 7, 8, 10, 4, 4, 5, 0, 1, 3, 0, 0, 0, 0, 0, 1],
+      "after": [4, 7, 8, 10, 0, 0, 5, 5, 0, 0, 1, 3, 0, 0, 0, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 495,
+      "after_moves": 496,
+      "score": 10732,
+      "highest": 10,
+      "gained": 68,
+      "before": [4, 7, 8, 10, 0, 0, 5, 5, 0, 0, 1, 3, 0, 0, 1, 1],
+      "after": [4, 7, 8, 10, 0, 0, 0, 6, 0, 0, 1, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 496,
+      "after_moves": 497,
+      "score": 10800,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 8, 10, 0, 0, 1, 6, 0, 0, 1, 3, 0, 0, 0, 2],
+      "after": [4, 7, 8, 10, 0, 0, 2, 6, 0, 0, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 497,
+      "after_moves": 498,
+      "score": 10804,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 8, 10, 0, 0, 2, 6, 0, 2, 0, 3, 0, 0, 0, 2],
+      "after": [4, 7, 8, 10, 0, 0, 2, 6, 0, 0, 2, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 498,
+      "after_moves": 499,
+      "score": 10804,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 8, 10, 0, 0, 2, 6, 1, 0, 2, 3, 0, 0, 0, 2],
+      "after": [4, 7, 8, 10, 0, 0, 2, 6, 0, 1, 2, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 499,
+      "after_moves": 500,
+      "score": 10804,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 8, 10, 0, 0, 2, 6, 0, 1, 2, 3, 0, 0, 2, 2],
+      "after": [4, 7, 8, 10, 0, 0, 2, 6, 0, 1, 2, 3, 0, 0, 0, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 500,
+      "after_moves": 501,
+      "score": 10812,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 8, 10, 0, 0, 2, 6, 0, 1, 2, 3, 1, 0, 0, 3],
+      "after": [4, 7, 8, 10, 0, 0, 2, 6, 0, 1, 2, 3, 0, 0, 1, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 501,
+      "after_moves": 502,
+      "score": 10812,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 8, 10, 0, 0, 2, 6, 1, 1, 2, 3, 0, 0, 1, 3],
+      "after": [4, 7, 8, 10, 0, 0, 2, 6, 0, 2, 2, 3, 0, 0, 1, 3]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 502,
+      "after_moves": 503,
+      "score": 10816,
+      "highest": 10,
+      "gained": 24,
+      "before": [4, 7, 8, 10, 2, 0, 2, 6, 0, 2, 2, 3, 0, 0, 1, 3],
+      "after": [4, 7, 8, 10, 2, 2, 3, 6, 0, 0, 1, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 503,
+      "after_moves": 504,
+      "score": 10840,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 8, 10, 2, 2, 3, 6, 0, 0, 1, 4, 0, 0, 1, 0],
+      "after": [4, 7, 8, 10, 2, 2, 3, 6, 0, 0, 2, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 504,
+      "after_moves": 505,
+      "score": 10844,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 8, 10, 2, 2, 3, 6, 0, 1, 2, 4, 0, 0, 0, 0],
+      "after": [4, 7, 8, 10, 0, 3, 3, 6, 0, 1, 2, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 505,
+      "after_moves": 506,
+      "score": 10852,
+      "highest": 10,
+      "gained": 16,
+      "before": [4, 7, 8, 10, 1, 3, 3, 6, 0, 1, 2, 4, 0, 0, 0, 0],
+      "after": [4, 7, 8, 10, 0, 1, 4, 6, 0, 1, 2, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 506,
+      "after_moves": 507,
+      "score": 10868,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 8, 10, 1, 1, 4, 6, 0, 1, 2, 4, 0, 0, 0, 0],
+      "after": [4, 7, 8, 10, 1, 2, 4, 6, 0, 0, 2, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 507,
+      "after_moves": 508,
+      "score": 10872,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 8, 10, 1, 2, 4, 6, 0, 2, 2, 4, 0, 0, 0, 0],
+      "after": [4, 7, 8, 10, 1, 2, 4, 6, 0, 0, 3, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 508,
+      "after_moves": 509,
+      "score": 10880,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 8, 10, 1, 2, 4, 6, 0, 0, 3, 4, 0, 2, 0, 0],
+      "after": [4, 7, 8, 10, 1, 3, 4, 6, 0, 0, 3, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 509,
+      "after_moves": 510,
+      "score": 10888,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 8, 10, 1, 3, 4, 6, 0, 0, 3, 4, 1, 0, 0, 0],
+      "after": [4, 7, 8, 10, 2, 3, 4, 6, 0, 0, 3, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 510,
+      "after_moves": 511,
+      "score": 10892,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 8, 10, 2, 3, 4, 6, 0, 0, 3, 4, 1, 0, 0, 0],
+      "after": [4, 7, 8, 10, 2, 3, 4, 6, 0, 0, 3, 4, 0, 0, 0, 1]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 511,
+      "after_moves": 512,
+      "score": 10892,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 8, 10, 2, 3, 4, 6, 1, 0, 3, 4, 0, 0, 0, 1],
+      "after": [4, 7, 8, 10, 2, 3, 4, 6, 1, 3, 4, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 512,
+      "after_moves": 513,
+      "score": 10892,
+      "highest": 10,
+      "gained": 52,
+      "before": [4, 7, 8, 10, 2, 3, 4, 6, 1, 3, 4, 0, 1, 1, 0, 0],
+      "after": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 513,
+      "after_moves": 514,
+      "score": 10944,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 0, 0, 0, 0, 0, 1],
+      "after": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 514,
+      "after_moves": 515,
+      "score": 10944,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 0, 3, 1, 0, 0, 0],
+      "after": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 3, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 515,
+      "after_moves": 516,
+      "score": 10944,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 3, 0, 1, 1, 0, 0],
+      "after": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 3, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 516,
+      "after_moves": 517,
+      "score": 10948,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 3, 0, 2, 2, 0, 0],
+      "after": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 3, 0, 3, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 517,
+      "after_moves": 518,
+      "score": 10956,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 8, 10, 2, 4, 5, 6, 2, 1, 3, 0, 3, 0, 1, 0],
+      "after": [4, 7, 8, 10, 3, 4, 5, 6, 3, 1, 3, 0, 0, 0, 1, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 518,
+      "after_moves": 519,
+      "score": 10964,
+      "highest": 10,
+      "gained": 16,
+      "before": [4, 7, 8, 10, 3, 4, 5, 6, 3, 1, 3, 2, 0, 0, 1, 0],
+      "after": [4, 7, 8, 10, 4, 4, 5, 6, 0, 1, 3, 2, 0, 0, 1, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 519,
+      "after_moves": 520,
+      "score": 10980,
+      "highest": 10,
+      "gained": 36,
+      "before": [4, 7, 8, 10, 4, 4, 5, 6, 1, 1, 3, 2, 0, 0, 1, 0],
+      "after": [4, 7, 8, 10, 0, 5, 5, 6, 0, 2, 3, 2, 0, 0, 0, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 520,
+      "after_moves": 521,
+      "score": 11016,
+      "highest": 10,
+      "gained": 64,
+      "before": [4, 7, 8, 10, 0, 5, 5, 6, 0, 2, 3, 2, 3, 0, 0, 1],
+      "after": [4, 7, 8, 10, 0, 0, 6, 6, 0, 2, 3, 2, 0, 0, 3, 1]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 521,
+      "after_moves": 522,
+      "score": 11080,
+      "highest": 10,
+      "gained": 128,
+      "before": [4, 7, 8, 10, 0, 2, 6, 6, 0, 2, 3, 2, 0, 0, 3, 1],
+      "after": [4, 7, 8, 10, 2, 7, 0, 0, 2, 3, 2, 0, 3, 1, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 522,
+      "after_moves": 523,
+      "score": 11208,
+      "highest": 10,
+      "gained": 264,
+      "before": [4, 7, 8, 10, 2, 7, 0, 0, 2, 3, 2, 1, 3, 1, 0, 0],
+      "after": [4, 8, 8, 10, 3, 3, 2, 1, 3, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 523,
+      "after_moves": 524,
+      "score": 11472,
+      "highest": 10,
+      "gained": 20,
+      "before": [4, 8, 8, 10, 3, 3, 2, 1, 3, 1, 0, 0, 0, 0, 0, 1],
+      "after": [4, 8, 8, 10, 4, 3, 2, 2, 0, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 524,
+      "after_moves": 525,
+      "score": 11492,
+      "highest": 10,
+      "gained": 520,
+      "before": [4, 8, 8, 10, 4, 3, 2, 2, 0, 1, 0, 0, 0, 1, 0, 0],
+      "after": [0, 4, 9, 10, 0, 4, 3, 3, 0, 0, 0, 1, 0, 0, 0, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 525,
+      "after_moves": 526,
+      "score": 12012,
+      "highest": 10,
+      "gained": 36,
+      "before": [4, 4, 9, 10, 0, 4, 3, 3, 0, 0, 0, 1, 0, 0, 0, 1],
+      "after": [4, 5, 9, 10, 0, 0, 3, 3, 0, 0, 0, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 526,
+      "after_moves": 527,
+      "score": 12048,
+      "highest": 10,
+      "gained": 16,
+      "before": [4, 5, 9, 10, 0, 0, 3, 3, 0, 0, 0, 2, 0, 0, 0, 1],
+      "after": [4, 5, 9, 10, 4, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 527,
+      "after_moves": 528,
+      "score": 12064,
+      "highest": 10,
+      "gained": 32,
+      "before": [4, 5, 9, 10, 4, 0, 0, 0, 2, 1, 0, 0, 1, 0, 0, 0],
+      "after": [5, 5, 9, 10, 2, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 528,
+      "after_moves": 529,
+      "score": 12096,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 5, 9, 10, 2, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+      "after": [5, 5, 9, 10, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 529,
+      "after_moves": 530,
+      "score": 12096,
+      "highest": 10,
+      "gained": 72,
+      "before": [5, 5, 9, 10, 2, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+      "after": [0, 6, 9, 10, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 530,
+      "after_moves": 531,
+      "score": 12168,
+      "highest": 10,
+      "gained": 8,
+      "before": [0, 6, 9, 10, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 0, 1],
+      "after": [0, 6, 9, 10, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0, 1]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 531,
+      "after_moves": 532,
+      "score": 12176,
+      "highest": 10,
+      "gained": 0,
+      "before": [1, 6, 9, 10, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0, 1],
+      "after": [1, 6, 9, 10, 3, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 532,
+      "after_moves": 533,
+      "score": 12176,
+      "highest": 10,
+      "gained": 4,
+      "before": [1, 6, 9, 10, 3, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 1],
+      "after": [1, 6, 9, 10, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 533,
+      "after_moves": 534,
+      "score": 12180,
+      "highest": 10,
+      "gained": 8,
+      "before": [1, 6, 9, 10, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 2, 2],
+      "after": [1, 6, 9, 10, 0, 0, 2, 3, 0, 0, 0, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 534,
+      "after_moves": 535,
+      "score": 12188,
+      "highest": 10,
+      "gained": 0,
+      "before": [1, 6, 9, 10, 0, 1, 2, 3, 0, 0, 0, 3, 0, 0, 0, 0],
+      "after": [1, 6, 9, 10, 1, 2, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 535,
+      "after_moves": 536,
+      "score": 12188,
+      "highest": 10,
+      "gained": 0,
+      "before": [1, 6, 9, 10, 1, 2, 3, 0, 3, 0, 0, 0, 2, 0, 0, 0],
+      "after": [1, 6, 9, 10, 0, 1, 2, 3, 0, 0, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 536,
+      "after_moves": 537,
+      "score": 12188,
+      "highest": 10,
+      "gained": 8,
+      "before": [1, 6, 9, 10, 0, 1, 2, 3, 0, 0, 0, 3, 2, 0, 0, 2],
+      "after": [1, 6, 9, 10, 0, 1, 2, 3, 0, 0, 0, 3, 0, 0, 0, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 537,
+      "after_moves": 538,
+      "score": 12196,
+      "highest": 10,
+      "gained": 0,
+      "before": [1, 6, 9, 10, 0, 1, 2, 3, 2, 0, 0, 3, 0, 0, 0, 3],
+      "after": [1, 6, 9, 10, 0, 1, 2, 3, 0, 0, 2, 3, 0, 0, 0, 3]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 538,
+      "after_moves": 539,
+      "score": 12196,
+      "highest": 10,
+      "gained": 28,
+      "before": [1, 6, 9, 10, 0, 1, 2, 3, 0, 0, 2, 3, 0, 1, 0, 3],
+      "after": [1, 6, 9, 10, 0, 2, 3, 4, 0, 0, 0, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 539,
+      "after_moves": 540,
+      "score": 12224,
+      "highest": 10,
+      "gained": 0,
+      "before": [1, 6, 9, 10, 0, 2, 3, 4, 0, 1, 0, 3, 0, 0, 0, 0],
+      "after": [1, 6, 9, 10, 2, 3, 4, 0, 1, 3, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 540,
+      "after_moves": 541,
+      "score": 12224,
+      "highest": 10,
+      "gained": 16,
+      "before": [1, 6, 9, 10, 2, 3, 4, 0, 1, 3, 0, 0, 0, 1, 0, 0],
+      "after": [1, 6, 9, 10, 2, 4, 4, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 541,
+      "after_moves": 542,
+      "score": 12240,
+      "highest": 10,
+      "gained": 36,
+      "before": [1, 6, 9, 10, 2, 4, 4, 0, 1, 1, 0, 3, 0, 0, 0, 0],
+      "after": [1, 6, 9, 10, 0, 0, 2, 5, 0, 0, 2, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 542,
+      "after_moves": 543,
+      "score": 12276,
+      "highest": 10,
+      "gained": 12,
+      "before": [1, 6, 9, 10, 0, 0, 2, 5, 0, 0, 2, 3, 1, 0, 0, 0],
+      "after": [2, 6, 9, 10, 0, 0, 3, 5, 0, 0, 0, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 543,
+      "after_moves": 544,
+      "score": 12288,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 6, 9, 10, 0, 1, 3, 5, 0, 0, 0, 3, 0, 0, 0, 0],
+      "after": [2, 6, 9, 10, 1, 3, 5, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 544,
+      "after_moves": 545,
+      "score": 12288,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 6, 9, 10, 1, 3, 5, 0, 3, 0, 0, 0, 0, 1, 0, 0],
+      "after": [2, 6, 9, 10, 1, 3, 5, 0, 3, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 545,
+      "after_moves": 546,
+      "score": 12288,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 6, 9, 10, 1, 3, 5, 0, 3, 1, 0, 0, 0, 0, 0, 1],
+      "after": [2, 6, 9, 10, 0, 1, 3, 5, 0, 0, 3, 1, 0, 0, 0, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 546,
+      "after_moves": 547,
+      "score": 12288,
+      "highest": 10,
+      "gained": 24,
+      "before": [2, 6, 9, 10, 0, 1, 3, 5, 0, 0, 3, 1, 0, 1, 0, 1],
+      "after": [2, 6, 9, 10, 0, 2, 4, 5, 0, 0, 0, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 547,
+      "after_moves": 548,
+      "score": 12312,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 6, 9, 10, 0, 2, 4, 5, 0, 0, 0, 2, 0, 0, 1, 0],
+      "after": [2, 6, 9, 10, 0, 2, 4, 5, 0, 0, 1, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 548,
+      "after_moves": 549,
+      "score": 12312,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 6, 9, 10, 1, 2, 4, 5, 0, 0, 1, 2, 0, 0, 0, 0],
+      "after": [2, 6, 9, 10, 1, 2, 4, 5, 1, 2, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 549,
+      "after_moves": 550,
+      "score": 12312,
+      "highest": 10,
+      "gained": 12,
+      "before": [2, 6, 9, 10, 1, 2, 4, 5, 1, 2, 0, 0, 0, 0, 0, 3],
+      "after": [2, 6, 9, 10, 2, 3, 4, 5, 0, 0, 0, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 550,
+      "after_moves": 551,
+      "score": 12324,
+      "highest": 10,
+      "gained": 0,
+      "before": [2, 6, 9, 10, 2, 3, 4, 5, 0, 0, 0, 3, 2, 0, 0, 0],
+      "after": [2, 6, 9, 10, 2, 3, 4, 5, 3, 0, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 551,
+      "after_moves": 552,
+      "score": 12324,
+      "highest": 10,
+      "gained": 8,
+      "before": [2, 6, 9, 10, 2, 3, 4, 5, 3, 0, 0, 0, 2, 0, 1, 0],
+      "after": [3, 6, 9, 10, 3, 3, 4, 5, 2, 0, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 552,
+      "after_moves": 553,
+      "score": 12332,
+      "highest": 10,
+      "gained": 16,
+      "before": [3, 6, 9, 10, 3, 3, 4, 5, 2, 0, 1, 0, 1, 0, 0, 0],
+      "after": [3, 6, 9, 10, 0, 4, 4, 5, 0, 0, 2, 1, 0, 0, 0, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 553,
+      "after_moves": 554,
+      "score": 12348,
+      "highest": 10,
+      "gained": 40,
+      "before": [3, 6, 9, 10, 0, 4, 4, 5, 0, 2, 2, 1, 0, 0, 0, 1],
+      "after": [3, 6, 9, 10, 0, 0, 5, 5, 0, 0, 3, 1, 0, 0, 0, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 554,
+      "after_moves": 555,
+      "score": 12388,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 6, 9, 10, 0, 0, 5, 5, 1, 0, 3, 1, 0, 0, 0, 1],
+      "after": [3, 6, 9, 10, 1, 0, 5, 5, 0, 0, 3, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 555,
+      "after_moves": 556,
+      "score": 12392,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 6, 9, 10, 1, 0, 5, 5, 0, 0, 3, 2, 0, 1, 0, 0],
+      "after": [3, 6, 9, 10, 1, 1, 5, 5, 0, 0, 3, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 556,
+      "after_moves": 557,
+      "score": 12392,
+      "highest": 10,
+      "gained": 68,
+      "before": [3, 6, 9, 10, 1, 1, 5, 5, 0, 1, 3, 2, 0, 0, 0, 0],
+      "after": [3, 6, 9, 10, 2, 6, 0, 0, 1, 3, 2, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 557,
+      "after_moves": 558,
+      "score": 12460,
+      "highest": 10,
+      "gained": 128,
+      "before": [3, 6, 9, 10, 2, 6, 0, 1, 1, 3, 2, 0, 0, 0, 0, 0],
+      "after": [3, 7, 9, 10, 2, 3, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 558,
+      "after_moves": 559,
+      "score": 12588,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 7, 9, 10, 2, 3, 2, 1, 1, 0, 0, 0, 0, 0, 0, 1],
+      "after": [3, 7, 9, 10, 2, 3, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 559,
+      "after_moves": 560,
+      "score": 12592,
+      "highest": 10,
+      "gained": 8,
+      "before": [3, 7, 9, 10, 2, 3, 2, 2, 1, 0, 0, 0, 0, 0, 2, 0],
+      "after": [3, 7, 9, 10, 2, 3, 3, 0, 1, 0, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 560,
+      "after_moves": 561,
+      "score": 12600,
+      "highest": 10,
+      "gained": 16,
+      "before": [3, 7, 9, 10, 2, 3, 3, 0, 1, 0, 0, 0, 2, 0, 1, 0],
+      "after": [3, 7, 9, 10, 0, 0, 2, 4, 0, 0, 0, 1, 0, 0, 2, 1]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 561,
+      "after_moves": 562,
+      "score": 12616,
+      "highest": 10,
+      "gained": 4,
+      "before": [3, 7, 9, 10, 0, 0, 2, 4, 0, 1, 0, 1, 0, 0, 2, 1],
+      "after": [3, 7, 9, 10, 2, 4, 0, 0, 2, 0, 0, 0, 2, 1, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 562,
+      "after_moves": 563,
+      "score": 12620,
+      "highest": 10,
+      "gained": 8,
+      "before": [3, 7, 9, 10, 2, 4, 1, 0, 2, 0, 0, 0, 2, 1, 0, 0],
+      "after": [3, 7, 9, 10, 3, 4, 1, 0, 2, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 563,
+      "after_moves": 564,
+      "score": 12628,
+      "highest": 10,
+      "gained": 0,
+      "before": [3, 7, 9, 10, 3, 4, 1, 0, 2, 1, 0, 0, 0, 2, 0, 0],
+      "after": [3, 7, 9, 10, 3, 4, 1, 0, 2, 1, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 564,
+      "after_moves": 565,
+      "score": 12628,
+      "highest": 10,
+      "gained": 24,
+      "before": [3, 7, 9, 10, 3, 4, 1, 0, 2, 1, 0, 1, 2, 0, 0, 0],
+      "after": [4, 7, 9, 10, 3, 4, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 565,
+      "after_moves": 566,
+      "score": 12652,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 3, 4, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0],
+      "after": [4, 7, 9, 10, 0, 3, 4, 2, 0, 0, 0, 1, 0, 0, 0, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 566,
+      "after_moves": 567,
+      "score": 12656,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 1, 3, 4, 2, 0, 0, 0, 1, 0, 0, 0, 1],
+      "after": [4, 7, 9, 10, 1, 3, 4, 2, 0, 0, 0, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 567,
+      "after_moves": 568,
+      "score": 12660,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 9, 10, 1, 3, 4, 2, 0, 0, 0, 2, 0, 0, 1, 0],
+      "after": [4, 7, 9, 10, 1, 3, 4, 3, 0, 0, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 568,
+      "after_moves": 569,
+      "score": 12668,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 1, 3, 4, 3, 2, 0, 1, 0, 0, 0, 0, 0],
+      "after": [4, 7, 9, 10, 1, 3, 4, 3, 0, 0, 2, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 569,
+      "after_moves": 570,
+      "score": 12668,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 1, 3, 4, 3, 0, 0, 2, 1, 0, 0, 0, 1],
+      "after": [4, 7, 9, 10, 1, 3, 4, 3, 0, 0, 2, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 570,
+      "after_moves": 571,
+      "score": 12672,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 9, 10, 1, 3, 4, 3, 0, 1, 2, 2, 0, 0, 0, 0],
+      "after": [4, 7, 9, 10, 1, 3, 4, 3, 0, 0, 1, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 571,
+      "after_moves": 572,
+      "score": 12680,
+      "highest": 10,
+      "gained": 16,
+      "before": [4, 7, 9, 10, 1, 3, 4, 3, 0, 0, 1, 3, 0, 1, 0, 0],
+      "after": [4, 7, 9, 10, 1, 3, 4, 4, 0, 1, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 572,
+      "after_moves": 573,
+      "score": 12696,
+      "highest": 10,
+      "gained": 36,
+      "before": [4, 7, 9, 10, 1, 3, 4, 4, 0, 1, 1, 0, 0, 0, 1, 0],
+      "after": [4, 7, 9, 10, 0, 1, 3, 5, 0, 0, 0, 2, 0, 0, 0, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 573,
+      "after_moves": 574,
+      "score": 12732,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 0, 1, 3, 5, 0, 0, 0, 2, 0, 0, 1, 1],
+      "after": [4, 7, 9, 10, 0, 1, 3, 5, 0, 0, 0, 2, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 574,
+      "after_moves": 575,
+      "score": 12736,
+      "highest": 10,
+      "gained": 12,
+      "before": [4, 7, 9, 10, 0, 1, 3, 5, 0, 1, 0, 2, 0, 0, 0, 2],
+      "after": [4, 7, 9, 10, 0, 2, 3, 5, 0, 0, 0, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 575,
+      "after_moves": 576,
+      "score": 12748,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 1, 2, 3, 5, 0, 0, 0, 3, 0, 0, 0, 0],
+      "after": [4, 7, 9, 10, 1, 2, 3, 5, 3, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 576,
+      "after_moves": 577,
+      "score": 12748,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 1, 2, 3, 5, 3, 0, 0, 2, 0, 0, 0, 0],
+      "after": [4, 7, 9, 10, 1, 2, 3, 5, 0, 0, 3, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 577,
+      "after_moves": 578,
+      "score": 12748,
+      "highest": 10,
+      "gained": 20,
+      "before": [4, 7, 9, 10, 1, 2, 3, 5, 1, 0, 3, 2, 0, 0, 0, 0],
+      "after": [4, 7, 9, 10, 2, 2, 4, 5, 0, 0, 0, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 578,
+      "after_moves": 579,
+      "score": 12768,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 9, 10, 2, 2, 4, 5, 0, 0, 0, 2, 0, 0, 0, 3],
+      "after": [4, 7, 9, 10, 0, 3, 4, 5, 0, 0, 0, 2, 0, 0, 0, 3]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 579,
+      "after_moves": 580,
+      "score": 12776,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 0, 3, 4, 5, 0, 0, 0, 2, 0, 0, 1, 3],
+      "after": [4, 7, 9, 10, 0, 3, 4, 5, 0, 0, 1, 2, 0, 0, 0, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 580,
+      "after_moves": 581,
+      "score": 12776,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 0, 3, 4, 5, 0, 1, 1, 2, 0, 0, 0, 3],
+      "after": [4, 7, 9, 10, 0, 3, 4, 5, 0, 0, 2, 2, 0, 0, 0, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 581,
+      "after_moves": 582,
+      "score": 12780,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 9, 10, 0, 3, 4, 5, 0, 0, 2, 2, 0, 0, 1, 3],
+      "after": [4, 7, 9, 10, 0, 3, 4, 5, 0, 0, 0, 3, 0, 0, 1, 3]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 582,
+      "after_moves": 583,
+      "score": 12788,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 0, 3, 4, 5, 0, 0, 0, 3, 1, 0, 1, 3],
+      "after": [4, 7, 9, 10, 3, 4, 5, 0, 3, 0, 0, 0, 2, 3, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 583,
+      "after_moves": 584,
+      "score": 12792,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 3, 4, 5, 0, 3, 0, 0, 0, 2, 3, 0, 1],
+      "after": [4, 7, 9, 10, 3, 4, 5, 0, 3, 0, 0, 0, 2, 3, 1, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 584,
+      "after_moves": 585,
+      "score": 12792,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 3, 4, 5, 0, 3, 0, 0, 0, 2, 3, 1, 2],
+      "after": [4, 7, 9, 10, 0, 3, 4, 5, 0, 0, 0, 3, 2, 3, 1, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 585,
+      "after_moves": 586,
+      "score": 12792,
+      "highest": 10,
+      "gained": 16,
+      "before": [4, 7, 9, 10, 1, 3, 4, 5, 0, 0, 0, 3, 2, 3, 1, 2],
+      "after": [4, 7, 9, 10, 1, 4, 4, 5, 2, 0, 1, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 586,
+      "after_moves": 587,
+      "score": 12808,
+      "highest": 10,
+      "gained": 32,
+      "before": [4, 7, 9, 10, 1, 4, 4, 5, 2, 0, 1, 3, 0, 1, 0, 2],
+      "after": [4, 7, 9, 10, 0, 1, 5, 5, 0, 2, 1, 3, 0, 0, 1, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 587,
+      "after_moves": 588,
+      "score": 12840,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 0, 1, 5, 5, 1, 2, 1, 3, 0, 0, 1, 2],
+      "after": [4, 7, 9, 10, 1, 1, 5, 5, 0, 2, 2, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 588,
+      "after_moves": 589,
+      "score": 12844,
+      "highest": 10,
+      "gained": 76,
+      "before": [4, 7, 9, 10, 1, 1, 5, 5, 0, 2, 2, 3, 1, 0, 0, 2],
+      "after": [4, 7, 9, 10, 0, 0, 2, 6, 0, 0, 3, 3, 0, 0, 1, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 589,
+      "after_moves": 590,
+      "score": 12920,
+      "highest": 10,
+      "gained": 20,
+      "before": [4, 7, 9, 10, 0, 0, 2, 6, 0, 0, 3, 3, 1, 0, 1, 2],
+      "after": [4, 7, 9, 10, 0, 0, 2, 6, 0, 0, 0, 4, 0, 0, 2, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 590,
+      "after_moves": 591,
+      "score": 12940,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 9, 10, 0, 0, 2, 6, 0, 0, 1, 4, 0, 0, 2, 2],
+      "after": [4, 7, 9, 10, 0, 0, 2, 6, 0, 0, 1, 4, 0, 0, 0, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 591,
+      "after_moves": 592,
+      "score": 12948,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 0, 0, 2, 6, 0, 0, 1, 4, 0, 1, 0, 3],
+      "after": [4, 7, 9, 10, 0, 0, 2, 6, 0, 0, 1, 4, 0, 0, 1, 3]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 592,
+      "after_moves": 593,
+      "score": 12948,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 0, 0, 2, 6, 0, 0, 1, 4, 2, 0, 1, 3],
+      "after": [4, 7, 9, 10, 2, 0, 2, 6, 0, 0, 2, 4, 0, 0, 0, 3]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 593,
+      "after_moves": 594,
+      "score": 12952,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 9, 10, 2, 3, 2, 6, 0, 0, 2, 4, 0, 0, 0, 3],
+      "after": [4, 7, 9, 10, 2, 3, 3, 6, 0, 0, 0, 4, 0, 0, 0, 3]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 594,
+      "after_moves": 595,
+      "score": 12960,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 2, 3, 3, 6, 0, 0, 0, 4, 1, 0, 0, 3],
+      "after": [4, 7, 9, 10, 2, 3, 3, 6, 1, 0, 0, 4, 0, 0, 0, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 595,
+      "after_moves": 596,
+      "score": 12960,
+      "highest": 10,
+      "gained": 32,
+      "before": [4, 7, 9, 10, 2, 3, 3, 6, 1, 0, 0, 4, 0, 0, 3, 3],
+      "after": [4, 7, 9, 10, 0, 2, 4, 6, 0, 0, 1, 4, 0, 0, 0, 4]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 596,
+      "after_moves": 597,
+      "score": 12992,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 0, 2, 4, 6, 0, 0, 1, 4, 1, 0, 0, 4],
+      "after": [4, 7, 9, 10, 0, 2, 4, 6, 0, 0, 1, 4, 0, 0, 1, 4]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 597,
+      "after_moves": 598,
+      "score": 12992,
+      "highest": 10,
+      "gained": 44,
+      "before": [4, 7, 9, 10, 0, 2, 4, 6, 0, 0, 1, 4, 0, 2, 1, 4],
+      "after": [4, 7, 9, 10, 0, 3, 4, 6, 0, 0, 2, 5, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 598,
+      "after_moves": 599,
+      "score": 13036,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 0, 3, 4, 6, 0, 0, 2, 5, 0, 0, 1, 0],
+      "after": [4, 7, 9, 10, 0, 3, 4, 6, 0, 0, 2, 5, 0, 0, 0, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 599,
+      "after_moves": 600,
+      "score": 13036,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 0, 3, 4, 6, 0, 0, 2, 5, 0, 0, 1, 1],
+      "after": [4, 7, 9, 10, 0, 3, 4, 6, 0, 0, 2, 5, 0, 0, 0, 2]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 600,
+      "after_moves": 601,
+      "score": 13040,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 1, 3, 4, 6, 0, 0, 2, 5, 0, 0, 0, 2],
+      "after": [4, 7, 9, 10, 1, 3, 4, 6, 2, 5, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 601,
+      "after_moves": 602,
+      "score": 13040,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 1, 3, 4, 6, 2, 5, 0, 1, 2, 0, 0, 0],
+      "after": [4, 7, 9, 10, 1, 3, 4, 6, 2, 5, 1, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 602,
+      "after_moves": 603,
+      "score": 13040,
+      "highest": 10,
+      "gained": 0,
+      "before": [4, 7, 9, 10, 1, 3, 4, 6, 2, 5, 1, 0, 2, 0, 1, 0],
+      "after": [4, 7, 9, 10, 1, 3, 4, 6, 2, 5, 1, 0, 2, 1, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 603,
+      "after_moves": 604,
+      "score": 13040,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 9, 10, 1, 3, 4, 6, 2, 5, 1, 1, 2, 1, 0, 0],
+      "after": [4, 7, 9, 10, 1, 3, 4, 6, 3, 5, 1, 1, 0, 1, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 604,
+      "after_moves": 605,
+      "score": 13048,
+      "highest": 10,
+      "gained": 8,
+      "before": [4, 7, 9, 10, 1, 3, 4, 6, 3, 5, 1, 1, 0, 1, 0, 1],
+      "after": [4, 7, 9, 10, 1, 3, 4, 6, 0, 3, 5, 2, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 605,
+      "after_moves": 606,
+      "score": 13056,
+      "highest": 10,
+      "gained": 24,
+      "before": [4, 7, 9, 10, 1, 3, 4, 6, 0, 3, 5, 2, 0, 1, 0, 2],
+      "after": [4, 7, 9, 10, 1, 4, 4, 6, 0, 1, 5, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 606,
+      "after_moves": 607,
+      "score": 13080,
+      "highest": 10,
+      "gained": 32,
+      "before": [4, 7, 9, 10, 1, 4, 4, 6, 0, 1, 5, 3, 1, 0, 0, 0],
+      "after": [4, 7, 9, 10, 0, 1, 5, 6, 0, 1, 5, 3, 0, 0, 0, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 607,
+      "after_moves": 608,
+      "score": 13112,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 0, 1, 5, 6, 0, 1, 5, 3, 1, 0, 0, 1],
+      "after": [4, 7, 9, 10, 0, 1, 5, 6, 0, 1, 5, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 608,
+      "after_moves": 609,
+      "score": 13116,
+      "highest": 10,
+      "gained": 4,
+      "before": [4, 7, 9, 10, 1, 1, 5, 6, 0, 1, 5, 3, 0, 0, 0, 2],
+      "after": [4, 7, 9, 10, 0, 2, 5, 6, 0, 1, 5, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 609,
+      "after_moves": 610,
+      "score": 13120,
+      "highest": 10,
+      "gained": 64,
+      "before": [4, 7, 9, 10, 0, 2, 5, 6, 3, 1, 5, 3, 0, 0, 0, 2],
+      "after": [4, 7, 9, 10, 3, 2, 6, 6, 0, 1, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 610,
+      "after_moves": 611,
+      "score": 13184,
+      "highest": 10,
+      "gained": 16,
+      "before": [4, 7, 9, 10, 3, 2, 6, 6, 3, 1, 0, 3, 0, 0, 0, 2],
+      "after": [4, 7, 9, 10, 4, 2, 6, 6, 0, 1, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 611,
+      "after_moves": 612,
+      "score": 13200,
+      "highest": 10,
+      "gained": 32,
+      "before": [4, 7, 9, 10, 4, 2, 6, 6, 0, 1, 0, 3, 0, 0, 1, 2],
+      "after": [5, 7, 9, 10, 0, 2, 6, 6, 0, 1, 1, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 612,
+      "after_moves": 613,
+      "score": 13232,
+      "highest": 10,
+      "gained": 132,
+      "before": [5, 7, 9, 10, 0, 2, 6, 6, 1, 1, 1, 3, 0, 0, 0, 2],
+      "after": [5, 7, 9, 10, 2, 7, 0, 0, 2, 1, 3, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 613,
+      "after_moves": 614,
+      "score": 13364,
+      "highest": 10,
+      "gained": 268,
+      "before": [5, 7, 9, 10, 2, 7, 0, 0, 2, 1, 3, 0, 2, 1, 0, 0],
+      "after": [5, 8, 9, 10, 3, 2, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 614,
+      "after_moves": 615,
+      "score": 13632,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 3, 2, 3, 0, 2, 4, 0, 0, 0, 0, 0, 0],
+      "after": [5, 8, 9, 10, 0, 3, 2, 3, 0, 0, 2, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 615,
+      "after_moves": 616,
+      "score": 13632,
+      "highest": 10,
+      "gained": 8,
+      "before": [5, 8, 9, 10, 0, 3, 2, 3, 0, 0, 2, 4, 0, 0, 2, 0],
+      "after": [5, 8, 9, 10, 0, 3, 3, 3, 0, 0, 2, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 616,
+      "after_moves": 617,
+      "score": 13640,
+      "highest": 10,
+      "gained": 16,
+      "before": [5, 8, 9, 10, 0, 3, 3, 3, 1, 0, 2, 4, 0, 0, 0, 0],
+      "after": [5, 8, 9, 10, 0, 0, 3, 4, 0, 1, 2, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 617,
+      "after_moves": 618,
+      "score": 13656,
+      "highest": 10,
+      "gained": 32,
+      "before": [5, 8, 9, 10, 2, 0, 3, 4, 0, 1, 2, 4, 0, 0, 0, 0],
+      "after": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 2, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 618,
+      "after_moves": 619,
+      "score": 13688,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 2, 1, 3, 5, 1, 0, 2, 0, 0, 0, 0, 0],
+      "after": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 1, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 619,
+      "after_moves": 620,
+      "score": 13688,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 1, 2, 0, 3, 0, 0],
+      "after": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 1, 2, 0, 0, 0, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 620,
+      "after_moves": 621,
+      "score": 13688,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 1, 2, 1, 0, 0, 3],
+      "after": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 1, 2, 0, 0, 1, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 621,
+      "after_moves": 622,
+      "score": 13688,
+      "highest": 10,
+      "gained": 4,
+      "before": [5, 8, 9, 10, 2, 1, 3, 5, 1, 0, 1, 2, 0, 0, 1, 3],
+      "after": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 2, 2, 0, 0, 1, 3]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 622,
+      "after_moves": 623,
+      "score": 13692,
+      "highest": 10,
+      "gained": 12,
+      "before": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 2, 2, 1, 0, 1, 3],
+      "after": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 0, 3, 0, 0, 2, 3]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 623,
+      "after_moves": 624,
+      "score": 13704,
+      "highest": 10,
+      "gained": 20,
+      "before": [5, 8, 9, 10, 2, 1, 3, 5, 0, 0, 0, 3, 0, 1, 2, 3],
+      "after": [5, 8, 9, 10, 2, 2, 3, 5, 0, 0, 2, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 624,
+      "after_moves": 625,
+      "score": 13724,
+      "highest": 10,
+      "gained": 16,
+      "before": [5, 8, 9, 10, 2, 2, 3, 5, 2, 0, 2, 4, 0, 0, 0, 0],
+      "after": [5, 8, 9, 10, 0, 3, 3, 5, 0, 0, 3, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 625,
+      "after_moves": 626,
+      "score": 13740,
+      "highest": 10,
+      "gained": 16,
+      "before": [5, 8, 9, 10, 0, 3, 3, 5, 0, 0, 3, 4, 0, 0, 1, 0],
+      "after": [5, 8, 9, 10, 0, 3, 4, 5, 0, 0, 1, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 626,
+      "after_moves": 627,
+      "score": 13756,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 0, 3, 4, 5, 0, 0, 1, 4, 0, 1, 0, 0],
+      "after": [5, 8, 9, 10, 3, 4, 5, 0, 1, 4, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 627,
+      "after_moves": 628,
+      "score": 13756,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 3, 4, 5, 1, 1, 4, 0, 0, 1, 0, 0, 0],
+      "after": [5, 8, 9, 10, 3, 4, 5, 1, 0, 0, 1, 4, 0, 0, 0, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 628,
+      "after_moves": 629,
+      "score": 13756,
+      "highest": 10,
+      "gained": 4,
+      "before": [5, 8, 9, 10, 3, 4, 5, 1, 0, 0, 1, 4, 0, 0, 1, 1],
+      "after": [5, 8, 9, 10, 3, 4, 5, 1, 0, 0, 1, 4, 0, 0, 0, 2]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 629,
+      "after_moves": 630,
+      "score": 13760,
+      "highest": 10,
+      "gained": 4,
+      "before": [5, 8, 9, 10, 3, 4, 5, 1, 1, 0, 1, 4, 0, 0, 0, 2],
+      "after": [5, 8, 9, 10, 3, 4, 5, 1, 2, 4, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 630,
+      "after_moves": 631,
+      "score": 13764,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 3, 4, 5, 1, 2, 4, 0, 1, 2, 0, 0, 0],
+      "after": [5, 8, 9, 10, 3, 4, 5, 1, 2, 4, 1, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 631,
+      "after_moves": 632,
+      "score": 13764,
+      "highest": 10,
+      "gained": 40,
+      "before": [5, 8, 9, 10, 3, 4, 5, 1, 2, 4, 1, 2, 2, 0, 0, 0],
+      "after": [5, 8, 9, 10, 3, 5, 5, 1, 3, 0, 1, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 632,
+      "after_moves": 633,
+      "score": 13804,
+      "highest": 10,
+      "gained": 20,
+      "before": [5, 8, 9, 10, 3, 5, 5, 1, 3, 0, 1, 2, 0, 0, 1, 0],
+      "after": [5, 8, 9, 10, 4, 5, 5, 1, 0, 0, 2, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 633,
+      "after_moves": 634,
+      "score": 13824,
+      "highest": 10,
+      "gained": 72,
+      "before": [5, 8, 9, 10, 4, 5, 5, 1, 0, 0, 2, 2, 1, 0, 0, 0],
+      "after": [5, 8, 9, 10, 4, 6, 1, 0, 3, 0, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 634,
+      "after_moves": 635,
+      "score": 13896,
+      "highest": 10,
+      "gained": 4,
+      "before": [5, 8, 9, 10, 4, 6, 1, 0, 3, 0, 0, 0, 1, 0, 0, 1],
+      "after": [5, 8, 9, 10, 4, 6, 1, 0, 3, 0, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 635,
+      "after_moves": 636,
+      "score": 13900,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 4, 6, 1, 2, 3, 0, 0, 0, 2, 0, 0, 0],
+      "after": [5, 8, 9, 10, 4, 6, 1, 2, 0, 0, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 636,
+      "after_moves": 637,
+      "score": 13900,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 4, 6, 1, 2, 1, 0, 0, 3, 0, 0, 0, 2],
+      "after": [5, 8, 9, 10, 4, 6, 1, 2, 0, 0, 1, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 637,
+      "after_moves": 638,
+      "score": 13900,
+      "highest": 10,
+      "gained": 4,
+      "before": [5, 8, 9, 10, 4, 6, 1, 2, 0, 0, 1, 3, 2, 0, 0, 2],
+      "after": [5, 8, 9, 10, 4, 6, 2, 2, 2, 0, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 638,
+      "after_moves": 639,
+      "score": 13904,
+      "highest": 10,
+      "gained": 8,
+      "before": [5, 8, 9, 10, 4, 6, 2, 2, 2, 0, 0, 3, 2, 0, 0, 2],
+      "after": [5, 8, 9, 10, 4, 6, 2, 2, 3, 0, 0, 3, 0, 0, 0, 2]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 639,
+      "after_moves": 640,
+      "score": 13912,
+      "highest": 10,
+      "gained": 8,
+      "before": [5, 8, 9, 10, 4, 6, 2, 2, 3, 1, 0, 3, 0, 0, 0, 2],
+      "after": [5, 8, 9, 10, 4, 6, 3, 0, 3, 1, 3, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 640,
+      "after_moves": 641,
+      "score": 13920,
+      "highest": 10,
+      "gained": 16,
+      "before": [5, 8, 9, 10, 4, 6, 3, 1, 3, 1, 3, 0, 2, 0, 0, 0],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 3, 1, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 641,
+      "after_moves": 642,
+      "score": 13936,
+      "highest": 10,
+      "gained": 4,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 3, 1, 0, 1, 2, 0, 0, 0],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 0, 0, 3, 2, 0, 0, 0, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 642,
+      "after_moves": 643,
+      "score": 13940,
+      "highest": 10,
+      "gained": 8,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 0, 1, 3, 2, 0, 0, 0, 2],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 0, 1, 3, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 643,
+      "after_moves": 644,
+      "score": 13948,
+      "highest": 10,
+      "gained": 16,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 0, 1, 3, 3, 0, 0, 0, 4],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 0, 0, 1, 4, 0, 0, 0, 4]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 644,
+      "after_moves": 645,
+      "score": 13964,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 0, 0, 1, 4, 0, 0, 2, 4],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 1, 4, 0, 0, 2, 4, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 645,
+      "after_moves": 646,
+      "score": 13964,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 1, 4, 0, 0, 2, 4, 1, 0],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 0, 0, 1, 4, 0, 2, 4, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 646,
+      "after_moves": 647,
+      "score": 13964,
+      "highest": 10,
+      "gained": 8,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 0, 0, 1, 4, 2, 2, 4, 1],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 0, 0, 1, 4, 0, 3, 4, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 647,
+      "after_moves": 648,
+      "score": 13972,
+      "highest": 10,
+      "gained": 4,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 1, 0, 1, 4, 0, 3, 4, 1],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 0, 0, 2, 4, 0, 3, 4, 1]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 648,
+      "after_moves": 649,
+      "score": 13976,
+      "highest": 10,
+      "gained": 0,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 1, 0, 2, 4, 0, 3, 4, 1],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 0, 1, 2, 4, 0, 3, 4, 1]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 649,
+      "after_moves": 650,
+      "score": 13976,
+      "highest": 10,
+      "gained": 4,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 1, 1, 2, 4, 0, 3, 4, 1],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 2, 2, 4, 0, 3, 4, 1, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 650,
+      "after_moves": 651,
+      "score": 13980,
+      "highest": 10,
+      "gained": 8,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 2, 2, 4, 1, 3, 4, 1, 0],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 3, 4, 1, 0, 3, 4, 1, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 651,
+      "after_moves": 652,
+      "score": 13988,
+      "highest": 10,
+      "gained": 52,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 3, 4, 1, 3, 3, 4, 1, 0],
+      "after": [5, 8, 9, 10, 4, 6, 4, 1, 4, 5, 2, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 652,
+      "after_moves": 653,
+      "score": 14040,
+      "highest": 10,
+      "gained": 40,
+      "before": [5, 8, 9, 10, 4, 6, 4, 1, 4, 5, 2, 3, 0, 0, 2, 0],
+      "after": [5, 8, 9, 10, 5, 6, 4, 1, 0, 5, 3, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 653,
+      "after_moves": 654,
+      "score": 14080,
+      "highest": 10,
+      "gained": 64,
+      "before": [5, 8, 9, 10, 5, 6, 4, 1, 0, 5, 3, 3, 0, 0, 1, 0],
+      "after": [6, 8, 9, 10, 0, 6, 4, 1, 0, 5, 3, 3, 0, 0, 1, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 654,
+      "after_moves": 655,
+      "score": 14144,
+      "highest": 10,
+      "gained": 16,
+      "before": [6, 8, 9, 10, 1, 6, 4, 1, 0, 5, 3, 3, 0, 0, 1, 0],
+      "after": [6, 8, 9, 10, 1, 6, 4, 1, 5, 4, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 655,
+      "after_moves": 656,
+      "score": 14160,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 1, 6, 4, 1, 5, 4, 0, 0, 1, 1, 0, 0],
+      "after": [6, 8, 9, 10, 1, 6, 4, 1, 0, 0, 5, 4, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 656,
+      "after_moves": 657,
+      "score": 14164,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 1, 6, 4, 1, 0, 0, 5, 4, 0, 4, 0, 2],
+      "after": [6, 8, 9, 10, 1, 6, 4, 1, 0, 0, 5, 4, 0, 0, 4, 2]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 657,
+      "after_moves": 658,
+      "score": 14164,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 1, 6, 4, 1, 0, 0, 5, 4, 1, 0, 4, 2],
+      "after": [6, 8, 9, 10, 1, 6, 4, 1, 5, 4, 0, 0, 1, 4, 2, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 658,
+      "after_moves": 659,
+      "score": 14164,
+      "highest": 10,
+      "gained": 36,
+      "before": [6, 8, 9, 10, 1, 6, 4, 1, 5, 4, 0, 0, 1, 4, 2, 1],
+      "after": [6, 8, 9, 10, 1, 6, 4, 2, 5, 5, 2, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 659,
+      "after_moves": 660,
+      "score": 14200,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 1, 6, 4, 2, 5, 5, 2, 0, 1, 0, 0, 1],
+      "after": [6, 8, 9, 10, 1, 6, 4, 2, 5, 5, 2, 1, 1, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 660,
+      "after_moves": 661,
+      "score": 14200,
+      "highest": 10,
+      "gained": 68,
+      "before": [6, 8, 9, 10, 1, 6, 4, 2, 5, 5, 2, 1, 1, 0, 0, 1],
+      "after": [6, 8, 9, 10, 1, 6, 4, 2, 6, 2, 1, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 661,
+      "after_moves": 662,
+      "score": 14268,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 1, 6, 4, 2, 6, 2, 1, 0, 2, 0, 1, 0],
+      "after": [6, 8, 9, 10, 1, 6, 4, 2, 0, 6, 2, 1, 0, 0, 2, 1]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 662,
+      "after_moves": 663,
+      "score": 14268,
+      "highest": 10,
+      "gained": 144,
+      "before": [6, 8, 9, 10, 1, 6, 4, 2, 1, 6, 2, 1, 0, 0, 2, 1],
+      "after": [6, 8, 9, 10, 2, 7, 4, 2, 0, 0, 3, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 663,
+      "after_moves": 664,
+      "score": 14412,
+      "highest": 10,
+      "gained": 16,
+      "before": [6, 8, 9, 10, 2, 7, 4, 2, 0, 3, 3, 2, 0, 0, 0, 0],
+      "after": [6, 8, 9, 10, 2, 7, 4, 2, 0, 0, 4, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 664,
+      "after_moves": 665,
+      "score": 14428,
+      "highest": 10,
+      "gained": 40,
+      "before": [6, 8, 9, 10, 2, 7, 4, 2, 0, 0, 4, 2, 0, 1, 0, 0],
+      "after": [6, 8, 9, 10, 2, 7, 5, 3, 0, 1, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 665,
+      "after_moves": 666,
+      "score": 14468,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 2, 7, 5, 3, 0, 1, 1, 0, 0, 0, 0, 0],
+      "after": [6, 8, 9, 10, 2, 7, 5, 3, 2, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 666,
+      "after_moves": 667,
+      "score": 14472,
+      "highest": 10,
+      "gained": 8,
+      "before": [6, 8, 9, 10, 2, 7, 5, 3, 2, 2, 0, 0, 0, 0, 0, 0],
+      "after": [6, 8, 9, 10, 2, 7, 5, 3, 0, 0, 0, 3, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 667,
+      "after_moves": 668,
+      "score": 14480,
+      "highest": 10,
+      "gained": 16,
+      "before": [6, 8, 9, 10, 2, 7, 5, 3, 0, 0, 0, 3, 0, 0, 0, 1],
+      "after": [6, 8, 9, 10, 2, 7, 5, 4, 0, 0, 0, 1, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 668,
+      "after_moves": 669,
+      "score": 14496,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 2, 7, 5, 4, 0, 0, 0, 1, 0, 0, 0, 1],
+      "after": [6, 8, 9, 10, 2, 7, 5, 4, 1, 0, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 669,
+      "after_moves": 670,
+      "score": 14496,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 2, 7, 5, 4, 1, 0, 0, 0, 1, 0, 1, 0],
+      "after": [6, 8, 9, 10, 2, 7, 5, 4, 2, 0, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 670,
+      "after_moves": 671,
+      "score": 14500,
+      "highest": 10,
+      "gained": 8,
+      "before": [6, 8, 9, 10, 2, 7, 5, 4, 2, 0, 1, 0, 0, 1, 0, 0],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 0, 1, 1, 0, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 671,
+      "after_moves": 672,
+      "score": 14508,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 1, 1, 1, 0, 0, 0, 0, 0],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 0, 0, 1, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 672,
+      "after_moves": 673,
+      "score": 14512,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 0, 0, 1, 2, 0, 0, 1, 0],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 0, 0, 2, 2, 0, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 673,
+      "after_moves": 674,
+      "score": 14516,
+      "highest": 10,
+      "gained": 8,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 0, 0, 2, 2, 0, 0, 0, 1],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 3, 0, 0, 0, 1, 0, 0, 0]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 674,
+      "after_moves": 675,
+      "score": 14524,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 3, 0, 0, 0, 1, 0, 1, 0],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 3, 0, 0, 0, 2, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 675,
+      "after_moves": 676,
+      "score": 14528,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 3, 0, 0, 0, 2, 4, 0, 0],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 0, 0, 0, 3, 0, 0, 2, 4]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 676,
+      "after_moves": 677,
+      "score": 14528,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 1, 0, 0, 3, 0, 0, 2, 4],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 1, 0, 2, 3, 0, 0, 0, 4]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 677,
+      "after_moves": 678,
+      "score": 14528,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 1, 0, 2, 3, 0, 1, 0, 4],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 1, 1, 2, 3, 0, 0, 0, 4]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 678,
+      "after_moves": 679,
+      "score": 14528,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 1, 1, 2, 3, 1, 0, 0, 4],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 0, 2, 2, 3, 0, 0, 1, 4]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 679,
+      "after_moves": 680,
+      "score": 14532,
+      "highest": 10,
+      "gained": 8,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 1, 2, 2, 3, 0, 0, 1, 4],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 0, 1, 3, 3, 0, 0, 1, 4]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 680,
+      "after_moves": 681,
+      "score": 14540,
+      "highest": 10,
+      "gained": 20,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 0, 1, 3, 3, 1, 0, 1, 4],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 0, 0, 1, 4, 0, 0, 2, 4]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 681,
+      "after_moves": 682,
+      "score": 14560,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 0, 1, 1, 4, 0, 0, 2, 4],
+      "after": [6, 8, 9, 10, 3, 7, 5, 4, 0, 0, 2, 4, 0, 0, 2, 4]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 682,
+      "after_moves": 683,
+      "score": 14564,
+      "highest": 10,
+      "gained": 40,
+      "before": [6, 8, 9, 10, 3, 7, 5, 4, 0, 0, 2, 4, 0, 1, 2, 4],
+      "after": [6, 8, 9, 10, 3, 7, 5, 5, 0, 1, 3, 4, 0, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 683,
+      "after_moves": 684,
+      "score": 14604,
+      "highest": 10,
+      "gained": 64,
+      "before": [6, 8, 9, 10, 3, 7, 5, 5, 0, 1, 3, 4, 0, 5, 0, 0],
+      "after": [6, 8, 9, 10, 0, 3, 7, 6, 0, 1, 3, 4, 0, 0, 0, 5]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 684,
+      "after_moves": 685,
+      "score": 14668,
+      "highest": 10,
+      "gained": 64,
+      "before": [6, 8, 9, 10, 0, 3, 7, 6, 0, 1, 3, 4, 0, 5, 0, 5],
+      "after": [6, 8, 9, 10, 0, 3, 7, 6, 0, 1, 3, 4, 0, 0, 0, 6]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 685,
+      "after_moves": 686,
+      "score": 14732,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 0, 3, 7, 6, 0, 1, 3, 4, 0, 1, 0, 6],
+      "after": [6, 8, 9, 10, 0, 3, 7, 6, 0, 2, 3, 4, 0, 0, 0, 6]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 686,
+      "after_moves": 687,
+      "score": 14736,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 0, 3, 7, 6, 0, 2, 3, 4, 1, 0, 0, 6],
+      "after": [6, 8, 9, 10, 1, 3, 7, 6, 0, 2, 3, 4, 0, 0, 0, 6]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 687,
+      "after_moves": 688,
+      "score": 14736,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 1, 3, 7, 6, 0, 2, 3, 4, 0, 0, 1, 6],
+      "after": [6, 8, 9, 10, 1, 3, 7, 6, 2, 3, 4, 0, 1, 6, 0, 0]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 688,
+      "after_moves": 689,
+      "score": 14736,
+      "highest": 10,
+      "gained": 16,
+      "before": [6, 8, 9, 10, 1, 3, 7, 6, 2, 3, 4, 4, 1, 6, 0, 0],
+      "after": [6, 8, 9, 10, 1, 4, 7, 6, 2, 6, 4, 4, 1, 0, 0, 0]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 689,
+      "after_moves": 690,
+      "score": 14752,
+      "highest": 10,
+      "gained": 36,
+      "before": [6, 8, 9, 10, 1, 4, 7, 6, 2, 6, 4, 4, 1, 1, 0, 0],
+      "after": [6, 8, 9, 10, 1, 4, 7, 6, 0, 2, 6, 5, 0, 0, 0, 2]
+    },
+    {
+      "direction": "right",
+      "source": "human",
+      "moves": 690,
+      "after_moves": 691,
+      "score": 14788,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 1, 4, 7, 6, 0, 2, 6, 5, 1, 0, 0, 2],
+      "after": [6, 8, 9, 10, 1, 4, 7, 6, 0, 2, 6, 5, 0, 0, 1, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 691,
+      "after_moves": 692,
+      "score": 14788,
+      "highest": 10,
+      "gained": 8,
+      "before": [6, 8, 9, 10, 1, 4, 7, 6, 0, 2, 6, 5, 0, 2, 1, 2],
+      "after": [6, 8, 9, 10, 1, 4, 7, 6, 0, 3, 6, 5, 0, 0, 1, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 692,
+      "after_moves": 693,
+      "score": 14796,
+      "highest": 10,
+      "gained": 4,
+      "before": [6, 8, 9, 10, 1, 4, 7, 6, 1, 3, 6, 5, 0, 0, 1, 2],
+      "after": [6, 8, 9, 10, 2, 4, 7, 6, 0, 3, 6, 5, 0, 0, 1, 2]
+    },
+    {
+      "direction": "up",
+      "source": "human",
+      "moves": 693,
+      "after_moves": 694,
+      "score": 14800,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 2, 4, 7, 6, 0, 3, 6, 5, 4, 0, 1, 2],
+      "after": [6, 8, 9, 10, 2, 4, 7, 6, 4, 3, 6, 5, 0, 0, 1, 2]
+    },
+    {
+      "direction": "left",
+      "source": "human",
+      "moves": 694,
+      "after_moves": 695,
+      "score": 14800,
+      "highest": 10,
+      "gained": 0,
+      "before": [6, 8, 9, 10, 2, 4, 7, 6, 4, 3, 6, 5, 2, 0, 1, 2],
+      "after": [6, 8, 9, 10, 2, 4, 7, 6, 4, 3, 6, 5, 2, 1, 2, 0]
+    }
+  ],
+  "outcome": {
+    "status": "ended",
+    "target": 13,
+    "final_score": 14800,
+    "final_moves": 695,
+    "final_highest": 10,
+    "success": false,
+    "reason": "manual",
+    "ended_at": "2026-05-31T22:10:53.363Z"
+  }
+}

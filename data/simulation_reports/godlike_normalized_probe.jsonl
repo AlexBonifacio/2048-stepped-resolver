@@ -1,1 +1,0 @@
-{"simulations": 1, "solver": "hybrid", "quality": "balanced", "seed": 42, "depth": 7, "rollouts": 2500, "candidates": 4, "chance_cells": 16, "max_rollout_moves": 220, "avg_score": 4780, "avg_moves": 297, "best_score": 4780, "best_moves": 297, "best_highest": 9, "results": [{"score": 4780, "moves": 297, "highest": 9}]}
