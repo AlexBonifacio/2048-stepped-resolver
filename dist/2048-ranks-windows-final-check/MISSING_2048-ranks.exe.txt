@@ -1,0 +1,1 @@
+Compile 2048-ranks.exe, then rerun tools/package_windows.py --solver-exe PATH\2048-ranks.exe

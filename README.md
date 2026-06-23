@@ -94,7 +94,7 @@ Choisit le solveur. `hybrid` est le mode recommande pour jouer serieusement: il 
 Affiche le classement chiffre des coups avant la suggestion. Utile pour comprendre pourquoi l'IA prefere un coup.
 
 `--quality fast|balanced|strong|godlike`
-Regle la puissance de recherche. Par defaut: `strong`, profondeur 6. `godlike` pousse la profondeur, les rollouts et toutes les cases de spawn pour les positions avancees.
+Regle la puissance de recherche. Par defaut: `godlike`, profondeur 7. `godlike` pousse la profondeur, les rollouts et toutes les cases de spawn pour les positions avancees.
 
 `--depth N`  
 Profondeur expectimax.
@@ -119,6 +119,9 @@ Force le nombre de coups de depart. Important pour ne pas biaiser les stats cont
 
 `--stats read-only|read-write`  
 `run-game` utilise `read-write`, mais avec une session les vraies stats ne sont publiees que via `p`.
+
+`--model-stats global|session|sessions|merged`
+Choisit les donnees utilisees pour generer les tuiles dans les suggestions. Par defaut: `sessions`, qui agrege tous les fichiers JSON de `data/sessions/` et l'etat courant.
 
 `--simulate N`  
 Lance `N` parties automatiques depuis un plateau neuf avec deux cases `1`, sans modifier les JSON. Avec `--session NOM`, les apparitions observees dans `data/sessions/NOM.json` enrichissent le modele de generation des tuiles.
@@ -238,7 +241,7 @@ Le champ `outcome` sert a apprendre des echecs et des reussites:
 ```json
 {
   "status": "ended",
-  "target": 13,
+  "target": 12,
   "final_score": 53780,
   "final_moves": 2037,
   "final_highest": 12,
@@ -247,7 +250,7 @@ Le champ `outcome` sert a apprendre des echecs et des reussites:
 }
 ```
 
-Le site remplit automatiquement `outcome` si la partie n'a plus de coup possible. Tu peux aussi utiliser `Marquer fin` pour clore une partie manuellement.
+Le site remplit automatiquement `outcome` si la partie n'a plus de coup possible. Tu peux aussi utiliser `Mark ended` pour clore une partie manuellement.
 
 ## Site web
 
@@ -261,10 +264,10 @@ Pour une vraie partie commencee avant d'ouvrir l'appli:
 
 1. cree ou ouvre une session;
 2. reproduis le plateau actuel en ranks;
-3. saisis le score reel dans `score actuel`;
-4. clique `Estimer coups`;
+3. saisis le score reel dans `current score`;
+4. clique `Estimate moves`;
 5. ajuste le nombre de coups si tu as une meilleure estimation;
-6. clique `Appliquer contexte`.
+6. clique `Apply context`.
 
 Le score et les coups sont sauvegardes dans le JSON de session. C'est important parce que le modele de spawn utilise le nombre de coups et la plus grosse tuile pour choisir les probabilites.
 
@@ -285,7 +288,7 @@ L'evaluation du plateau combine:
 - homogeneite des valeurs voisines
 - heuristique de lignes inspiree de `nneonneo/2048-ai`
 
-Difference importante avec le 2048 classique: les spawns ne sont pas forces en 90/10. Par defaut, les simulations et suggestions utilisent uniquement les sessions JSON, par exemple `data/sessions/youtube_max01_VozVoz.json`. `data/observed_spawns.json` n'est utilise que si tu demandes explicitement `global` ou `merged`.
+Difference importante avec le 2048 classique: les spawns ne sont pas forces en 90/10. Par defaut, les suggestions du site utilisent toutes les sessions JSON dans `data/sessions/`. `data/observed_spawns.json` n'est utilise que si tu demandes explicitement `global` ou `merged`.
 
 ## Recettes utiles
 
@@ -377,13 +380,13 @@ High, profil recommande actuellement pour vraie partie:
 make run-game GAME_ARGS="--solver hybrid --session mimmo --depth 5 --rollouts 500 --candidates 3 --chance-cells 16 --max-rollout-moves 120"
 ```
 
-Very high, equivalent au mode par defaut `strong`:
+Very high, equivalent au mode `strong`:
 
 ```bash
 make run-game GAME_ARGS="--solver hybrid --session mimmo --depth 6 --rollouts 1000 --candidates 4 --chance-cells 16 --max-rollout-moves 160"
 ```
 
-Godlike, experimental. Tres lent, pas forcement meilleur que High:
+Godlike, equivalent au mode par defaut:
 
 ```bash
 make run-game GAME_ARGS="--solver hybrid --session mimmo --depth 7 --rollouts 2500 --candidates 4 --chance-cells 16 --max-rollout-moves 220"
@@ -395,10 +398,11 @@ Raccourcis integres:
 make run-game GAME_ARGS="--quality fast --solver hybrid --session mimmo"
 make run-game GAME_ARGS="--quality balanced --solver hybrid --session mimmo"
 make run-game GAME_ARGS="--quality strong --solver hybrid --session mimmo"
+make run-game GAME_ARGS="--quality godlike --solver hybrid --session mimmo"
 ```
 
-`--quality strong` correspond a:
+`--quality godlike` correspond a:
 
 ```text
-depth 6, rollouts 1000, candidates 4, chance-cells 16, max-rollout-moves 160
+depth 7, rollouts 2500, candidates 4, chance-cells 16, max-rollout-moves 220
 ```

@@ -3,6 +3,7 @@
 import argparse
 import json
 import shutil
+import subprocess
 import zipfile
 from pathlib import Path
 
@@ -10,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 PACKAGE_NAME = "2048-ranks-windows"
+DISCORD_SIZE_TARGET = 10 * 1024 * 1024
 
 
 def ignore_build_artifacts(_directory, names):
@@ -29,7 +31,7 @@ def empty_session():
         "observations": [],
         "spawns": {},
         "solved": [],
-        "outcome": {"status": "in_progress", "target": 13},
+        "outcome": {"status": "in_progress", "target": 12},
     }
 
 
@@ -50,11 +52,20 @@ def zip_directory(source_dir, zip_path):
                 archive.write(path, path.relative_to(source_dir.parent))
 
 
+def try_strip_exe(path):
+    strip = shutil.which("strip")
+    if not strip or not path.exists():
+        return False
+    subprocess.run([strip, str(path)], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser(description="Prepare un zip Windows pour 2048 ranks.")
     parser.add_argument("--solver-exe", default="", help="Chemin vers 2048-ranks.exe deja compile.")
     parser.add_argument("--name", default=PACKAGE_NAME, help="Nom du dossier/zip genere.")
     parser.add_argument("--no-zip", action="store_true", help="Cree seulement le dossier, sans zip.")
+    parser.add_argument("--strip-exe", action="store_true", help="Essaie de reduire 2048-ranks.exe avec strip si disponible.")
     args = parser.parse_args()
 
     package_dir = DIST / args.name
@@ -71,10 +82,10 @@ def main():
     (data_dir / "simulation_reports").mkdir(parents=True)
 
     copy_file_if_exists(ROOT / "data" / "observed_spawns.json", data_dir / "observed_spawns.json")
-    copy_file_if_exists(
-        ROOT / "data" / "sessions" / "youtube_max01_VozVoz.json",
-        data_dir / "sessions" / "youtube_max01_VozVoz.json",
-    )
+    source_sessions = ROOT / "data" / "sessions"
+    if source_sessions.exists():
+        for source in sorted(source_sessions.glob("*.json")):
+            copy_file_if_exists(source, data_dir / "sessions" / source.name)
     (data_dir / "sessions" / "ma_partie.json").write_text(
         json.dumps(empty_session(), indent=2) + "\n",
         encoding="utf-8",
@@ -88,25 +99,31 @@ def main():
     if not solver_source.is_absolute():
         solver_source = ROOT / solver_source
     if solver_source.exists():
-        shutil.copy2(solver_source, package_dir / "2048-ranks.exe")
+        packaged_solver = package_dir / "2048-ranks.exe"
+        shutil.copy2(solver_source, packaged_solver)
+        if args.strip_exe:
+            try_strip_exe(packaged_solver)
     else:
-        (package_dir / "IL_MANQUE_2048-ranks.exe.txt").write_text(
-            "Compile 2048-ranks.exe puis relance tools/package_windows.py --solver-exe CHEMIN\\2048-ranks.exe\n",
+        (package_dir / "MISSING_2048-ranks.exe.txt").write_text(
+            "Compile 2048-ranks.exe, then rerun tools/package_windows.py --solver-exe PATH\\2048-ranks.exe\n",
             encoding="utf-8",
         )
-        print("Attention: 2048-ranks.exe introuvable. Le dossier genere n'est pas directement utilisable.")
+        print("Warning: 2048-ranks.exe was not found. The generated folder is not directly usable.")
 
     local_python = ROOT / "python"
     if (local_python / "python.exe").exists():
         shutil.copytree(local_python, package_dir / "python", ignore=ignore_build_artifacts)
     else:
-        print("Info: aucun runtime Python embarque trouve dans python/. Le launcher utilisera Python installe.")
+        print("Info: no embedded Python runtime found in python/. The launcher will use installed Python.")
 
     if not args.no_zip:
         zip_path = DIST / f"{args.name}.zip"
         zip_directory(package_dir, zip_path)
-        print(f"Package cree: {zip_path}")
-    print(f"Dossier cree: {package_dir}")
+        size = zip_path.stat().st_size
+        print(f"Package cree: {zip_path} ({size / (1024 * 1024):.2f} MiB)")
+        if size > DISCORD_SIZE_TARGET:
+            print("Warning: the zip is over 10 MiB. Try --strip-exe and avoid embedding python/ if you want a small Discord zip.")
+    print(f"Folder created: {package_dir}")
 
 
 if __name__ == "__main__":

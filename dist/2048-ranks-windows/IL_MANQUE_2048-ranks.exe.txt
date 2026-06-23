@@ -1,0 +1,1 @@
+Compile 2048-ranks.exe puis relance tools/package_windows.py --solver-exe CHEMIN\2048-ranks.exe

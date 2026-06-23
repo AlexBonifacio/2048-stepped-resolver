@@ -25,14 +25,15 @@ namespace {
 constexpr const char* StatsPath = "data/observed_spawns.json";
 constexpr const char* SessionDir = "data/sessions";
 constexpr const char* SimulationReportDir = "data/simulation_reports";
+constexpr int DefaultTargetRank = 12;
 
 struct CliOptions {
-    int depth = 6;
-    int rollouts = 1000;
+    int depth = 7;
+    int rollouts = 2500;
     int candidates = 4;
-    int maxRolloutMoves = 160;
+    int maxRolloutMoves = 220;
     int chanceCells = Board::CellCount;
-    int targetRank = 13;
+    int targetRank = DefaultTargetRank;
     std::optional<int> startScore;
     std::optional<int> startMoves;
     int simulations = 0;
@@ -45,9 +46,9 @@ struct CliOptions {
     std::optional<int> solvedCheckpointMove;
     std::string solvedCheckpointSource = "human";
     std::string modelSessionName;
-    std::string modelStatsSource = "session";
+    std::string modelStatsSource = "sessions";
     std::string solver = "hybrid";
-    std::string quality = "strong";
+    std::string quality = "godlike";
     std::string sessionName;
     bool startFromSession = false;
     bool suggestOnly = false;
@@ -60,7 +61,7 @@ struct GameState {
     int moves = 0;
     StatTracker sessionStats;
     std::string solvedJson = "[]";
-    std::string outcomeJson = "{\"status\": \"in_progress\", \"target\": 13}";
+    std::string outcomeJson = "{\"status\": \"in_progress\", \"target\": 12}";
 };
 
 struct UndoSnapshot {
@@ -177,8 +178,8 @@ CliOptions readOptions(int argc, char** argv) {
         options.maxRolloutMoves = 50;
         options.chanceCells = 8;
     } else if (options.quality != "balanced") {
-        std::cout << "Qualite inconnue, utilisation du mode balanced.\n";
-        options.quality = "balanced";
+        std::cout << "Qualite inconnue, utilisation du mode godlike.\n";
+        options.quality = "godlike";
     }
     options.depth = readIntOption(argc, argv, "--depth", options.depth);
     options.rollouts = readIntOption(argc, argv, "--rollouts", options.rollouts);
@@ -229,9 +230,10 @@ CliOptions readOptions(int argc, char** argv) {
     }
     if (options.modelStatsSource != "global" &&
         options.modelStatsSource != "session" &&
+        options.modelStatsSource != "sessions" &&
         options.modelStatsSource != "merged") {
-        std::cout << "Source de modele inconnue, utilisation de session.\n";
-        options.modelStatsSource = "session";
+        std::cout << "Source de modele inconnue, utilisation de sessions.\n";
+        options.modelStatsSource = "sessions";
     }
     if (statsMode == "read-write") {
         options.updateStats = true;
@@ -389,7 +391,7 @@ void printHelp() {
     std::cout << "Commandes: z/w=haut, s=bas, q/a=gauche, d=droite, u=undo, u 3=undo 3 pas, c=contexte, e=edit, p=publier session, h=aide, r=nouveau plateau, x=quitter\n";
     std::cout << "Coordonnees: colonnes a-d, lignes 1-4. a1 et 1a designent la meme case. Ancien format 1 1 accepte.\n";
     std::cout << "Sessions: --session nom sauvegarde plateau, score, coups et apparitions dans data/sessions/nom.json.\n";
-    std::cout << "Options: --quality fast|balanced|strong|godlike --solver hybrid|expectimax|optimistic|human|target --target 13 --explain --suggest-only --model-session NOM --model-stats global|session|merged --simulate N --sim-max-moves N --sim-stats global|session|merged --force-first-move haut|bas|gauche|droite --sim-report NOM --seed N --depth 4 --rollouts 200 --candidates 2 --chance-cells 12 --max-rollout-moves 80 --start-score N --start-moves N --start-from-session --start-from-solved 0.5 --checkpoint-move N --checkpoint-source human|ai|any --stats read-only|read-write.\n";
+    std::cout << "Options: --quality fast|balanced|strong|godlike --solver hybrid|expectimax|optimistic|human|target --target 12 --explain --suggest-only --model-session NOM --model-stats global|session|sessions|merged --simulate N --sim-max-moves N --sim-stats global|session|merged --force-first-move haut|bas|gauche|droite --sim-report NOM --seed N --depth 4 --rollouts 200 --candidates 2 --chance-cells 12 --max-rollout-moves 80 --start-score N --start-moves N --start-from-session --start-from-solved 0.5 --checkpoint-move N --checkpoint-source human|ai|any --stats read-only|read-write.\n";
 }
 
 bool saveStatsIfNeeded(const StatTracker& stats, const CliOptions& options, bool hasSession) {
@@ -635,7 +637,7 @@ bool outcomeEnded(const GameState& game) {
            game.outcomeJson.find("\"status\":\"ended\"") != std::string::npos;
 }
 
-std::string endedOutcomeJson(const GameState& game, const std::string& reason = "no_moves", int target = 13) {
+std::string endedOutcomeJson(const GameState& game, const std::string& reason = "no_moves", int target = DefaultTargetRank) {
     const int highest = game.board.highestTile();
     std::ostringstream out;
     out << "{"
@@ -727,7 +729,7 @@ bool saveSession(const GameState& game, const std::string& name) {
     }
     out << "},\n";
     out << "  \"solved\": " << (game.solvedJson.empty() ? "[]" : game.solvedJson) << ",\n";
-    out << "  \"outcome\": " << (game.outcomeJson.empty() ? "{\"status\": \"in_progress\", \"target\": 13}" : game.outcomeJson) << "\n";
+    out << "  \"outcome\": " << (game.outcomeJson.empty() ? "{\"status\": \"in_progress\", \"target\": 12}" : game.outcomeJson) << "\n";
     out << "}\n";
     return true;
 }
@@ -764,7 +766,7 @@ bool loadSession(GameState& game, const std::string& name) {
 
     game.sessionStats.load(sessionPath(name));
     game.solvedJson = compactSolvedArrays(readJsonArray(content, "solved").value_or("[]"));
-    game.outcomeJson = readJsonObject(content, "outcome").value_or("{\"status\": \"in_progress\", \"target\": 13}");
+    game.outcomeJson = readJsonObject(content, "outcome").value_or("{\"status\": \"in_progress\", \"target\": 12}");
 
     return true;
 }
@@ -1267,6 +1269,33 @@ bool mergeSessionStats(StatTracker& target, const std::string& name) {
     return true;
 }
 
+int mergeAllSessionStats(StatTracker& target, const std::string& excludedSession = "") {
+    int loadedCount = 0;
+    const std::string excluded = sanitizedSessionName(excludedSession);
+    std::error_code error;
+    if (!std::filesystem::exists(SessionDir, error)) {
+        return loadedCount;
+    }
+
+    for (const auto& entry : std::filesystem::directory_iterator(SessionDir, error)) {
+        if (error) {
+            break;
+        }
+        if (!entry.is_regular_file() || entry.path().extension() != ".json") {
+            continue;
+        }
+        if (!excludedSession.empty() && sanitizedSessionName(entry.path().stem().string()) == excluded) {
+            continue;
+        }
+        GameState loaded;
+        if (loadSession(loaded, entry.path().stem().string())) {
+            target.mergeFrom(loaded.sessionStats);
+            ++loadedCount;
+        }
+    }
+    return loadedCount;
+}
+
 std::vector<MoveAnalysis> analyzeHumanPriorMoves(
     const Board& board,
     const std::vector<SpawnProbability>& spawnModel,
@@ -1346,7 +1375,10 @@ std::optional<StatTracker> buildModelStats(const CliOptions& options, const Stat
         modelStats.mergeFrom(globalStats);
     }
 
-    if (options.modelStatsSource == "session" || options.modelStatsSource == "merged") {
+    if (options.modelStatsSource == "sessions") {
+        mergeAllSessionStats(modelStats, options.sessionName);
+        modelStats.mergeFrom(game.sessionStats);
+    } else if (options.modelStatsSource == "session" || options.modelStatsSource == "merged") {
         if (options.modelSessionName.empty()) {
             modelStats.mergeFrom(game.sessionStats);
         } else {
