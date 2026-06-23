@@ -31,6 +31,7 @@ def empty_session():
         "observations": [],
         "spawns": {},
         "solved": [],
+        "context_ready": False,
         "outcome": {"status": "in_progress", "target": 12},
     }
 

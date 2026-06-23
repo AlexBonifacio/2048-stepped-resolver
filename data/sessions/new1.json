@@ -48,6 +48,7 @@
   "observations": [],
   "spawns": {},
   "solved": [],
+  "context_ready": false,
   "outcome": {
     "status": "in_progress",
     "target": 12

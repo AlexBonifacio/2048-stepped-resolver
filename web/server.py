@@ -44,6 +44,7 @@ def empty_session_data():
         "observations": [],
         "spawns": {},
         "solved": [],
+        "context_ready": False,
         "outcome": {"status": "in_progress", "target": 12},
     }
 
@@ -55,6 +56,23 @@ def ensure_session(name):
     SESSION_DIR.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(empty_session_data(), indent=2) + "\n", encoding="utf-8")
     return path
+
+
+def session_summaries():
+    sessions = []
+    for path in sorted(SESSION_DIR.glob("*.json"), key=lambda item: item.stem.lower()):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            data = {}
+        sessions.append({
+            "name": path.stem,
+            "score": int_value(data.get("score")),
+            "moves": int_value(data.get("moves")),
+            "highest": max((int_value(value) for value in data.get("cells", [])), default=0) if isinstance(data.get("cells"), list) else 0,
+            "context_ready": bool(data.get("context_ready")),
+        })
+    return sessions
 
 
 def int_value(value, fallback=0):
@@ -122,7 +140,7 @@ def estimate_moves_from_score(score):
 
     estimate = round(weighted_total / weight_sum)
     close_count = sum(1 for ref in refs if abs(ref["score"] - score) / max(score, ref["score"]) <= 0.35)
-    confidence = "haute" if close_count >= 8 else "moyenne" if close_count >= 3 else "basse"
+    confidence = "high" if close_count >= 8 else "medium" if close_count >= 3 else "low"
     return {
         "score": score,
         "moves": max(0, estimate),
@@ -222,6 +240,9 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/api/session":
             self.handle_get_session(parsed)
             return
+        if parsed.path == "/api/sessions":
+            self.handle_get_sessions(parsed)
+            return
         if parsed.path == "/api/suggestion":
             self.handle_get_suggestion(parsed)
             return
@@ -255,6 +276,9 @@ class Handler(BaseHTTPRequestHandler):
             self.write_json({"error": f"Invalid JSON: {exc}"}, status=500)
             return
         self.write_json({"name": name, "path": str(path.relative_to(ROOT)), "data": data})
+
+    def handle_get_sessions(self, parsed):
+        self.write_json({"ok": True, "sessions": session_summaries()})
 
     def handle_get_suggestion(self, parsed):
         query = parse_qs(parsed.query)

@@ -28,6 +28,9 @@
           </div>
         </div>
       </section>
+	  <section>
+		  <p id="status" class="status"></p>
+	  </section>
 
       <section class="board-shell">
         <div id="board" class="board" aria-label="2048 grid" role="grid"></div>
@@ -38,40 +41,35 @@
           <span>Move</span>
           <strong id="suggestionDirection">...</strong>
         </div>
-        <p id="suggestionMeta">Waiting for calculation</p>
-        <button id="suggestionRefreshButton" type="button" title="Recalculate the suggested move">Recalculate</button>
+        <p id="suggestionMeta"></p>
+        <button id="suggestionRefreshButton" type="button" title="Calculate the suggested move">Calculate</button>
+        <button id="undoButton" type="button" title="Undo">Undo</button>
         <ol id="suggestionRanking" class="ranking"></ol>
       </section>
 
       <section class="context-controls" aria-label="Game context">
-        <input id="contextScore" type="number" min="0" step="1" inputmode="numeric" placeholder="current score">
-        <input id="contextMoves" type="number" min="0" step="1" inputmode="numeric" placeholder="estimated moves">
-        <button id="estimateMovesButton" type="button" title="Estimate moves from the score">Estimate moves</button>
-        <button id="applyContextButton" type="button" title="Apply score and moves to the JSON">Apply context</button>
-      </section>
-
-      <section class="outcome-controls" aria-label="Game result">
-        <input id="outcomeTarget" type="number" min="1" step="1" inputmode="numeric" placeholder="target rank">
-        <p id="outcomeStatus">In progress</p>
-        <button id="markOutcomeButton" type="button" title="Mark the game as ended">Mark ended</button>
-        <button id="reopenOutcomeButton" type="button" title="Set the game back to in progress">Reopen</button>
+        <label for="contextScore">Current score</label>
+        <input id="contextScore" type="number" min="0" step="1" inputmode="numeric" required>
+        <button id="applyContextButton" type="button" title="Start with this score">Start</button>
       </section>
 
       <section class="getting-started" aria-label="Getting started">
         <h2>Getting started</h2>
-        <p>Copy the board you see in the game, enter the current score, estimate or enter the move count, then apply the context. Move with the arrow keys, place the spawned tile by clicking an empty cell, and press Enter to confirm the tile or recalculate the AI suggestion.</p>
+        <p>Copy the board you see in the game, enter the current score, then start.</p>
+        <p>Move with the arrow keys, place the spawned tile by left clicking an empty cell, and press Enter to confirm the tile or calculate the AI suggestion.</p>
+        <p>Right click to lower a tile. Click Undo if you hit a tile by mistake.</p>
       </section>
 
       <section class="controls">
+        <select id="existingSessionSelect" aria-label="Existing sessions">
+          <option value="">Open session...</option>
+        </select>
+        <button id="openSessionButton" type="button" title="Open the selected session">Open</button>
         <input id="newSessionName" type="text" autocomplete="off" placeholder="new session">
         <button id="newSessionButton" type="button" title="Create an empty session">New</button>
-        <button id="undoButton" type="button" title="Undo">↶ Undo</button>
         <button id="commitSpawnButton" type="button" title="Confirm the spawned tile">Confirm tile</button>
-        <button id="saveButton" type="button" title="Save the session">Save</button>
-        <button id="reloadButton" type="button" title="Reload from JSON">Reload</button>
       </section>
 
-      <p id="status" class="status"></p>
     </main>
 
     <script src="/app.js"></script>

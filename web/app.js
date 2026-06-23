@@ -9,29 +9,23 @@ const scoreEl = document.querySelector("#score");
 const movesEl = document.querySelector("#moves");
 const highestEl = document.querySelector("#highest");
 const sessionNameEl = document.querySelector("#sessionName");
+const existingSessionSelectEl = document.querySelector("#existingSessionSelect");
+const openSessionButton = document.querySelector("#openSessionButton");
 const newSessionNameEl = document.querySelector("#newSessionName");
 const newSessionButton = document.querySelector("#newSessionButton");
 const undoButton = document.querySelector("#undoButton");
 const commitSpawnButton = document.querySelector("#commitSpawnButton");
-const saveButton = document.querySelector("#saveButton");
-const reloadButton = document.querySelector("#reloadButton");
 const suggestionDirectionEl = document.querySelector("#suggestionDirection");
 const suggestionMetaEl = document.querySelector("#suggestionMeta");
 const suggestionRefreshButton = document.querySelector("#suggestionRefreshButton");
 const suggestionRankingEl = document.querySelector("#suggestionRanking");
+const contextControlsEl = document.querySelector(".context-controls");
 const contextScoreEl = document.querySelector("#contextScore");
-const contextMovesEl = document.querySelector("#contextMoves");
-const estimateMovesButton = document.querySelector("#estimateMovesButton");
 const applyContextButton = document.querySelector("#applyContextButton");
-const outcomeTargetEl = document.querySelector("#outcomeTarget");
-const outcomeStatusEl = document.querySelector("#outcomeStatus");
-const markOutcomeButton = document.querySelector("#markOutcomeButton");
-const reopenOutcomeButton = document.querySelector("#reopenOutcomeButton");
 
 let state = null;
 let history = [];
 let pendingSpawn = null;
-let lastSavedAt = "";
 let suggestionRequestId = 0;
 
 const suggestionOptions = {
@@ -45,6 +39,19 @@ const defaultTargetRank = Math.max(1, Number(params.get("target")) || 12);
 
 sessionNameEl.textContent = sessionName;
 
+function directionLabel(direction) {
+  return {
+    haut: "up",
+    bas: "down",
+    gauche: "left",
+    droite: "right",
+    up: "up",
+    down: "down",
+    left: "left",
+    right: "right",
+  }[direction] || direction;
+}
+
 function emptySession() {
   return {
     moves: 0,
@@ -54,6 +61,7 @@ function emptySession() {
     observations: [],
     spawns: {},
     solved: [],
+    context_ready: false,
     outcome: {
       status: "in_progress",
       target: defaultTargetRank,
@@ -95,6 +103,11 @@ function normalizeSession(data) {
       source: typeof move.source === "string" ? move.source : "human",
     }))
     : [];
+  next.context_ready = Boolean(next.context_ready) ||
+    next.moves > 0 ||
+    next.score > 0 ||
+    next.observations.length > 0 ||
+    next.solved.length > 0;
   next.outcome = normalizeOutcome(next.outcome);
   syncMap(next);
   return next;
@@ -115,7 +128,6 @@ function restore(snap) {
   state = snap.state;
   pendingSpawn = snap.pendingSpawn;
   syncContextInputs();
-  syncOutcomeControls();
   render();
 }
 
@@ -197,7 +209,7 @@ function canMove() {
 }
 
 function currentOutcome(status = "ended", reason = "manual") {
-  const target = Math.max(1, Math.round(Number(outcomeTargetEl.value) || state.outcome?.target || defaultTargetRank));
+  const target = defaultTargetRank;
   const finalHighest = highestRank();
   return {
     status,
@@ -209,17 +221,6 @@ function currentOutcome(status = "ended", reason = "manual") {
     reason,
     ended_at: status === "ended" ? new Date().toISOString() : "",
   };
-}
-
-function markOutcome(reason = "manual") {
-  state.outcome = currentOutcome("ended", reason);
-  syncOutcomeControls();
-}
-
-function reopenOutcome() {
-  const target = Math.max(1, Math.round(Number(outcomeTargetEl.value) || state.outcome?.target || defaultTargetRank));
-  state.outcome = { status: "in_progress", target };
-  syncOutcomeControls();
 }
 
 function recordSolvedMove(direction, beforeCells, result, context) {
@@ -244,7 +245,34 @@ function isInitialSetup() {
     state.observations.length === 0;
 }
 
+function gameHasStarted() {
+  return Boolean(state) && (
+    state.context_ready ||
+    state.moves > 0 ||
+    state.score > 0 ||
+    state.observations.length > 0 ||
+    state.solved.length > 0 ||
+    pendingSpawn
+  );
+}
+
+function scoreIsFilled() {
+  return contextScoreEl.value.trim() !== "";
+}
+
+function requireContextReady() {
+  if (state?.context_ready) {
+    return true;
+  }
+  setStatus("Enter the current score and press Start before playing.", "warn");
+  contextScoreEl.focus();
+  return false;
+}
+
 function move(direction) {
+  if (!requireContextReady()) {
+    return;
+  }
   if (!state || pendingSpawn) {
     setStatus("Place the new tile first, or clear it with right click.", "warn");
     return;
@@ -284,7 +312,13 @@ async function handleCellClick(index, event) {
     syncMap(state);
     render();
     await saveSession();
-    await refreshSuggestion();
+    if (state.context_ready) {
+      await refreshSuggestion();
+    } else {
+      setSuggestion("...", "");
+      setSuggestionRanking();
+      setStatus("Enter the current score and press Start before playing.");
+    }
     return;
   }
 
@@ -330,7 +364,7 @@ async function commitPendingSpawn({ save = true, refresh = true } = {}) {
   syncMap(state);
   const ended = !canMove();
   if (ended) {
-    markOutcome("no_moves");
+    state.outcome = currentOutcome("ended", "no_moves");
   }
   render();
   if (save) {
@@ -362,34 +396,14 @@ async function saveSession() {
     setStatus(payload.error || "Could not save.", "warn");
     return;
   }
-  lastSavedAt = new Date().toLocaleTimeString();
-  setStatus(`Saved to ${payload.path} at ${lastSavedAt}.`);
 }
 
 function syncContextInputs() {
   if (!state) {
     contextScoreEl.value = "";
-    contextMovesEl.value = "";
     return;
   }
-  contextScoreEl.value = String(state.score);
-  contextMovesEl.value = String(state.moves);
-}
-
-function syncOutcomeControls() {
-  if (!state) {
-    outcomeTargetEl.value = String(defaultTargetRank);
-    outcomeStatusEl.textContent = "In progress";
-    return;
-  }
-  state.outcome = normalizeOutcome(state.outcome);
-  outcomeTargetEl.value = String(state.outcome.target);
-  if (state.outcome.status === "ended") {
-    const result = state.outcome.success ? "success" : "failed";
-    outcomeStatusEl.textContent = `Ended, ${result}: max ${state.outcome.final_highest}/${state.outcome.target}, score ${state.outcome.final_score}`;
-  } else {
-    outcomeStatusEl.textContent = `In progress: target ${state.outcome.target}`;
-  }
+  contextScoreEl.value = state.score > 0 ? String(state.score) : "";
 }
 
 async function loadSession() {
@@ -405,33 +419,66 @@ async function loadSession() {
   history = [];
   pendingSpawn = null;
   syncContextInputs();
-  syncOutcomeControls();
   render();
-  await refreshSuggestion();
+  if (state.context_ready) {
+    await refreshSuggestion();
+  } else {
+    setSuggestion("...", "");
+    setSuggestionRanking();
+    setStatus("Copy the board, enter the current score, then press Start.");
+  }
 }
 
-async function estimateMovesFromScore() {
-  const score = Math.max(0, Number(contextScoreEl.value) || 0);
+function sessionOptionLabel(session) {
+  const details = [];
+  if (Number(session.score) > 0) details.push(`score ${session.score}`);
+  if (Number(session.moves) > 0) details.push(`${session.moves} moves`);
+  if (Number(session.highest) > 0) details.push(`max ${session.highest}`);
+  return details.length > 0 ? `${session.name} (${details.join(", ")})` : session.name;
+}
+
+async function loadSessionList() {
+  try {
+    const response = await fetch("/api/sessions");
+    const payload = await response.json();
+    if (!response.ok || !payload.ok) {
+      return;
+    }
+
+    existingSessionSelectEl.replaceChildren();
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Open session...";
+    existingSessionSelectEl.append(placeholder);
+
+    payload.sessions.forEach((session) => {
+      const option = document.createElement("option");
+      option.value = session.name;
+      option.textContent = sessionOptionLabel(session);
+      option.selected = session.name === sessionName;
+      existingSessionSelectEl.append(option);
+    });
+    openSessionButton.disabled = !existingSessionSelectEl.value || existingSessionSelectEl.value === sessionName;
+  } catch (error) {
+    openSessionButton.disabled = true;
+  }
+}
+
+async function estimateMoves(score) {
   if (score === 0) {
-    contextMovesEl.value = "0";
-    setStatus("Zero score: context reset to the start.");
-    return;
+    return 0;
   }
 
-  estimateMovesButton.disabled = true;
   try {
     const response = await fetch(`/api/estimate-moves?score=${encodeURIComponent(score)}`);
     const payload = await response.json();
     if (!response.ok || !payload.ok) {
-      setStatus(payload.error || "Could not estimate moves.", "warn");
-      return;
+      throw new Error(payload.error || "Could not estimate moves.");
     }
-    contextMovesEl.value = String(payload.moves);
-    setStatus(`Estimate: ${payload.moves} moves for score ${score} (${payload.confidence}, ${payload.references} refs).`);
+    return Math.max(0, Math.round(Number(payload.moves) || 0));
   } catch (error) {
-    setStatus("Move estimate server is unavailable.", "warn");
-  } finally {
-    estimateMovesButton.disabled = false;
+    setStatus("Move estimate server is unavailable; starting with 0 estimated moves.", "warn");
+    return 0;
   }
 }
 
@@ -440,45 +487,26 @@ async function applyContext() {
     setStatus("Confirm the current tile before changing the context.", "warn");
     return;
   }
+  if (!scoreIsFilled()) {
+    setStatus("Current score is required before starting.", "warn");
+    contextScoreEl.focus();
+    return;
+  }
 
   const score = Math.max(0, Math.round(Number(contextScoreEl.value) || 0));
-  const moves = Math.max(0, Math.round(Number(contextMovesEl.value) || 0));
+  const moves = await estimateMoves(score);
   pushHistory();
   state.score = score;
   state.moves = moves;
+  state.context_ready = true;
   if (state.outcome?.status === "ended") {
     state.outcome = currentOutcome("ended", state.outcome.reason || "manual");
   }
   syncContextInputs();
-  syncOutcomeControls();
   render();
   await saveSession();
   await refreshSuggestion();
-  setStatus(`Context applied: score ${score}, moves ${moves}.`);
-}
-
-async function saveManualOutcome() {
-  if (!state || pendingSpawn) {
-    setStatus("Confirm the current tile before marking the game as ended.", "warn");
-    return;
-  }
-  pushHistory();
-  markOutcome("manual");
-  render();
-  await saveSession();
-  setStatus(`Outcome saved: max ${state.outcome.final_highest}/${state.outcome.target}.`);
-}
-
-async function reopenManualOutcome() {
-  if (!state) {
-    return;
-  }
-  pushHistory();
-  reopenOutcome();
-  render();
-  await saveSession();
-  await refreshSuggestion();
-  setStatus("Game marked as in progress.");
+  setStatus(`Started with score ${score}.`);
 }
 
 async function createNewSession() {
@@ -501,13 +529,21 @@ async function createNewSession() {
   window.location.href = `/?session=${encodeURIComponent(rawName)}`;
 }
 
+function openSelectedSession() {
+  const selected = existingSessionSelectEl.value;
+  if (!selected || selected === sessionName) {
+    return;
+  }
+  window.location.href = `/?session=${encodeURIComponent(selected)}`;
+}
+
 function setStatus(text, mode = "") {
   statusEl.textContent = text;
   statusEl.className = `status ${mode}`.trim();
 }
 
 function setSuggestion(direction, meta, mode = "") {
-  suggestionDirectionEl.textContent = direction;
+  suggestionDirectionEl.textContent = directionLabel(direction);
   suggestionMetaEl.textContent = meta;
   suggestionMetaEl.className = mode;
 }
@@ -518,8 +554,8 @@ function setSuggestionRanking(ranking = []) {
     const entry = document.createElement("li");
     const direction = document.createElement("strong");
     const score = document.createElement("span");
-    direction.textContent = `${index + 1}. ${item.direction}`;
-    score.textContent = Number(item.score).toLocaleString("fr-FR", { maximumFractionDigits: 0 });
+    direction.textContent = `${index + 1}. ${directionLabel(item.direction)}`;
+    score.textContent = Number(item.score).toLocaleString("en-US", { maximumFractionDigits: 0 });
     entry.append(direction, score);
     suggestionRankingEl.append(entry);
   });
@@ -529,6 +565,11 @@ async function refreshSuggestion() {
   const requestId = ++suggestionRequestId;
   if (!state) {
     setSuggestion("...", "Session not loaded");
+    setSuggestionRanking();
+    return;
+  }
+  if (!requireContextReady()) {
+    setSuggestion("...", "");
     setSuggestionRanking();
     return;
   }
@@ -566,11 +607,7 @@ async function refreshSuggestion() {
       setSuggestion("!", payload.error || "Could not calculate", "warn");
       return;
     }
-    const rollouts = Number(payload.rollouts) > 0 ? `, ${payload.rollouts} rollouts` : "";
-    setSuggestion(
-      payload.direction,
-      `${payload.solver} ${payload.quality}, depth ${payload.depth}${rollouts}, model ${payload.model_stats}, target ${payload.target || defaultTargetRank}`,
-    );
+    setSuggestion(payload.direction, "");
     setSuggestionRanking(payload.ranking || []);
   } catch (error) {
     if (requestId === suggestionRequestId) {
@@ -594,13 +631,11 @@ function render() {
   scoreEl.textContent = state.score;
   movesEl.textContent = state.moves;
   highestEl.textContent = highestRank();
-  syncOutcomeControls();
   undoButton.disabled = history.length === 0;
   commitSpawnButton.disabled = !pendingSpawn;
-  saveButton.disabled = Boolean(pendingSpawn);
   suggestionRefreshButton.disabled = Boolean(pendingSpawn);
-  markOutcomeButton.disabled = Boolean(pendingSpawn);
-  reopenOutcomeButton.disabled = state.outcome?.status !== "ended";
+  contextControlsEl.classList.toggle("is-hidden", gameHasStarted());
+  applyContextButton.disabled = Boolean(pendingSpawn) || !scoreIsFilled();
 
   boardEl.replaceChildren();
   state.cells.forEach((rank, index) => {
@@ -677,40 +712,28 @@ undoButton.addEventListener("click", async () => {
 commitSpawnButton.addEventListener("click", async () => {
   await commitPendingSpawn();
 });
-saveButton.addEventListener("click", async () => {
-  await saveSession();
-  await refreshSuggestion();
-});
-reloadButton.addEventListener("click", loadSession);
 suggestionRefreshButton.addEventListener("click", refreshSuggestion);
-estimateMovesButton.addEventListener("click", estimateMovesFromScore);
 applyContextButton.addEventListener("click", applyContext);
-markOutcomeButton.addEventListener("click", saveManualOutcome);
-reopenOutcomeButton.addEventListener("click", reopenManualOutcome);
-outcomeTargetEl.addEventListener("change", async () => {
-  if (!state) {
-    return;
-  }
-  const target = Math.max(1, Math.round(Number(outcomeTargetEl.value) || defaultTargetRank));
-  state.outcome = state.outcome?.status === "ended"
-    ? { ...currentOutcome("ended", state.outcome.reason || "manual"), target, success: highestRank() >= target }
-    : { status: "in_progress", target };
-  syncOutcomeControls();
-  await saveSession();
-});
 contextScoreEl.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    estimateMovesFromScore();
-  }
-});
-contextMovesEl.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
     applyContext();
   }
 });
+contextScoreEl.addEventListener("input", () => {
+  applyContextButton.disabled = !scoreIsFilled();
+});
 newSessionButton.addEventListener("click", createNewSession);
+openSessionButton.addEventListener("click", openSelectedSession);
+existingSessionSelectEl.addEventListener("change", () => {
+  openSessionButton.disabled = !existingSessionSelectEl.value || existingSessionSelectEl.value === sessionName;
+});
+existingSessionSelectEl.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    openSelectedSession();
+  }
+});
 newSessionNameEl.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
@@ -719,3 +742,4 @@ newSessionNameEl.addEventListener("keydown", (event) => {
 });
 
 loadSession();
+loadSessionList();

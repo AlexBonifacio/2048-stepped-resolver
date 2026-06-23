@@ -38,7 +38,8 @@ button {
   cursor: pointer;
 }
 
-input {
+input,
+select {
   min-height: 42px;
   width: min(210px, 100%);
   border: 1px solid #bfb4a4;
@@ -50,7 +51,8 @@ input {
   font-weight: 700;
 }
 
-input:focus {
+input:focus,
+select:focus {
   border-color: var(--accent);
   outline: 2px solid rgba(23, 111, 107, 0.18);
 }
@@ -77,7 +79,7 @@ button:disabled {
 
 .suggestion {
   display: grid;
-  grid-template-columns: minmax(116px, auto) 1fr auto;
+  grid-template-columns: minmax(116px, auto) 1fr auto auto;
   align-items: center;
   width: 100%;
   gap: 12px;
@@ -154,33 +156,26 @@ button:disabled {
 
 .context-controls {
   display: grid;
-  grid-template-columns: repeat(2, minmax(130px, 1fr)) repeat(2, auto);
+  grid-template-columns: auto minmax(130px, 1fr) auto;
+  align-items: center;
   width: 100%;
   gap: 10px;
+}
+
+.context-controls label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .context-controls input {
   width: 100%;
 }
 
-.outcome-controls {
-  display: grid;
-  grid-template-columns: minmax(100px, 130px) 1fr auto auto;
-  align-items: center;
-  width: 100%;
-  gap: 10px;
-  border-top: 1px solid var(--line);
-  padding-top: 12px;
-}
-
-.outcome-controls input {
-  width: 100%;
-}
-
-.outcome-controls p {
-  margin: 0;
-  color: var(--muted);
-  font-weight: 800;
+.context-controls.is-hidden {
+  display: none;
 }
 
 .getting-started {
@@ -330,10 +325,16 @@ h1 {
 .rank-high { background: #171717; color: #fffaf2; }
 
 .controls {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(180px, 1.2fr) auto minmax(160px, 1fr) auto auto;
+  align-items: center;
   gap: 10px;
+  width: 100%;
+}
+
+.controls input,
+.controls select {
+  width: 100%;
 }
 
 .status {
@@ -381,7 +382,8 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .outcome-controls {
+  .controls {
     grid-template-columns: 1fr;
   }
+
 }
