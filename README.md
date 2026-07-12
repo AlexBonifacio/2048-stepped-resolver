@@ -287,7 +287,7 @@ Calibrage, a faire une seule fois tant que la fenetre du jeu ne bouge pas:
 
 1. clique `Calibrate`;
 2. choisis le moniteur ou se trouve le jeu;
-3. trace un rectangle autour de la grille 4x4 du jeu.
+3. trace un carre autour de la grille 4x4 du jeu (la selection reste carree toute seule).
 
 La region est sauvegardee dans `data/capture.json`. Le bouton `Preview` affiche en direct ce que le serveur capture, pour verifier le cadrage.
 
@@ -307,6 +307,15 @@ Details du mode watch:
 - les inputs manuels de la page sont bloques pendant le watch.
 
 Entre deux lectures, le site retrouve la transition exacte en testant les quatre directions sur l'ancien plateau. Quand une seule correspond (le cas normal), le score gagne les points exacts des fusions, le coup est enregistre dans `solved`, et la tuile apparue alimente les observations de spawn avec son contexte, exactement comme en mode manuel. Si plusieurs coups ont ete rates (fenetre masquee un moment), le score est corrige par difference d'estimation, exacte au petit biais pres des spawns de rank 2 ou plus.
+
+Chaque changement de plateau est classe avant d'etre accepte, pour que les autres ecrans du jeu (menus, autres modes) ne polluent jamais le score:
+
+- `move`: une seule direction legale reproduit le nouveau plateau, comptabilisation exacte;
+- `new-game`: plateau de debut de partie detecte, le score et les coups repartent a 0;
+- `gap`: des coups ont ete rates mais le plateau respecte les invariants du jeu (pour chaque rank r, la valeur cumulee des tuiles >= r ne diminue jamais; la plus grosse tuile ne saute pas de plus de +1), correction par difference d'estimation;
+- `foreign`: le plateau lu viole ces invariants (ecran de menu, autre mode), la frame est ignoree et l'etat est gele.
+
+Si des frames `foreign` stables persistent ~15 secondes, le plateau est resynchronise depuis l'ecran sans toucher au score. Le bouton `Read board` force aussi cette resynchronisation manuellement.
 
 Endpoints associes: `GET /api/capture/status`, `GET /api/capture/frame?source=monitor|board|score`, `GET /api/capture/board`, `POST /api/capture/region`.
 

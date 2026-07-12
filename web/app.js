@@ -801,7 +801,7 @@ function renderCaptureStatus(message = "", mode = "") {
     captureStatusEl.className = "capture-status";
     return;
   }
-  captureStatusEl.textContent = "Not calibrated yet. Click Calibrate, then drag a rectangle around the game grid.";
+  captureStatusEl.textContent = "Not calibrated yet. Click Calibrate, then drag a square around the game grid.";
   captureStatusEl.className = "capture-status";
 }
 
@@ -843,7 +843,7 @@ async function loadCalibrationFrame() {
   captureDragRectEl.hidden = true;
   calibration.board = null;
   calibration.drag = null;
-  captureModalHintEl.textContent = "Drag a rectangle around the 4x4 grid.";
+  captureModalHintEl.textContent = "Drag a square around the 4x4 grid.";
   captureModalImageEl.src = `/api/capture/frame?source=monitor&monitor=${calibration.monitor}&t=${Date.now()}`;
 }
 
@@ -881,11 +881,20 @@ function calibrationPoint(event) {
 }
 
 function dragRect(drag, point) {
+  // The game grid is square, so the selection is forced to a square: the
+  // side follows the dominant drag axis, anchored on the starting corner.
+  const dx = point.x - drag.x;
+  const dy = point.y - drag.y;
+  const maxSide = Math.min(
+    dx >= 0 ? captureModalImageEl.clientWidth - drag.x : drag.x,
+    dy >= 0 ? captureModalImageEl.clientHeight - drag.y : drag.y,
+  );
+  const side = Math.min(Math.max(Math.abs(dx), Math.abs(dy)), maxSide);
   return {
-    x: Math.min(drag.x, point.x),
-    y: Math.min(drag.y, point.y),
-    width: Math.abs(point.x - drag.x),
-    height: Math.abs(point.y - drag.y),
+    x: dx >= 0 ? drag.x : drag.x - side,
+    y: dy >= 0 ? drag.y : drag.y - side,
+    width: side,
+    height: side,
   };
 }
 
@@ -975,6 +984,39 @@ function detectTransition(before, after) {
   return matches.length === 1 ? matches[0] : null;
 }
 
+function valueAboveRank(cells, rank) {
+  return cells.reduce((total, value) => (value >= rank ? total + 2 ** value : total), 0);
+}
+
+function isPlausibleContinuation(previous, cells) {
+  // In a legal sequence of moves, the cumulated value of tiles of rank >= r
+  // never decreases, for every r: merges conserve it or push value into the
+  // set, spawns only add. Screens that merely look like a board break this.
+  if (highestRank(cells) > highestRank(previous) + 1) {
+    return false;
+  }
+  const topRank = Math.max(highestRank(cells), highestRank(previous));
+  for (let rank = 1; rank <= topRank; rank += 1) {
+    if (valueAboveRank(cells, rank) < valueAboveRank(previous, rank)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function classifyBoardChange(previous, cells) {
+  // Decide what a stable board change means before trusting it: the player
+  // can visit other in-game screens whose digits read as a fake board.
+  if (isFreshBoard(cells) && !isFreshBoard(previous)) {
+    return { kind: "new-game" };
+  }
+  const transition = detectTransition(previous, cells);
+  if (transition) {
+    return { kind: "move", transition };
+  }
+  return { kind: isPlausibleContinuation(previous, cells) ? "gap" : "foreign" };
+}
+
 function estimateScoreFromBoard(cells) {
   // Building a rank-r tile from rank-1 tiles earns 2^r * (r - 1) points in
   // merges. Spawned tiles of rank >= 2 earn less, so this is a slight
@@ -1023,7 +1065,9 @@ async function readBoardFromCapture() {
       return;
     }
     const cells = payload.cells.map((value) => Math.max(0, Number(value) || 0));
-    await applyReadBoard(cells);
+    // Manual read: the user explicitly wants the screen applied, even if the
+    // change breaks game invariants (the score is then left untouched).
+    await applyReadBoard(cells, { force: true });
   } catch (error) {
     setStatus("Capture server unavailable.", "warn");
   } finally {
@@ -1035,10 +1079,14 @@ async function readBoardFromCapture() {
 // board, fill the page, let the AI suggest, repeat. No move/spawn tracking.
 
 const WATCH_INTERVAL_MS = 600;
+// Stable foreign-looking frames tolerated before resyncing the board anyway
+// (about 15 seconds), a recovery path for misreads adopted by mistake.
+const WATCH_FOREIGN_RESYNC_TICKS = 25;
 
 let watchTimer = null;
 let watchBusy = false;
 let watchCandidateSignature = "";
+let watchForeignStreak = 0;
 
 function isWatching() {
   return watchTimer !== null;
@@ -1053,6 +1101,7 @@ function startWatch() {
     return;
   }
   watchCandidateSignature = "";
+  watchForeignStreak = 0;
   watchTimer = setInterval(() => {
     void watchTick();
   }, WATCH_INTERVAL_MS);
@@ -1093,9 +1142,25 @@ async function watchTick() {
       return;
     }
     if (signature === boardSignature(state.cells)) {
+      watchForeignStreak = 0;
       return;
     }
-    await applyReadBoard(cells);
+    const applied = await applyReadBoard(cells);
+    if (applied) {
+      watchForeignStreak = 0;
+      return;
+    }
+    // The stable frame reads as a board but breaks game invariants: the
+    // player is probably on another in-game screen. Hold the last state,
+    // and resync (keeping the score) if it persists.
+    watchForeignStreak += 1;
+    if (watchForeignStreak === 1) {
+      setStatus("The captured area no longer looks like the game board; holding the last state.", "warn");
+    }
+    if (watchForeignStreak >= WATCH_FOREIGN_RESYNC_TICKS) {
+      watchForeignStreak = 0;
+      await applyReadBoard(cells, { force: true });
+    }
   } catch (error) {
     // Server hiccup: keep watching.
   } finally {
@@ -1103,39 +1168,53 @@ async function watchTick() {
   }
 }
 
-async function applyReadBoard(cells) {
+async function applyReadBoard(cells, { force = false } = {}) {
   const previous = state.cells.slice();
   const changed = boardSignature(previous) !== boardSignature(cells);
+  let change = null;
+  if (state.context_ready && changed) {
+    change = classifyBoardChange(previous, cells);
+    if (change.kind === "foreign" && !force) {
+      return false;
+    }
+  }
+
   pushHistory();
   pendingSpawn = null;
 
-  if (state.context_ready && changed) {
-    const transition = detectTransition(previous, cells);
-    if (transition) {
-      // Exact bookkeeping: the move, its points and the spawned tile are all
-      // known, so the session learns as much as in manual mode.
-      const context = { moves: state.moves, score: state.score, highest: highestRank(previous) };
-      recordSolvedMove(transition.direction, previous, {
-        cells: transition.movedCells,
-        gained: transition.gained,
-      }, context);
-      state.score += transition.gained;
-      state.moves += 1;
-      if (transition.spawnRank > 0) {
-        state.observations.push({
-          value: transition.spawnRank,
-          moves: state.moves,
-          highest: context.highest,
-        });
-        state.spawns[String(transition.spawnRank)] =
-          (Number(state.spawns[String(transition.spawnRank)]) || 0) + 1;
-      }
-    } else {
-      // Several moves were missed: the estimate difference equals the merge
-      // points, off only by the small bias of spawned tiles of rank >= 2.
-      state.score += Math.max(0, estimateScoreFromBoard(cells) - estimateScoreFromBoard(previous));
-      state.moves += 1;
+  if (change && change.kind === "move") {
+    // Exact bookkeeping: the move, its points and the spawned tile are all
+    // known, so the session learns as much as in manual mode.
+    const transition = change.transition;
+    const context = { moves: state.moves, score: state.score, highest: highestRank(previous) };
+    recordSolvedMove(transition.direction, previous, {
+      cells: transition.movedCells,
+      gained: transition.gained,
+    }, context);
+    state.score += transition.gained;
+    state.moves += 1;
+    if (transition.spawnRank > 0) {
+      state.observations.push({
+        value: transition.spawnRank,
+        moves: state.moves,
+        highest: context.highest,
+      });
+      state.spawns[String(transition.spawnRank)] =
+        (Number(state.spawns[String(transition.spawnRank)]) || 0) + 1;
     }
+  } else if (change && change.kind === "gap") {
+    // Several moves were missed: the estimate difference equals the merge
+    // points, off only by the small bias of spawned tiles of rank >= 2.
+    state.score += Math.max(0, estimateScoreFromBoard(cells) - estimateScoreFromBoard(previous));
+    state.moves += 1;
+  } else if (change && change.kind === "new-game") {
+    state.score = 0;
+    state.moves = 0;
+    state.outcome = { status: "in_progress", target: defaultTargetRank };
+    setStatus("New game detected: score reset to 0.");
+  } else if (change && change.kind === "foreign") {
+    // Forced resync: trust the screen for the board but keep the score.
+    setStatus("Board resynced from the screen; score kept.", "warn");
   }
 
   state.cells = cells;
@@ -1151,6 +1230,7 @@ async function applyReadBoard(cells) {
   if (state.context_ready) {
     await refreshSuggestion();
   }
+  return true;
 }
 
 function stopCapturePreview() {
