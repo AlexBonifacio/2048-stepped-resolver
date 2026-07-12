@@ -28,6 +28,10 @@ jobs:
           Invoke-WebRequest "https://www.python.org/ftp/python/3.12.4/python-3.12.4-embed-amd64.zip" -OutFile python-embed.zip
           Expand-Archive python-embed.zip -DestinationPath python
 
+      - name: Add mss for screen capture
+        shell: pwsh
+        run: python -m pip install mss --target python
+
       - name: Build package
         shell: pwsh
         run: python tools/package_windows.py --solver-exe 2048-ranks.exe
