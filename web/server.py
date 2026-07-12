@@ -5,10 +5,15 @@ import json
 import mimetypes
 import os
 import subprocess
+import sys
 import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, quote, urlparse
+
+# The embedded Windows Python (python/._pth) does not put the script
+# directory on sys.path, so add it explicitly before local imports.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import capture
 import recognize
