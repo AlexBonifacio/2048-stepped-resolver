@@ -34,10 +34,12 @@ jobs:
 
       - name: Build package
         shell: pwsh
-        run: python tools/package_windows.py --solver-exe 2048-ranks.exe
+        run: python tools/package_windows.py --solver-exe 2048-ranks.exe --no-zip
 
-      - name: Upload Windows zip
+      # Upload the folder, not the zip: GitHub already wraps artifacts in a
+      # zip on download, so uploading a zip forced a zip-in-a-zip extraction.
+      - name: Upload Windows package
         uses: actions/upload-artifact@v4
         with:
           name: 2048-ranks-windows
-          path: dist/2048-ranks-windows.zip
+          path: dist/2048-ranks-windows

@@ -565,6 +565,8 @@ def main():
     parser.add_argument("--open", action="store_true", help="Ouvre automatiquement le navigateur.")
     args = parser.parse_args()
 
+    SESSION_DIR.mkdir(parents=True, exist_ok=True)
+    SIMULATION_REPORT_DIR.mkdir(parents=True, exist_ok=True)
     ensure_session(args.session)
     server = ThreadingHTTPServer((args.host, args.port), Handler)
     url = (
