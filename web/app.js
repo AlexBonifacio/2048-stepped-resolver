@@ -433,7 +433,7 @@ async function loadSession() {
   } else {
     setSuggestion("...", "");
     setSuggestionRanking();
-    setStatus("Copy the board, enter the current score, then press Start.");
+    setStatus("Calibrate the screen capture and click Watch game, or copy the board by hand.");
   }
 }
 
@@ -761,7 +761,6 @@ const captureModalEl = document.querySelector("#captureModal");
 const captureModalHintEl = document.querySelector("#captureModalHint");
 const captureMonitorSelectEl = document.querySelector("#captureMonitorSelect");
 const captureRefreshButton = document.querySelector("#captureRefreshButton");
-const captureSkipButton = document.querySelector("#captureSkipButton");
 const captureCancelButton = document.querySelector("#captureCancelButton");
 const captureStageEl = document.querySelector("#captureStage");
 const captureModalImageEl = document.querySelector("#captureModalImage");
@@ -798,8 +797,7 @@ function renderCaptureStatus(message = "", mode = "") {
   }
   if (captureBoardCalibrated()) {
     const board = captureConfig.board;
-    const score = captureConfig.score ? ", score region set" : "";
-    captureStatusEl.textContent = `Board region calibrated (${board.width}x${board.height} px${score}).`;
+    captureStatusEl.textContent = `Board region calibrated (${board.width}x${board.height} px).`;
     captureStatusEl.className = "capture-status";
     return;
   }
@@ -839,21 +837,13 @@ function populateCaptureMonitors(selected) {
   });
 }
 
-function setCalibrationStep(step) {
-  calibration.step = step;
-  captureSkipButton.hidden = step !== "score";
-  captureModalHintEl.textContent = step === "board"
-    ? "Drag a rectangle around the 4x4 grid."
-    : "Now drag a rectangle around the score number, or click Skip score.";
-}
-
 async function loadCalibrationFrame() {
   captureModalImageEl.removeAttribute("src");
   captureBoardRectEl.hidden = true;
   captureDragRectEl.hidden = true;
   calibration.board = null;
   calibration.drag = null;
-  setCalibrationStep("board");
+  captureModalHintEl.textContent = "Drag a rectangle around the 4x4 grid.";
   captureModalImageEl.src = `/api/capture/frame?source=monitor&monitor=${calibration.monitor}&t=${Date.now()}`;
 }
 
@@ -866,7 +856,6 @@ async function openCalibration() {
   stopWatch();
   calibration = {
     monitor: captureConfig?.monitor ?? 1,
-    step: "board",
     board: null,
     drag: null,
   };
@@ -920,11 +909,11 @@ function toScreenRect(rect) {
   };
 }
 
-async function saveCalibration(scoreRect) {
+async function saveCalibration() {
   const body = {
     monitor: calibration.monitor,
     board: toScreenRect(calibration.board),
-    score: scoreRect ? toScreenRect(scoreRect) : null,
+    score: null,
   };
   try {
     const response = await fetch("/api/capture/region", {
@@ -950,13 +939,40 @@ async function saveCalibration(scoreRect) {
 }
 
 function handleCalibrationRect(rect) {
-  if (calibration.step === "board") {
-    calibration.board = rect;
-    placeRect(captureBoardRectEl, rect);
-    setCalibrationStep("score");
-    return;
+  calibration.board = rect;
+  placeRect(captureBoardRectEl, rect);
+  void saveCalibration();
+}
+
+function estimateScoreFromBoard(cells) {
+  // Building a rank-r tile from rank-1 tiles earns 2^r * (r - 1) points in
+  // merges. Spawned tiles of rank >= 2 earn less, so this is a slight
+  // overestimate the player can adjust before starting.
+  return cells.reduce((total, rank) => (rank > 1 ? total + 2 ** rank * (rank - 1) : total), 0);
+}
+
+function isFreshBoard(cells) {
+  const tiles = cells.filter((rank) => rank > 0);
+  return tiles.length <= 2 && tiles.every((rank) => rank <= 1);
+}
+
+async function autoStartContext(cells) {
+  // A just-started game needs no input at all: score is 0.
+  if (isFreshBoard(cells)) {
+    state.score = 0;
+    state.moves = 0;
+    state.context_ready = true;
+    syncContextInputs();
+    setStatus("New game detected: started at score 0.");
+    return true;
   }
-  void saveCalibration(rect);
+  // Game in progress: suggest an estimate, let the player confirm.
+  if (contextScoreEl.value.trim() === "" || document.activeElement !== contextScoreEl) {
+    contextScoreEl.value = String(estimateScoreFromBoard(cells));
+    applyContextButton.disabled = false;
+  }
+  setStatus("Board read. Check the estimated score below, adjust it if needed, then press Start.");
+  return false;
 }
 
 async function readBoardFromCapture() {
@@ -975,16 +991,8 @@ async function readBoardFromCapture() {
       setStatus(`Could not read ${payload.unreadable} cell(s). Check the calibration with Preview.`, "warn");
       return;
     }
-    if (!isInitialSetup()) {
-      setStatus("Board reading is only available before the game starts, to copy the initial board.", "warn");
-      return;
-    }
-    pushHistory();
-    state.cells = payload.cells.map((value) => Math.max(0, Number(value) || 0));
-    syncMap(state);
-    render();
-    await saveSession();
-    setStatus("Board read from the game screen. Enter the current score, then press Start.");
+    const cells = payload.cells.map((value) => Math.max(0, Number(value) || 0));
+    await applyReadBoard(cells, { countMove: false });
   } catch (error) {
     setStatus("Capture server unavailable.", "warn");
   } finally {
@@ -1066,15 +1074,17 @@ async function watchTick() {
   }
 }
 
-async function applyWatchedBoard(cells) {
+async function applyReadBoard(cells, { countMove }) {
   pushHistory();
   pendingSpawn = null;
   state.cells = cells;
-  if (state.context_ready && watchHasApplied) {
+  if (countMove && state.context_ready && watchHasApplied) {
     state.moves += 1;
   }
-  watchHasApplied = true;
   syncMap(state);
+  if (!state.context_ready) {
+    await autoStartContext(state.cells);
+  }
   if (!canMove()) {
     state.outcome = currentOutcome("ended", "no_moves");
   }
@@ -1082,9 +1092,12 @@ async function applyWatchedBoard(cells) {
   await saveSession();
   if (state.context_ready) {
     await refreshSuggestion();
-  } else {
-    setStatus("Board read from the game screen. Enter the current score, then press Start.");
   }
+}
+
+async function applyWatchedBoard(cells) {
+  await applyReadBoard(cells, { countMove: true });
+  watchHasApplied = true;
 }
 
 function stopCapturePreview() {
@@ -1140,11 +1153,6 @@ calibrateButton.addEventListener("click", () => {
   void openCalibration();
 });
 captureCancelButton.addEventListener("click", closeCalibration);
-captureSkipButton.addEventListener("click", () => {
-  if (calibration && calibration.board) {
-    void saveCalibration(null);
-  }
-});
 captureRefreshButton.addEventListener("click", () => {
   if (calibration) {
     void loadCalibrationFrame();

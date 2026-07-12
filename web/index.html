@@ -55,10 +55,10 @@
 
       <section class="getting-started" aria-label="Getting started">
         <h2>Getting started</h2>
-        <p>Copy the board you see in the game, enter the current score, then start.</p>
-        <p>Move with the arrow keys, place the spawned tile by left clicking an empty cell, and press Enter to confirm the tile or calculate the AI suggestion.</p>
-        <p>Right click to lower a tile. Click Undo if you hit a tile by mistake.</p>
-        <p>Hands-free: calibrate the screen capture below, then click Watch game. The board and the suggestion follow the game screen by themselves.</p>
+        <p>1. In Screen capture below, click Calibrate and drag a rectangle around the game grid. This is needed once, as long as the game window does not move.</p>
+        <p>2. Click Watch game. The board follows the game screen by itself: a fresh game starts automatically, and for a game in progress you just confirm the estimated score.</p>
+        <p>3. Play the suggested move in the game. The board and the next suggestion update on their own.</p>
+        <p>Manual mode (no capture): build the board by clicking cells (right click lowers), enter the score, press Start. Move with the arrow keys, click the cell where the new tile spawned, press Enter to confirm. Undo reverts a mistake.</p>
       </section>
 
       <section class="controls">
@@ -91,7 +91,6 @@
           <p id="captureModalHint">Drag a rectangle around the 4x4 grid.</p>
           <select id="captureMonitorSelect" aria-label="Monitor"></select>
           <button id="captureRefreshButton" type="button" title="Take a new screenshot">Refresh</button>
-          <button id="captureSkipButton" type="button" title="Save without a score region" hidden>Skip score</button>
           <button id="captureCancelButton" type="button">Cancel</button>
         </div>
         <div id="captureStage" class="capture-stage">

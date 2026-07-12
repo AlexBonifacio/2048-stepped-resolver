@@ -287,14 +287,18 @@ Calibrage, a faire une seule fois tant que la fenetre du jeu ne bouge pas:
 
 1. clique `Calibrate`;
 2. choisis le moniteur ou se trouve le jeu;
-3. trace un rectangle autour de la grille 4x4 du jeu;
-4. trace un rectangle autour du score, ou clique `Skip score`.
+3. trace un rectangle autour de la grille 4x4 du jeu.
 
 La region est sauvegardee dans `data/capture.json`. Le bouton `Preview` affiche en direct ce que le serveur capture, pour verifier le cadrage.
 
 Une fois calibre, le bouton `Read board` lit le plateau directement depuis l'ecran du jeu et remplit la grille (disponible avant de demarrer la partie, pour copier le plateau initial sans le ressaisir).
 
 Le bouton `Watch game` active le mode mains libres: le site relit l'ecran du jeu en continu, met a jour le plateau des qu'il change, et recalcule la suggestion automatiquement. Le flux devient: lire l'ecran, remplir la page, l'IA conseille, recommencer. Seul le plateau actuel compte; aucun coup ni spawn n'est deduit.
+
+Le score de depart ne demande plus de saisie dans le cas courant:
+
+- plateau de debut de partie detecte (au plus deux tuiles de rank 1): la session demarre toute seule a score 0;
+- partie en cours: le champ score est pre-rempli avec une estimation calculee depuis le plateau (`2^rank * (rank - 1)` par tuile, legerement surestime), a ajuster puis valider avec `Start`.
 
 Details du mode watch:
 
