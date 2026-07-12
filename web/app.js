@@ -186,8 +186,8 @@ function mergeLine(line) {
   return { line: result, gained };
 }
 
-function applyMove(direction) {
-  const cells = state.cells.slice();
+function applyMove(direction, sourceCells = state.cells) {
+  const cells = sourceCells.slice();
   let changed = false;
   let gained = 0;
 
@@ -944,6 +944,37 @@ function handleCalibrationRect(rect) {
   void saveCalibration();
 }
 
+function detectTransition(before, after) {
+  // Find the single legal move that turns `before` into `after` minus one
+  // spawned tile. Returns exact gained points, direction and spawn, or null
+  // when no direction (or more than one) matches.
+  const matches = [];
+  ["left", "right", "up", "down"].forEach((direction) => {
+    const moved = applyMove(direction, before);
+    if (!moved.changed) {
+      return;
+    }
+    let spawnIndex = -1;
+    for (let index = 0; index < SIZE * SIZE; index += 1) {
+      if (moved.cells[index] === after[index]) {
+        continue;
+      }
+      if (moved.cells[index] === 0 && after[index] > 0 && spawnIndex === -1) {
+        spawnIndex = index;
+        continue;
+      }
+      return;
+    }
+    matches.push({
+      direction,
+      gained: moved.gained,
+      movedCells: moved.cells,
+      spawnRank: spawnIndex === -1 ? 0 : after[spawnIndex],
+    });
+  });
+  return matches.length === 1 ? matches[0] : null;
+}
+
 function estimateScoreFromBoard(cells) {
   // Building a rank-r tile from rank-1 tiles earns 2^r * (r - 1) points in
   // merges. Spawned tiles of rank >= 2 earn less, so this is a slight
@@ -992,7 +1023,7 @@ async function readBoardFromCapture() {
       return;
     }
     const cells = payload.cells.map((value) => Math.max(0, Number(value) || 0));
-    await applyReadBoard(cells, { countMove: false });
+    await applyReadBoard(cells);
   } catch (error) {
     setStatus("Capture server unavailable.", "warn");
   } finally {
@@ -1008,7 +1039,6 @@ const WATCH_INTERVAL_MS = 600;
 let watchTimer = null;
 let watchBusy = false;
 let watchCandidateSignature = "";
-let watchHasApplied = false;
 
 function isWatching() {
   return watchTimer !== null;
@@ -1023,7 +1053,6 @@ function startWatch() {
     return;
   }
   watchCandidateSignature = "";
-  watchHasApplied = false;
   watchTimer = setInterval(() => {
     void watchTick();
   }, WATCH_INTERVAL_MS);
@@ -1066,7 +1095,7 @@ async function watchTick() {
     if (signature === boardSignature(state.cells)) {
       return;
     }
-    await applyWatchedBoard(cells);
+    await applyReadBoard(cells);
   } catch (error) {
     // Server hiccup: keep watching.
   } finally {
@@ -1074,13 +1103,42 @@ async function watchTick() {
   }
 }
 
-async function applyReadBoard(cells, { countMove }) {
+async function applyReadBoard(cells) {
+  const previous = state.cells.slice();
+  const changed = boardSignature(previous) !== boardSignature(cells);
   pushHistory();
   pendingSpawn = null;
-  state.cells = cells;
-  if (countMove && state.context_ready && watchHasApplied) {
-    state.moves += 1;
+
+  if (state.context_ready && changed) {
+    const transition = detectTransition(previous, cells);
+    if (transition) {
+      // Exact bookkeeping: the move, its points and the spawned tile are all
+      // known, so the session learns as much as in manual mode.
+      const context = { moves: state.moves, score: state.score, highest: highestRank(previous) };
+      recordSolvedMove(transition.direction, previous, {
+        cells: transition.movedCells,
+        gained: transition.gained,
+      }, context);
+      state.score += transition.gained;
+      state.moves += 1;
+      if (transition.spawnRank > 0) {
+        state.observations.push({
+          value: transition.spawnRank,
+          moves: state.moves,
+          highest: context.highest,
+        });
+        state.spawns[String(transition.spawnRank)] =
+          (Number(state.spawns[String(transition.spawnRank)]) || 0) + 1;
+      }
+    } else {
+      // Several moves were missed: the estimate difference equals the merge
+      // points, off only by the small bias of spawned tiles of rank >= 2.
+      state.score += Math.max(0, estimateScoreFromBoard(cells) - estimateScoreFromBoard(previous));
+      state.moves += 1;
+    }
   }
+
+  state.cells = cells;
   syncMap(state);
   if (!state.context_ready) {
     await autoStartContext(state.cells);
@@ -1093,11 +1151,6 @@ async function applyReadBoard(cells, { countMove }) {
   if (state.context_ready) {
     await refreshSuggestion();
   }
-}
-
-async function applyWatchedBoard(cells) {
-  await applyReadBoard(cells, { countMove: true });
-  watchHasApplied = true;
 }
 
 function stopCapturePreview() {

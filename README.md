@@ -304,8 +304,9 @@ Details du mode watch:
 
 - une lecture n'est appliquee que si deux captures consecutives sont identiques (les animations du jeu sont ignorees);
 - un plateau illisible ou entierement vide (menu, popup au-dessus du jeu) est ignore;
-- les inputs manuels de la page sont bloques pendant le watch;
-- le compteur de coups est incremente a chaque changement pour garder un contexte de spawn coherent, mais les observations de spawn ne sont plus enregistrees dans ce mode.
+- les inputs manuels de la page sont bloques pendant le watch.
+
+Entre deux lectures, le site retrouve la transition exacte en testant les quatre directions sur l'ancien plateau. Quand une seule correspond (le cas normal), le score gagne les points exacts des fusions, le coup est enregistre dans `solved`, et la tuile apparue alimente les observations de spawn avec son contexte, exactement comme en mode manuel. Si plusieurs coups ont ete rates (fenetre masquee un moment), le score est corrige par difference d'estimation, exacte au petit biais pres des spawns de rank 2 ou plus.
 
 Endpoints associes: `GET /api/capture/status`, `GET /api/capture/frame?source=monitor|board|score`, `GET /api/capture/board`, `POST /api/capture/region`.
 
