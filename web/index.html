@@ -58,6 +58,7 @@
         <p>Copy the board you see in the game, enter the current score, then start.</p>
         <p>Move with the arrow keys, place the spawned tile by left clicking an empty cell, and press Enter to confirm the tile or calculate the AI suggestion.</p>
         <p>Right click to lower a tile. Click Undo if you hit a tile by mistake.</p>
+        <p>Hands-free: calibrate the screen capture below, then click Watch game. The board and the suggestion follow the game screen by themselves.</p>
       </section>
 
       <section class="controls">
@@ -70,7 +71,36 @@
         <button id="commitSpawnButton" type="button" title="Confirm the spawned tile">Confirm tile</button>
       </section>
 
+      <section class="capture" aria-label="Screen capture">
+        <h2>Screen capture</h2>
+        <p id="captureStatus" class="capture-status">Checking screen capture support...</p>
+        <div class="capture-actions">
+          <button id="calibrateButton" type="button" title="Select the game grid on a screenshot" disabled>Calibrate</button>
+          <button id="capturePreviewButton" type="button" title="Show the captured board region" disabled>Preview</button>
+          <button id="readBoardButton" type="button" title="Read the board from the game screen once" disabled>Read board</button>
+          <button id="watchButton" type="button" title="Keep reading the game screen and refresh the suggestion automatically" disabled>Watch game</button>
+        </div>
+        <img id="capturePreviewImage" class="capture-preview" alt="Captured board region" hidden>
+      </section>
+
     </main>
+
+    <div id="captureModal" class="capture-modal" hidden>
+      <div class="capture-modal-inner">
+        <div class="capture-modal-header">
+          <p id="captureModalHint">Drag a rectangle around the 4x4 grid.</p>
+          <select id="captureMonitorSelect" aria-label="Monitor"></select>
+          <button id="captureRefreshButton" type="button" title="Take a new screenshot">Refresh</button>
+          <button id="captureSkipButton" type="button" title="Save without a score region" hidden>Skip score</button>
+          <button id="captureCancelButton" type="button">Cancel</button>
+        </div>
+        <div id="captureStage" class="capture-stage">
+          <img id="captureModalImage" alt="Screen capture" draggable="false">
+          <div id="captureBoardRect" class="capture-rect saved" hidden></div>
+          <div id="captureDragRect" class="capture-rect drag" hidden></div>
+        </div>
+      </div>
+    </div>
 
     <script src="/app.js"></script>
   </body>

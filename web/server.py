@@ -10,11 +10,25 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, quote, urlparse
 
+import capture
+import recognize
+
 
 ROOT = Path(__file__).resolve().parents[1]
 WEB_ROOT = Path(__file__).resolve().parent
 SESSION_DIR = ROOT / "data" / "sessions"
 SIMULATION_REPORT_DIR = ROOT / "data" / "simulation_reports"
+CAPTURE_CONFIG_PATH = ROOT / "data" / "capture.json"
+DIGIT_TEMPLATES_PATH = WEB_ROOT / "digit_templates.json"
+
+_digit_templates = None
+
+
+def digit_templates():
+    global _digit_templates
+    if _digit_templates is None:
+        _digit_templates = recognize.load_templates(DIGIT_TEMPLATES_PATH)
+    return _digit_templates
 
 
 def solver_binary():
@@ -252,6 +266,15 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/api/outcome-summary":
             self.handle_outcome_summary(parsed)
             return
+        if parsed.path == "/api/capture/status":
+            self.handle_capture_status(parsed)
+            return
+        if parsed.path == "/api/capture/frame":
+            self.handle_capture_frame(parsed)
+            return
+        if parsed.path == "/api/capture/board":
+            self.handle_capture_board(parsed)
+            return
         self.serve_static(parsed.path)
 
     def do_POST(self):
@@ -261,6 +284,9 @@ class Handler(BaseHTTPRequestHandler):
             return
         if parsed.path == "/api/new-session":
             self.handle_new_session(parsed)
+            return
+        if parsed.path == "/api/capture/region":
+            self.handle_save_capture_region(parsed)
             return
         self.send_error(404)
 
@@ -359,6 +385,105 @@ class Handler(BaseHTTPRequestHandler):
     def handle_outcome_summary(self, parsed):
         self.write_json({"ok": True, **outcome_summary()})
 
+    def handle_capture_status(self, parsed):
+        config = capture.load_config(CAPTURE_CONFIG_PATH)
+        if not capture.capture_available():
+            self.write_json({
+                "ok": True,
+                "available": False,
+                "error": capture.capture_error_hint(),
+                "monitors": [],
+                "config": config,
+            })
+            return
+        try:
+            monitors = capture.list_monitors()
+        except Exception as exc:
+            self.write_json({"ok": False, "available": False, "error": f"Screen capture failed: {exc}"}, status=500)
+            return
+        self.write_json({"ok": True, "available": True, "monitors": monitors, "config": config})
+
+    def handle_capture_frame(self, parsed):
+        if not capture.capture_available():
+            self.write_json({"ok": False, "error": capture.capture_error_hint()}, status=503)
+            return
+
+        query = parse_qs(parsed.query)
+        source = query.get("source", ["board"])[0]
+        config = capture.load_config(CAPTURE_CONFIG_PATH)
+        try:
+            if source == "monitor":
+                monitor = capture.normalize_monitor(query.get("monitor", [str(config["monitor"])])[0])
+                png = capture.grab_monitor_png(monitor)
+            elif source in ("board", "score"):
+                region = config.get(source)
+                if not region:
+                    self.write_json({"ok": False, "error": f"No calibrated {source} region. Calibrate first."}, status=404)
+                    return
+                png = capture.grab_png(region)
+            else:
+                self.write_json({"ok": False, "error": "Invalid capture source."}, status=400)
+                return
+        except ValueError as exc:
+            self.write_json({"ok": False, "error": str(exc)}, status=400)
+            return
+        except Exception as exc:
+            self.write_json({"ok": False, "error": f"Screen capture failed: {exc}"}, status=500)
+            return
+        self.write_bytes(png, "image/png")
+
+    def handle_capture_board(self, parsed):
+        if not capture.capture_available():
+            self.write_json({"ok": False, "error": capture.capture_error_hint()}, status=503)
+            return
+
+        config = capture.load_config(CAPTURE_CONFIG_PATH)
+        region = config.get("board")
+        if not region:
+            self.write_json({"ok": False, "error": "No calibrated board region. Calibrate first."}, status=404)
+            return
+
+        try:
+            templates = digit_templates()
+        except (OSError, json.JSONDecodeError) as exc:
+            self.write_json({"ok": False, "error": f"Could not load digit templates: {exc}"}, status=500)
+            return
+
+        try:
+            raw, width, height = capture.grab_raw(region)
+        except Exception as exc:
+            self.write_json({"ok": False, "error": f"Screen capture failed: {exc}"}, status=500)
+            return
+
+        pixels = recognize.pixels_from_bgra(raw, width, height)
+        result = recognize.recognize_board(pixels, width, height, templates)
+        unreadable = sum(1 for cell in result["cells"] if cell is None)
+        self.write_json({
+            "ok": True,
+            "cells": result["cells"],
+            "confidences": result["confidences"],
+            "unreadable": unreadable,
+            "width": width,
+            "height": height,
+        })
+
+    def handle_save_capture_region(self, parsed):
+        length = int(self.headers.get("Content-Length", "0"))
+        try:
+            data = json.loads(self.rfile.read(length).decode("utf-8"))
+        except json.JSONDecodeError as exc:
+            self.write_json({"error": f"Invalid JSON: {exc}"}, status=400)
+            return
+
+        config = capture.build_config(data)
+        if config is None:
+            self.write_json({"error": "Invalid capture region: a board rectangle of at least 8x8 pixels is required."}, status=400)
+            return
+
+        CAPTURE_CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        CAPTURE_CONFIG_PATH.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
+        self.write_json({"ok": True, "config": config})
+
     def handle_save_session(self, parsed):
         name = parse_qs(parsed.query).get("name", ["try2"])[0]
         length = int(self.headers.get("Content-Length", "0"))
@@ -404,6 +529,14 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def write_bytes(self, body, content_type):
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store")
         self.end_headers()
         self.wfile.write(body)
 

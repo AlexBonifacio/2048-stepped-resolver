@@ -270,6 +270,10 @@ function requireContextReady() {
 }
 
 function move(direction) {
+  if (isWatching()) {
+    setStatus("Watch mode is on: play in the game, the board updates by itself.", "warn");
+    return;
+  }
   if (!requireContextReady()) {
     return;
   }
@@ -305,6 +309,10 @@ function move(direction) {
 
 async function handleCellClick(index, event) {
   event.preventDefault();
+  if (isWatching()) {
+    setStatus("Watch mode is on: play in the game, the board updates by itself.", "warn");
+    return;
+  }
   if (isInitialSetup()) {
     pushHistory();
     const delta = event.type === "contextmenu" ? -1 : 1;
@@ -741,5 +749,431 @@ newSessionNameEl.addEventListener("keydown", (event) => {
   }
 });
 
+// --- Screen capture calibration ---
+
+const captureStatusEl = document.querySelector("#captureStatus");
+const calibrateButton = document.querySelector("#calibrateButton");
+const capturePreviewButton = document.querySelector("#capturePreviewButton");
+const readBoardButton = document.querySelector("#readBoardButton");
+const watchButton = document.querySelector("#watchButton");
+const capturePreviewImageEl = document.querySelector("#capturePreviewImage");
+const captureModalEl = document.querySelector("#captureModal");
+const captureModalHintEl = document.querySelector("#captureModalHint");
+const captureMonitorSelectEl = document.querySelector("#captureMonitorSelect");
+const captureRefreshButton = document.querySelector("#captureRefreshButton");
+const captureSkipButton = document.querySelector("#captureSkipButton");
+const captureCancelButton = document.querySelector("#captureCancelButton");
+const captureStageEl = document.querySelector("#captureStage");
+const captureModalImageEl = document.querySelector("#captureModalImage");
+const captureBoardRectEl = document.querySelector("#captureBoardRect");
+const captureDragRectEl = document.querySelector("#captureDragRect");
+
+let captureAvailable = false;
+let captureMonitors = [];
+let captureConfig = null;
+let calibration = null;
+let capturePreviewTimer = null;
+
+function captureBoardCalibrated() {
+  return Boolean(captureConfig && captureConfig.board);
+}
+
+function renderCaptureStatus(message = "", mode = "") {
+  calibrateButton.disabled = !captureAvailable;
+  capturePreviewButton.disabled = !captureAvailable || !captureBoardCalibrated();
+  readBoardButton.disabled = !captureAvailable || !captureBoardCalibrated();
+  watchButton.disabled = !captureAvailable || !captureBoardCalibrated();
+  if (watchButton.disabled) {
+    stopWatch();
+  }
+  if (message) {
+    captureStatusEl.textContent = message;
+    captureStatusEl.className = `capture-status ${mode}`.trim();
+    return;
+  }
+  if (!captureAvailable) {
+    captureStatusEl.textContent = "Screen capture is unavailable. Install the mss package on the server: pip install mss";
+    captureStatusEl.className = "capture-status warn";
+    return;
+  }
+  if (captureBoardCalibrated()) {
+    const board = captureConfig.board;
+    const score = captureConfig.score ? ", score region set" : "";
+    captureStatusEl.textContent = `Board region calibrated (${board.width}x${board.height} px${score}).`;
+    captureStatusEl.className = "capture-status";
+    return;
+  }
+  captureStatusEl.textContent = "Not calibrated yet. Click Calibrate, then drag a rectangle around the game grid.";
+  captureStatusEl.className = "capture-status";
+}
+
+async function refreshCaptureStatus() {
+  try {
+    const response = await fetch("/api/capture/status");
+    const payload = await response.json();
+    captureAvailable = Boolean(payload.available);
+    captureMonitors = Array.isArray(payload.monitors) ? payload.monitors : [];
+    captureConfig = payload.config || null;
+  } catch (error) {
+    captureAvailable = false;
+    captureMonitors = [];
+  }
+  renderCaptureStatus();
+}
+
+function captureMonitorLabel(monitor) {
+  if (monitor.all) {
+    return `All monitors (${monitor.width}x${monitor.height})`;
+  }
+  return `Monitor ${monitor.index} (${monitor.width}x${monitor.height})`;
+}
+
+function populateCaptureMonitors(selected) {
+  captureMonitorSelectEl.replaceChildren();
+  captureMonitors.forEach((monitor) => {
+    const option = document.createElement("option");
+    option.value = String(monitor.index);
+    option.textContent = captureMonitorLabel(monitor);
+    option.selected = monitor.index === selected;
+    captureMonitorSelectEl.append(option);
+  });
+}
+
+function setCalibrationStep(step) {
+  calibration.step = step;
+  captureSkipButton.hidden = step !== "score";
+  captureModalHintEl.textContent = step === "board"
+    ? "Drag a rectangle around the 4x4 grid."
+    : "Now drag a rectangle around the score number, or click Skip score.";
+}
+
+async function loadCalibrationFrame() {
+  captureModalImageEl.removeAttribute("src");
+  captureBoardRectEl.hidden = true;
+  captureDragRectEl.hidden = true;
+  calibration.board = null;
+  calibration.drag = null;
+  setCalibrationStep("board");
+  captureModalImageEl.src = `/api/capture/frame?source=monitor&monitor=${calibration.monitor}&t=${Date.now()}`;
+}
+
+async function openCalibration() {
+  await refreshCaptureStatus();
+  if (!captureAvailable) {
+    return;
+  }
+  stopCapturePreview();
+  stopWatch();
+  calibration = {
+    monitor: captureConfig?.monitor ?? 1,
+    step: "board",
+    board: null,
+    drag: null,
+  };
+  if (!captureMonitors.some((monitor) => monitor.index === calibration.monitor)) {
+    calibration.monitor = captureMonitors.length > 1 ? 1 : 0;
+  }
+  populateCaptureMonitors(calibration.monitor);
+  captureModalEl.hidden = false;
+  await loadCalibrationFrame();
+}
+
+function closeCalibration() {
+  calibration = null;
+  captureModalEl.hidden = true;
+}
+
+function calibrationPoint(event) {
+  const bounds = captureModalImageEl.getBoundingClientRect();
+  return {
+    x: Math.min(Math.max(event.clientX - bounds.left, 0), bounds.width),
+    y: Math.min(Math.max(event.clientY - bounds.top, 0), bounds.height),
+  };
+}
+
+function dragRect(drag, point) {
+  return {
+    x: Math.min(drag.x, point.x),
+    y: Math.min(drag.y, point.y),
+    width: Math.abs(point.x - drag.x),
+    height: Math.abs(point.y - drag.y),
+  };
+}
+
+function placeRect(element, rect) {
+  element.style.left = `${rect.x}px`;
+  element.style.top = `${rect.y}px`;
+  element.style.width = `${rect.width}px`;
+  element.style.height = `${rect.height}px`;
+  element.hidden = false;
+}
+
+function toScreenRect(rect) {
+  const scaleX = captureModalImageEl.naturalWidth / captureModalImageEl.clientWidth;
+  const scaleY = captureModalImageEl.naturalHeight / captureModalImageEl.clientHeight;
+  const monitor = captureMonitors.find((entry) => entry.index === calibration.monitor) || { left: 0, top: 0 };
+  return {
+    left: Math.round(monitor.left + rect.x * scaleX),
+    top: Math.round(monitor.top + rect.y * scaleY),
+    width: Math.round(rect.width * scaleX),
+    height: Math.round(rect.height * scaleY),
+  };
+}
+
+async function saveCalibration(scoreRect) {
+  const body = {
+    monitor: calibration.monitor,
+    board: toScreenRect(calibration.board),
+    score: scoreRect ? toScreenRect(scoreRect) : null,
+  };
+  try {
+    const response = await fetch("/api/capture/region", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const payload = await response.json();
+    if (!response.ok || !payload.ok) {
+      renderCaptureStatus(payload.error || "Could not save the capture region.", "warn");
+      closeCalibration();
+      return;
+    }
+    captureConfig = payload.config;
+  } catch (error) {
+    renderCaptureStatus("Capture server unavailable.", "warn");
+    closeCalibration();
+    return;
+  }
+  closeCalibration();
+  renderCaptureStatus();
+  setStatus("Screen capture calibrated.");
+}
+
+function handleCalibrationRect(rect) {
+  if (calibration.step === "board") {
+    calibration.board = rect;
+    placeRect(captureBoardRectEl, rect);
+    setCalibrationStep("score");
+    return;
+  }
+  void saveCalibration(rect);
+}
+
+async function readBoardFromCapture() {
+  if (!captureBoardCalibrated()) {
+    return;
+  }
+  readBoardButton.disabled = true;
+  try {
+    const response = await fetch("/api/capture/board");
+    const payload = await response.json();
+    if (!response.ok || !payload.ok) {
+      setStatus(payload.error || "Could not read the board.", "warn");
+      return;
+    }
+    if (payload.unreadable > 0) {
+      setStatus(`Could not read ${payload.unreadable} cell(s). Check the calibration with Preview.`, "warn");
+      return;
+    }
+    if (!isInitialSetup()) {
+      setStatus("Board reading is only available before the game starts, to copy the initial board.", "warn");
+      return;
+    }
+    pushHistory();
+    state.cells = payload.cells.map((value) => Math.max(0, Number(value) || 0));
+    syncMap(state);
+    render();
+    await saveSession();
+    setStatus("Board read from the game screen. Enter the current score, then press Start.");
+  } catch (error) {
+    setStatus("Capture server unavailable.", "warn");
+  } finally {
+    readBoardButton.disabled = !captureAvailable || !captureBoardCalibrated();
+  }
+}
+
+// --- Watch mode: the game screen is the only source of truth. Read the
+// board, fill the page, let the AI suggest, repeat. No move/spawn tracking.
+
+const WATCH_INTERVAL_MS = 600;
+
+let watchTimer = null;
+let watchBusy = false;
+let watchCandidateSignature = "";
+let watchHasApplied = false;
+
+function isWatching() {
+  return watchTimer !== null;
+}
+
+function boardSignature(cells) {
+  return cells.join(",");
+}
+
+function startWatch() {
+  if (isWatching()) {
+    return;
+  }
+  watchCandidateSignature = "";
+  watchHasApplied = false;
+  watchTimer = setInterval(() => {
+    void watchTick();
+  }, WATCH_INTERVAL_MS);
+  watchButton.textContent = "Stop watching";
+  setStatus("Watching the game screen...");
+}
+
+function stopWatch() {
+  if (!isWatching()) {
+    return;
+  }
+  clearInterval(watchTimer);
+  watchTimer = null;
+  watchButton.textContent = "Watch game";
+  setStatus("Stopped watching the game screen.");
+}
+
+async function watchTick() {
+  if (watchBusy || !state) {
+    return;
+  }
+  watchBusy = true;
+  try {
+    const response = await fetch("/api/capture/board");
+    const payload = await response.json();
+    if (!response.ok || !payload.ok || payload.unreadable > 0) {
+      return;
+    }
+    const cells = payload.cells.map((value) => Math.max(0, Number(value) || 0));
+    if (!cells.some((value) => value !== 0)) {
+      // Empty board: menu or popup probably covers the grid.
+      return;
+    }
+    const signature = boardSignature(cells);
+    if (signature !== watchCandidateSignature) {
+      // Wait for two identical reads so animations settle.
+      watchCandidateSignature = signature;
+      return;
+    }
+    if (signature === boardSignature(state.cells)) {
+      return;
+    }
+    await applyWatchedBoard(cells);
+  } catch (error) {
+    // Server hiccup: keep watching.
+  } finally {
+    watchBusy = false;
+  }
+}
+
+async function applyWatchedBoard(cells) {
+  pushHistory();
+  pendingSpawn = null;
+  state.cells = cells;
+  if (state.context_ready && watchHasApplied) {
+    state.moves += 1;
+  }
+  watchHasApplied = true;
+  syncMap(state);
+  if (!canMove()) {
+    state.outcome = currentOutcome("ended", "no_moves");
+  }
+  render();
+  await saveSession();
+  if (state.context_ready) {
+    await refreshSuggestion();
+  } else {
+    setStatus("Board read from the game screen. Enter the current score, then press Start.");
+  }
+}
+
+function stopCapturePreview() {
+  if (capturePreviewTimer !== null) {
+    clearInterval(capturePreviewTimer);
+    capturePreviewTimer = null;
+  }
+  capturePreviewImageEl.hidden = true;
+  capturePreviewButton.textContent = "Preview";
+}
+
+function startCapturePreview() {
+  const refreshFrame = () => {
+    capturePreviewImageEl.src = `/api/capture/frame?source=board&t=${Date.now()}`;
+  };
+  refreshFrame();
+  capturePreviewImageEl.hidden = false;
+  capturePreviewButton.textContent = "Stop preview";
+  capturePreviewTimer = setInterval(refreshFrame, 1000);
+}
+
+captureStageEl.addEventListener("pointerdown", (event) => {
+  if (!calibration || !captureModalImageEl.naturalWidth) {
+    return;
+  }
+  event.preventDefault();
+  captureStageEl.setPointerCapture(event.pointerId);
+  calibration.drag = calibrationPoint(event);
+  placeRect(captureDragRectEl, dragRect(calibration.drag, calibration.drag));
+});
+
+captureStageEl.addEventListener("pointermove", (event) => {
+  if (!calibration || !calibration.drag) {
+    return;
+  }
+  placeRect(captureDragRectEl, dragRect(calibration.drag, calibrationPoint(event)));
+});
+
+captureStageEl.addEventListener("pointerup", (event) => {
+  if (!calibration || !calibration.drag) {
+    return;
+  }
+  const rect = dragRect(calibration.drag, calibrationPoint(event));
+  calibration.drag = null;
+  captureDragRectEl.hidden = true;
+  if (rect.width < 8 || rect.height < 8) {
+    return;
+  }
+  handleCalibrationRect(rect);
+});
+
+calibrateButton.addEventListener("click", () => {
+  void openCalibration();
+});
+captureCancelButton.addEventListener("click", closeCalibration);
+captureSkipButton.addEventListener("click", () => {
+  if (calibration && calibration.board) {
+    void saveCalibration(null);
+  }
+});
+captureRefreshButton.addEventListener("click", () => {
+  if (calibration) {
+    void loadCalibrationFrame();
+  }
+});
+captureMonitorSelectEl.addEventListener("change", () => {
+  if (calibration) {
+    calibration.monitor = Number(captureMonitorSelectEl.value) || 0;
+    void loadCalibrationFrame();
+  }
+});
+readBoardButton.addEventListener("click", () => {
+  void readBoardFromCapture();
+});
+watchButton.addEventListener("click", () => {
+  if (isWatching()) {
+    stopWatch();
+  } else {
+    startWatch();
+  }
+});
+capturePreviewButton.addEventListener("click", () => {
+  if (capturePreviewTimer !== null) {
+    stopCapturePreview();
+  } else {
+    startCapturePreview();
+  }
+});
+
 loadSession();
 loadSessionList();
+refreshCaptureStatus();

@@ -273,6 +273,56 @@ Le score et les coups sont sauvegardes dans le JSON de session. C'est important 
 
 Donc plus tu publies de vraies parties, plus le modele peut s'adapter aux spawns de debut/milieu/fin de partie.
 
+## Capture d'ecran
+
+La section `Screen capture` de la page web permet de capturer la fenetre du jeu directement depuis le serveur. Elle demande le paquet Python optionnel `mss`:
+
+```bash
+pip install mss
+```
+
+Sans `mss`, le site fonctionne normalement et la section explique comment l'activer.
+
+Calibrage, a faire une seule fois tant que la fenetre du jeu ne bouge pas:
+
+1. clique `Calibrate`;
+2. choisis le moniteur ou se trouve le jeu;
+3. trace un rectangle autour de la grille 4x4 du jeu;
+4. trace un rectangle autour du score, ou clique `Skip score`.
+
+La region est sauvegardee dans `data/capture.json`. Le bouton `Preview` affiche en direct ce que le serveur capture, pour verifier le cadrage.
+
+Une fois calibre, le bouton `Read board` lit le plateau directement depuis l'ecran du jeu et remplit la grille (disponible avant de demarrer la partie, pour copier le plateau initial sans le ressaisir).
+
+Le bouton `Watch game` active le mode mains libres: le site relit l'ecran du jeu en continu, met a jour le plateau des qu'il change, et recalcule la suggestion automatiquement. Le flux devient: lire l'ecran, remplir la page, l'IA conseille, recommencer. Seul le plateau actuel compte; aucun coup ni spawn n'est deduit.
+
+Details du mode watch:
+
+- une lecture n'est appliquee que si deux captures consecutives sont identiques (les animations du jeu sont ignorees);
+- un plateau illisible ou entierement vide (menu, popup au-dessus du jeu) est ignore;
+- les inputs manuels de la page sont bloques pendant le watch;
+- le compteur de coups est incremente a chaque changement pour garder un contexte de spawn coherent, mais les observations de spawn ne sont plus enregistrees dans ce mode.
+
+Endpoints associes: `GET /api/capture/status`, `GET /api/capture/frame?source=monitor|board|score`, `GET /api/capture/board`, `POST /api/capture/region`.
+
+## Reconnaissance du plateau
+
+`web/recognize.py` lit le rank de chaque case a partir du chiffre beige en bas a droite des tuiles du jeu, en pur Python (aucune dependance):
+
+1. seuillage adaptatif des pixels beiges (robuste aux variations de luminosite du jeu);
+2. segmentation des chiffres, en ancrant sur le bas du coin pour ignorer les icones;
+3. matching contre les templates de `web/digit_templates.json`.
+
+Une case dont la lecture n'est pas sure renvoie `null` plutot qu'une valeur fausse.
+
+Les templates sont generes depuis les captures de reference `data/captures/tiles/<rank>.png` avec:
+
+```bash
+python3 tools/build_digit_templates.py
+```
+
+Ce script demande Pillow (`pip install pillow`) mais seulement pour regenerer les templates; le serveur n'en a pas besoin. Si le jeu change l'apparence de ses chiffres, remplace les captures de reference et relance le script.
+
 ## Modele IA
 
 Le solver recommande utilise expectimax + rollouts Monte Carlo. Expectimax pondere les branches par la probabilite d'arriver a chaque etat apres le coup initial, avec une table de transposition pour reutiliser les positions deja vues.

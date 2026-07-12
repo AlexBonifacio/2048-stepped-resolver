@@ -52,6 +52,14 @@ dist/2048-ranks-windows.zip
 
 Pour une version sans installation Python cote utilisateur, ajoute un dossier `python/` contenant `python.exe` Windows avant de lancer `tools/package_windows.py`.
 
+Pour activer la capture d'ecran (section `Screen capture` du site), le paquet `mss` doit etre disponible dans le Python utilise. Avec un runtime embarque:
+
+```powershell
+python\python.exe -m pip install mss
+```
+
+Sans `mss`, le site fonctionne normalement mais la capture reste desactivee.
+
 ## Build rapide sur Windows
 
 Option simple: double-clique sur:

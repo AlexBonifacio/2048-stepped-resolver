@@ -337,6 +337,124 @@ h1 {
   width: 100%;
 }
 
+.capture {
+  width: 100%;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.capture h2 {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.capture-status {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.capture-status.warn {
+  color: var(--danger);
+}
+
+.capture-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.capture-preview {
+  display: block;
+  max-width: min(100%, 320px);
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.capture-preview[hidden] {
+  display: none;
+}
+
+.capture-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(42, 41, 38, 0.6);
+}
+
+.capture-modal[hidden] {
+  display: none;
+}
+
+.capture-modal-inner {
+  display: grid;
+  gap: 12px;
+  max-width: calc(100vw - 36px);
+  max-height: calc(100vh - 36px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: var(--panel);
+  overflow: auto;
+}
+
+.capture-modal-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.capture-modal-header p {
+  flex: 1 1 220px;
+  margin: 0;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.capture-modal-header select {
+  width: auto;
+}
+
+.capture-stage {
+  position: relative;
+  justify-self: center;
+  line-height: 0;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.capture-stage img {
+  display: block;
+  max-width: calc(100vw - 76px);
+  max-height: calc(100vh - 170px);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.capture-rect {
+  position: absolute;
+  pointer-events: none;
+}
+
+.capture-rect.drag {
+  border: 2px solid var(--accent);
+  background: rgba(23, 111, 107, 0.16);
+}
+
+.capture-rect.saved {
+  border: 2px solid var(--danger);
+  background: rgba(163, 60, 47, 0.10);
+}
+
 .status {
   min-height: 24px;
   margin: 0;
