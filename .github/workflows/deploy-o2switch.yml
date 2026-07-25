@@ -1,26 +1,35 @@
 name: Deploy to o2switch
 
+# o2switch's firewall blocks SSH from GitHub's runners, so the site cannot
+# be pushed to the host. Instead, the built site is committed to the
+# `o2switch-deploy` branch, and the o2switch server pulls it on a cron:
+#
+#   one-time setup on the server (SSH):
+#     git clone --branch o2switch-deploy --single-branch \
+#         https://github.com/<owner>/<repo>.git ~/deploy-2048
+#
+#   cPanel cron (every 5 minutes):
+#     cd $HOME/deploy-2048 && git fetch -q origin o2switch-deploy \
+#       && git reset -q --hard origin/o2switch-deploy \
+#       && rsync -a --delete --exclude=.git ./ $HOME/<site-directory>/
+
 on:
   workflow_dispatch:
   push:
     branches:
       - web-version
 
+permissions:
+  contents: write
+
 concurrency:
   group: o2switch
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build-deploy-branch:
     runs-on: ubuntu-latest
     steps:
-      - name: Check secrets
-        run: |
-          if [ -z "${{ secrets.O2SWITCH_SSH_HOST }}" ] || [ -z "${{ secrets.O2SWITCH_SSH_USER }}" ] || [ -z "${{ secrets.O2SWITCH_SSH_KEY }}" ] || [ -z "${{ secrets.O2SWITCH_DEPLOY_PATH }}" ]; then
-            echo "::error::Missing secrets. Define O2SWITCH_SSH_HOST, O2SWITCH_SSH_USER, O2SWITCH_SSH_KEY and O2SWITCH_DEPLOY_PATH in Settings > Secrets and variables > Actions."
-            exit 1
-          fi
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -35,39 +44,14 @@ jobs:
       - name: Assemble static site
         run: python3 tools/build_webapp.py
 
-      - name: Set up SSH
+      - name: Push site to o2switch-deploy branch
         run: |
-          mkdir -p ~/.ssh
-          printf '%s\n' "${{ secrets.O2SWITCH_SSH_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-
-      - name: Test SSH connection
-        run: |
-          HOST="${{ secrets.O2SWITCH_SSH_HOST }}"
-          PORT="${{ secrets.O2SWITCH_SSH_PORT || '22' }}"
-          if ! getent hosts "$HOST" >/dev/null; then
-            echo "::error::DNS resolution failed for O2SWITCH_SSH_HOST. Check the secret value: hostname only (e.g. yjzy2943.odns.fr), no https://, no user@, no spaces or line breaks."
-            exit 1
-          fi
-          if ! timeout 12 bash -c "cat </dev/null >/dev/tcp/$HOST/$PORT" 2>/dev/null; then
-            echo "::error::TCP connection to port $PORT is blocked from GitHub's runners (while SSH works from your machine): the host firewall most likely filters foreign/datacenter IPs. See the workflow discussion for alternatives."
-            exit 1
-          fi
-          echo "TCP reachability OK, testing SSH authentication..."
-          if ! ssh -vv -i ~/.ssh/deploy_key -p "$PORT" \
-              -o StrictHostKeyChecking=accept-new -o ConnectTimeout=15 -o BatchMode=yes \
-              "${{ secrets.O2SWITCH_SSH_USER }}@$HOST" 'echo "SSH connection OK, home:" && pwd' 2> ssh_debug.log; then
-            echo "---- last SSH debug lines ----"
-            tail -25 ssh_debug.log
-            echo "::error::TCP works but SSH authentication failed. Check: O2SWITCH_SSH_USER is the cPanel user; the PUBLIC key is imported AND authorized in cPanel; O2SWITCH_SSH_KEY holds the full PRIVATE key including the BEGIN/END lines."
-            exit 1
-          fi
-
-      # --delete keeps the target directory an exact mirror of web-dist/:
-      # point O2SWITCH_DEPLOY_PATH at a directory dedicated to this site.
-      - name: Deploy with rsync
-        run: |
-          rsync -az --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.O2SWITCH_SSH_PORT || '22' }} -o StrictHostKeyChecking=accept-new" \
-            web-dist/ \
-            "${{ secrets.O2SWITCH_SSH_USER }}@${{ secrets.O2SWITCH_SSH_HOST }}:${{ secrets.O2SWITCH_DEPLOY_PATH }}/"
+          cd web-dist
+          git init -q -b o2switch-deploy
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add -A
+          git commit -q -m "Deploy ${GITHUB_SHA::10}"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" o2switch-deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
