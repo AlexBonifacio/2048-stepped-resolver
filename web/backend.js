@@ -137,9 +137,12 @@ function createLocalBackend() {
   const SESSION_PREFIX = "ranks2048.session.";
   const CAPTURE_KEY = "ranks2048.capture";
 
+  const SEEDED_KEY = "ranks2048.seeded";
+
   let stream = null;
   let video = null;
   let templatesPromise = null;
+  let seededPromise = null;
   let worker = null;
   let workerSeq = 0;
   const workerPending = new Map();
@@ -190,6 +193,33 @@ function createLocalBackend() {
       // Fall through.
     }
     return null;
+  }
+
+  // First visit: import the sessions bundled with the site, so the spawn
+  // model starts from the project's real learned data instead of nothing.
+  function ensureSeeded() {
+    seededPromise ??= (async () => {
+      if (localStorage.getItem(SEEDED_KEY)) {
+        return;
+      }
+      try {
+        const response = await fetch("seed-sessions.json");
+        if (!response.ok) {
+          return;
+        }
+        const sessions = await response.json();
+        for (const [name, data] of Object.entries(sessions)) {
+          if (!localStorage.getItem(sessionKey(name))) {
+            localStorage.setItem(sessionKey(name), JSON.stringify(data));
+          }
+        }
+      } catch (error) {
+        // No seed bundle: nothing to import.
+      } finally {
+        localStorage.setItem(SEEDED_KEY, "1");
+      }
+    })();
+    return seededPromise;
   }
 
   async function loadTemplates() {
@@ -262,6 +292,7 @@ function createLocalBackend() {
     mode: "browser",
 
     async loadSession(name) {
+      await ensureSeeded();
       const data = readStoredSession(name);
       if (!data) {
         return { httpOk: false, error: `Session not found: ${sanitizeName(name)}` };
@@ -275,6 +306,7 @@ function createLocalBackend() {
     },
 
     async listSessions() {
+      await ensureSeeded();
       const sessions = Object.entries(allStoredSessions()).map(([name, data]) => ({
         name,
         score: Math.max(0, Number(data.score) || 0),
@@ -294,6 +326,7 @@ function createLocalBackend() {
     },
 
     async estimateMoves(score) {
+      await ensureSeeded();
       const value = Math.max(0, Math.round(Number(score) || 0));
       if (value <= 0) {
         return { httpOk: true, ok: true, score: value, moves: 0 };
@@ -322,6 +355,7 @@ function createLocalBackend() {
     },
 
     async suggest(sessionName, state, options, target) {
+      await ensureSeeded();
       const extraSessions = allStoredSessions();
       delete extraSessions[sanitizeName(sessionName)];
       const id = (workerSeq += 1);
@@ -388,6 +422,26 @@ function createLocalBackend() {
       }
       localStorage.setItem(CAPTURE_KEY, JSON.stringify({ board }));
       return { httpOk: true, ok: true };
+    },
+
+    async exportSessions() {
+      await ensureSeeded();
+      return { sessions: allStoredSessions() };
+    },
+
+    async importSessions(payload) {
+      const sessions = payload && typeof payload.sessions === "object" ? payload.sessions : null;
+      if (!sessions) {
+        return { ok: false, error: "Invalid backup file: missing sessions." };
+      }
+      let count = 0;
+      for (const [name, data] of Object.entries(sessions)) {
+        if (data && typeof data === "object") {
+          localStorage.setItem(sessionKey(name), JSON.stringify(data));
+          count += 1;
+        }
+      }
+      return { ok: true, count };
     },
 
     async readBoard() {

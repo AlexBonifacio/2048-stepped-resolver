@@ -1310,8 +1310,52 @@ capturePreviewButton.addEventListener("click", async () => {
   startCapturePreview();
 });
 
+// --- Session backup (browser mode only: sessions live in localStorage) ---
+
+const backupSectionEl = document.querySelector("#backupSection");
+const exportButton = document.querySelector("#exportButton");
+const importButton = document.querySelector("#importButton");
+const importFileInputEl = document.querySelector("#importFileInput");
+
+exportButton.addEventListener("click", async () => {
+  const payload = await backend.exportSessions();
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "2048-ranks-sessions.json";
+  link.click();
+  URL.revokeObjectURL(link.href);
+  setStatus(`Exported ${Object.keys(payload.sessions).length} session(s).`);
+});
+
+importButton.addEventListener("click", () => {
+  importFileInputEl.click();
+});
+
+importFileInputEl.addEventListener("change", async () => {
+  const file = importFileInputEl.files && importFileInputEl.files[0];
+  importFileInputEl.value = "";
+  if (!file) {
+    return;
+  }
+  try {
+    const payload = JSON.parse(await file.text());
+    const result = await backend.importSessions(payload);
+    if (!result.ok) {
+      setStatus(result.error || "Could not import the backup.", "warn");
+      return;
+    }
+    setStatus(`Imported ${result.count} session(s).`);
+    await loadSession();
+    await loadSessionList();
+  } catch (error) {
+    setStatus("Could not read the backup file.", "warn");
+  }
+});
+
 (async function init() {
   backend = await detectBackend();
+  backupSectionEl.hidden = backend.mode !== "browser";
   await loadSession();
   loadSessionList();
   refreshCaptureStatus();

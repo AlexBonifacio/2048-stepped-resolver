@@ -4,3 +4,4 @@ __pycache__/
 web/solver/2048-ranks.mjs
 web/solver/2048-ranks.wasm
 .claude/
+web-dist/

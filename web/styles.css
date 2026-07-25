@@ -337,6 +337,28 @@ h1 {
   width: 100%;
 }
 
+.backup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.backup p {
+  flex: 1 1 240px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.backup[hidden] {
+  display: none;
+}
+
 .capture {
   width: 100%;
   border-top: 1px solid var(--line);
