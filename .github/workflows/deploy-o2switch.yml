@@ -49,10 +49,17 @@ jobs:
             echo "::error::DNS resolution failed for O2SWITCH_SSH_HOST. Check the secret value: hostname only (e.g. yjzy2943.odns.fr), no https://, no user@, no spaces or line breaks."
             exit 1
           fi
-          if ! ssh -i ~/.ssh/deploy_key -p "$PORT" \
+          if ! timeout 12 bash -c "cat </dev/null >/dev/tcp/$HOST/$PORT" 2>/dev/null; then
+            echo "::error::TCP connection to port $PORT is blocked from GitHub's runners (while SSH works from your machine): the host firewall most likely filters foreign/datacenter IPs. See the workflow discussion for alternatives."
+            exit 1
+          fi
+          echo "TCP reachability OK, testing SSH authentication..."
+          if ! ssh -vv -i ~/.ssh/deploy_key -p "$PORT" \
               -o StrictHostKeyChecking=accept-new -o ConnectTimeout=15 -o BatchMode=yes \
-              "${{ secrets.O2SWITCH_SSH_USER }}@$HOST" 'echo "SSH connection OK, home:" && pwd'; then
-            echo "::error::SSH connection failed. Check: O2SWITCH_SSH_USER is the cPanel user; the PUBLIC key is imported AND authorized in cPanel (SSH Access > Manage SSH Keys > Manage > Authorize); O2SWITCH_SSH_KEY holds the full PRIVATE key including BEGIN/END lines."
+              "${{ secrets.O2SWITCH_SSH_USER }}@$HOST" 'echo "SSH connection OK, home:" && pwd' 2> ssh_debug.log; then
+            echo "---- last SSH debug lines ----"
+            tail -25 ssh_debug.log
+            echo "::error::TCP works but SSH authentication failed. Check: O2SWITCH_SSH_USER is the cPanel user; the PUBLIC key is imported AND authorized in cPanel; O2SWITCH_SSH_KEY holds the full PRIVATE key including the BEGIN/END lines."
             exit 1
           fi
 
