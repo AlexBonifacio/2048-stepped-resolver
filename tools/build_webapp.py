@@ -49,6 +49,19 @@ def main():
             raise SystemExit(f"Missing {source}: run tools/build_wasm.sh first.")
         shutil.copy2(source, DIST / "solver" / name)
 
+    # Apache shared hosting (o2switch...) often lacks the wasm/mjs MIME
+    # types; browsers hard-reject module workers served with the wrong
+    # Content-Type. Harmless on hosts that ignore .htaccess.
+    (DIST / ".htaccess").write_text(
+        "AddType application/wasm .wasm\n"
+        "AddType text/javascript .mjs\n"
+        "AddType application/json .json\n"
+        "<FilesMatch \"\\.(wasm|mjs)$\">\n"
+        "  Header set Cache-Control \"public, max-age=86400\"\n"
+        "</FilesMatch>\n",
+        encoding="utf-8",
+    )
+
     seed = {}
     for path in sorted((ROOT / "data" / "sessions").glob("*.json")):
         try:
