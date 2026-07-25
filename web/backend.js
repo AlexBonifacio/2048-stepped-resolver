@@ -424,26 +424,6 @@ function createLocalBackend() {
       return { httpOk: true, ok: true };
     },
 
-    async exportSessions() {
-      await ensureSeeded();
-      return { sessions: allStoredSessions() };
-    },
-
-    async importSessions(payload) {
-      const sessions = payload && typeof payload.sessions === "object" ? payload.sessions : null;
-      if (!sessions) {
-        return { ok: false, error: "Invalid backup file: missing sessions." };
-      }
-      let count = 0;
-      for (const [name, data] of Object.entries(sessions)) {
-        if (data && typeof data === "object") {
-          localStorage.setItem(sessionKey(name), JSON.stringify(data));
-          count += 1;
-        }
-      }
-      return { ok: true, count };
-    },
-
     async readBoard() {
       const calibration = loadCalibration();
       if (!calibration) {
