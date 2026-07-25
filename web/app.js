@@ -23,6 +23,7 @@ const contextControlsEl = document.querySelector(".context-controls");
 const contextScoreEl = document.querySelector("#contextScore");
 const applyContextButton = document.querySelector("#applyContextButton");
 
+let backend = null;
 let state = null;
 let history = [];
 let pendingSpawn = null;
@@ -394,13 +395,8 @@ async function saveSession() {
   }
 
   syncMap(state);
-  const response = await fetch(`/api/session?name=${encodeURIComponent(sessionName)}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(state),
-  });
-  const payload = await response.json();
-  if (!response.ok) {
+  const payload = await backend.saveSession(sessionName, state);
+  if (!payload.httpOk) {
     setStatus(payload.error || "Could not save.", "warn");
     return;
   }
@@ -415,11 +411,12 @@ function syncContextInputs() {
 }
 
 async function loadSession() {
-  const response = await fetch(`/api/session?name=${encodeURIComponent(sessionName)}`);
-  const payload = await response.json();
-  if (!response.ok) {
+  const payload = await backend.loadSession(sessionName);
+  if (!payload.httpOk) {
     state = emptySession();
-    setStatus(payload.error || "Session not found.", "warn");
+    if (backend.mode === "server") {
+      setStatus(payload.error || "Session not found.", "warn");
+    }
   } else {
     state = normalizeSession(payload.data);
     setStatus(`Session loaded from ${payload.path}.`);
@@ -447,9 +444,8 @@ function sessionOptionLabel(session) {
 
 async function loadSessionList() {
   try {
-    const response = await fetch("/api/sessions");
-    const payload = await response.json();
-    if (!response.ok || !payload.ok) {
+    const payload = await backend.listSessions();
+    if (!payload.httpOk || !payload.ok) {
       return;
     }
 
@@ -478,9 +474,8 @@ async function estimateMoves(score) {
   }
 
   try {
-    const response = await fetch(`/api/estimate-moves?score=${encodeURIComponent(score)}`);
-    const payload = await response.json();
-    if (!response.ok || !payload.ok) {
+    const payload = await backend.estimateMoves(score);
+    if (!payload.httpOk || !payload.ok) {
       throw new Error(payload.error || "Could not estimate moves.");
     }
     return Math.max(0, Math.round(Number(payload.moves) || 0));
@@ -525,16 +520,13 @@ async function createNewSession() {
     return;
   }
 
-  const response = await fetch(`/api/new-session?name=${encodeURIComponent(rawName)}`, {
-    method: "POST",
-  });
-  const payload = await response.json();
-  if (!response.ok) {
+  const payload = await backend.newSession(rawName);
+  if (!payload.httpOk) {
     setStatus(payload.error || "Could not create the session.", "warn");
     return;
   }
 
-  window.location.href = `/?session=${encodeURIComponent(rawName)}`;
+  window.location.href = `?session=${encodeURIComponent(rawName)}`;
 }
 
 function openSelectedSession() {
@@ -542,7 +534,7 @@ function openSelectedSession() {
   if (!selected || selected === sessionName) {
     return;
   }
-  window.location.href = `/?session=${encodeURIComponent(selected)}`;
+  window.location.href = `?session=${encodeURIComponent(selected)}`;
 }
 
 function setStatus(text, mode = "") {
@@ -595,23 +587,13 @@ async function refreshSuggestion() {
   suggestionRefreshButton.disabled = true;
   setSuggestion("...", "AI is thinking");
   setSuggestionRanking();
-  const query = new URLSearchParams({
-    name: sessionName,
-    solver: suggestionOptions.solver,
-    quality: suggestionOptions.quality,
-    model_session: suggestionOptions.modelSession,
-    model_stats: suggestionOptions.modelStats,
-    target: String(defaultTargetRank),
-    timeout: suggestionOptions.timeout,
-  });
 
   try {
-    const response = await fetch(`/api/suggestion?${query.toString()}`);
-    const payload = await response.json();
+    const payload = await backend.suggest(sessionName, state, suggestionOptions, defaultTargetRank);
     if (requestId !== suggestionRequestId) {
       return;
     }
-    if (!response.ok || !payload.ok) {
+    if (!payload.httpOk || !payload.ok) {
       setSuggestion("!", payload.error || "Could not calculate", "warn");
       return;
     }
@@ -619,7 +601,7 @@ async function refreshSuggestion() {
     setSuggestionRanking(payload.ranking || []);
   } catch (error) {
     if (requestId === suggestionRequestId) {
-      setSuggestion("!", "AI server unavailable", "warn");
+      setSuggestion("!", "AI unavailable", "warn");
       setSuggestionRanking();
     }
   } finally {
@@ -769,12 +751,12 @@ const captureDragRectEl = document.querySelector("#captureDragRect");
 
 let captureAvailable = false;
 let captureMonitors = [];
-let captureConfig = null;
+let captureInfo = null;
 let calibration = null;
 let capturePreviewTimer = null;
 
 function captureBoardCalibrated() {
-  return Boolean(captureConfig && captureConfig.board);
+  return Boolean(captureInfo && captureInfo.calibrated);
 }
 
 function renderCaptureStatus(message = "", mode = "") {
@@ -791,13 +773,13 @@ function renderCaptureStatus(message = "", mode = "") {
     return;
   }
   if (!captureAvailable) {
-    captureStatusEl.textContent = "Screen capture is unavailable. Install the mss package on the server: pip install mss";
+    captureStatusEl.textContent = (captureInfo && captureInfo.hint) ||
+      "Screen capture is unavailable. Install the mss package on the server: pip install mss";
     captureStatusEl.className = "capture-status warn";
     return;
   }
   if (captureBoardCalibrated()) {
-    const board = captureConfig.board;
-    captureStatusEl.textContent = `Board region calibrated (${board.width}x${board.height} px).`;
+    captureStatusEl.textContent = "Board region calibrated.";
     captureStatusEl.className = "capture-status";
     return;
   }
@@ -807,11 +789,9 @@ function renderCaptureStatus(message = "", mode = "") {
 
 async function refreshCaptureStatus() {
   try {
-    const response = await fetch("/api/capture/status");
-    const payload = await response.json();
-    captureAvailable = Boolean(payload.available);
-    captureMonitors = Array.isArray(payload.monitors) ? payload.monitors : [];
-    captureConfig = payload.config || null;
+    captureInfo = await backend.captureStatus();
+    captureAvailable = captureInfo.available;
+    captureMonitors = captureInfo.monitors;
   } catch (error) {
     captureAvailable = false;
     captureMonitors = [];
@@ -844,7 +824,7 @@ async function loadCalibrationFrame() {
   calibration.board = null;
   calibration.drag = null;
   captureModalHintEl.textContent = "Drag a square around the 4x4 grid.";
-  captureModalImageEl.src = `/api/capture/frame?source=monitor&monitor=${calibration.monitor}&t=${Date.now()}`;
+  captureModalImageEl.src = await backend.calibrationFrameURL(calibration.monitor);
 }
 
 async function openCalibration() {
@@ -854,14 +834,21 @@ async function openCalibration() {
   }
   stopCapturePreview();
   stopWatch();
+  try {
+    await backend.prepareCapture();
+  } catch (error) {
+    setStatus("Screen capture permission was denied.", "warn");
+    return;
+  }
   calibration = {
-    monitor: captureConfig?.monitor ?? 1,
+    monitor: captureInfo?.monitor ?? 1,
     board: null,
     drag: null,
   };
   if (!captureMonitors.some((monitor) => monitor.index === calibration.monitor)) {
     calibration.monitor = captureMonitors.length > 1 ? 1 : 0;
   }
+  captureMonitorSelectEl.hidden = captureMonitors.length === 0;
   populateCaptureMonitors(calibration.monitor);
   captureModalEl.hidden = false;
   await loadCalibrationFrame();
@@ -906,44 +893,32 @@ function placeRect(element, rect) {
   element.hidden = false;
 }
 
-function toScreenRect(rect) {
+function toNaturalRect(rect) {
   const scaleX = captureModalImageEl.naturalWidth / captureModalImageEl.clientWidth;
   const scaleY = captureModalImageEl.naturalHeight / captureModalImageEl.clientHeight;
-  const monitor = captureMonitors.find((entry) => entry.index === calibration.monitor) || { left: 0, top: 0 };
   return {
-    left: Math.round(monitor.left + rect.x * scaleX),
-    top: Math.round(monitor.top + rect.y * scaleY),
-    width: Math.round(rect.width * scaleX),
-    height: Math.round(rect.height * scaleY),
+    x: rect.x * scaleX,
+    y: rect.y * scaleY,
+    width: rect.width * scaleX,
+    height: rect.height * scaleY,
   };
 }
 
 async function saveCalibration() {
-  const body = {
-    monitor: calibration.monitor,
-    board: toScreenRect(calibration.board),
-    score: null,
-  };
   try {
-    const response = await fetch("/api/capture/region", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
-    const payload = await response.json();
-    if (!response.ok || !payload.ok) {
+    const payload = await backend.saveCalibration(toNaturalRect(calibration.board), calibration.monitor);
+    if (!payload.httpOk || !payload.ok) {
       renderCaptureStatus(payload.error || "Could not save the capture region.", "warn");
       closeCalibration();
       return;
     }
-    captureConfig = payload.config;
   } catch (error) {
-    renderCaptureStatus("Capture server unavailable.", "warn");
+    renderCaptureStatus("Could not save the capture region.", "warn");
     closeCalibration();
     return;
   }
   closeCalibration();
-  renderCaptureStatus();
+  await refreshCaptureStatus();
   setStatus("Screen capture calibrated.");
 }
 
@@ -1054,9 +1029,8 @@ async function readBoardFromCapture() {
   }
   readBoardButton.disabled = true;
   try {
-    const response = await fetch("/api/capture/board");
-    const payload = await response.json();
-    if (!response.ok || !payload.ok) {
+    const payload = await backend.readBoard();
+    if (!payload.httpOk || !payload.ok) {
       setStatus(payload.error || "Could not read the board.", "warn");
       return;
     }
@@ -1125,9 +1099,8 @@ async function watchTick() {
   }
   watchBusy = true;
   try {
-    const response = await fetch("/api/capture/board");
-    const payload = await response.json();
-    if (!response.ok || !payload.ok || payload.unreadable > 0) {
+    const payload = await backend.readBoard();
+    if (!payload.httpOk || !payload.ok || payload.unreadable > 0) {
       return;
     }
     const cells = payload.cells.map((value) => Math.max(0, Number(value) || 0));
@@ -1244,7 +1217,11 @@ function stopCapturePreview() {
 
 function startCapturePreview() {
   const refreshFrame = () => {
-    capturePreviewImageEl.src = `/api/capture/frame?source=board&t=${Date.now()}`;
+    void backend.boardFrameURL().then((url) => {
+      if (url) {
+        capturePreviewImageEl.src = url;
+      }
+    });
   };
   refreshFrame();
   capturePreviewImageEl.hidden = false;
@@ -1297,24 +1274,45 @@ captureMonitorSelectEl.addEventListener("change", () => {
     void loadCalibrationFrame();
   }
 });
-readBoardButton.addEventListener("click", () => {
-  void readBoardFromCapture();
+readBoardButton.addEventListener("click", async () => {
+  try {
+    await backend.prepareCapture();
+  } catch (error) {
+    setStatus("Screen capture permission was denied.", "warn");
+    return;
+  }
+  await readBoardFromCapture();
 });
-watchButton.addEventListener("click", () => {
+watchButton.addEventListener("click", async () => {
   if (isWatching()) {
     stopWatch();
-  } else {
-    startWatch();
+    return;
   }
+  try {
+    await backend.prepareCapture();
+  } catch (error) {
+    setStatus("Screen capture permission was denied.", "warn");
+    return;
+  }
+  startWatch();
 });
-capturePreviewButton.addEventListener("click", () => {
+capturePreviewButton.addEventListener("click", async () => {
   if (capturePreviewTimer !== null) {
     stopCapturePreview();
-  } else {
-    startCapturePreview();
+    return;
   }
+  try {
+    await backend.prepareCapture();
+  } catch (error) {
+    setStatus("Screen capture permission was denied.", "warn");
+    return;
+  }
+  startCapturePreview();
 });
 
-loadSession();
-loadSessionList();
-refreshCaptureStatus();
+(async function init() {
+  backend = await detectBackend();
+  await loadSession();
+  loadSessionList();
+  refreshCaptureStatus();
+})();

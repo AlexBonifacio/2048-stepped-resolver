@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 web/solver/2048-ranks.mjs
 web/solver/2048-ranks.wasm
+.claude/

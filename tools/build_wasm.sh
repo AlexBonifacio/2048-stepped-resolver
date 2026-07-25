@@ -33,6 +33,10 @@ em++ -std=c++17 -O3 -fwasm-exceptions \
     -sEXPORTED_RUNTIME_METHODS=callMain,FS \
     -sALLOW_MEMORY_GROWTH=1 \
     -sENVIRONMENT=web,worker,node \
-    -sSTACK_SIZE=1048576
+    -sSTACK_SIZE=1048576 \
+    -sGROWABLE_ARRAYBUFFERS=0
+# GROWABLE_ARRAYBUFFERS=0: with resizable ArrayBuffers (the default), Chrome's
+# TextDecoder rejects heap views and every solver call fails with
+# "The provided ArrayBuffer value must not be resizable".
 
 ls -lh web/solver/
