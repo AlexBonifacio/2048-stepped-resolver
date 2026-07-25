@@ -40,13 +40,27 @@ jobs:
           mkdir -p ~/.ssh
           printf '%s\n' "${{ secrets.O2SWITCH_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "${{ secrets.O2SWITCH_SSH_PORT || '22' }}" "${{ secrets.O2SWITCH_SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Test SSH connection
+        run: |
+          HOST="${{ secrets.O2SWITCH_SSH_HOST }}"
+          PORT="${{ secrets.O2SWITCH_SSH_PORT || '22' }}"
+          if ! getent hosts "$HOST" >/dev/null; then
+            echo "::error::DNS resolution failed for O2SWITCH_SSH_HOST. Check the secret value: hostname only (e.g. yjzy2943.odns.fr), no https://, no user@, no spaces or line breaks."
+            exit 1
+          fi
+          if ! ssh -i ~/.ssh/deploy_key -p "$PORT" \
+              -o StrictHostKeyChecking=accept-new -o ConnectTimeout=15 -o BatchMode=yes \
+              "${{ secrets.O2SWITCH_SSH_USER }}@$HOST" 'echo "SSH connection OK, home:" && pwd'; then
+            echo "::error::SSH connection failed. Check: O2SWITCH_SSH_USER is the cPanel user; the PUBLIC key is imported AND authorized in cPanel (SSH Access > Manage SSH Keys > Manage > Authorize); O2SWITCH_SSH_KEY holds the full PRIVATE key including BEGIN/END lines."
+            exit 1
+          fi
 
       # --delete keeps the target directory an exact mirror of web-dist/:
       # point O2SWITCH_DEPLOY_PATH at a directory dedicated to this site.
       - name: Deploy with rsync
         run: |
           rsync -az --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.O2SWITCH_SSH_PORT || '22' }}" \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.O2SWITCH_SSH_PORT || '22' }} -o StrictHostKeyChecking=accept-new" \
             web-dist/ \
             "${{ secrets.O2SWITCH_SSH_USER }}@${{ secrets.O2SWITCH_SSH_HOST }}:${{ secrets.O2SWITCH_DEPLOY_PATH }}/"
