@@ -1,0 +1,52 @@
+name: Deploy to o2switch
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - web-version
+
+concurrency:
+  group: o2switch
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check secrets
+        run: |
+          if [ -z "${{ secrets.O2SWITCH_SSH_HOST }}" ] || [ -z "${{ secrets.O2SWITCH_SSH_USER }}" ] || [ -z "${{ secrets.O2SWITCH_SSH_KEY }}" ] || [ -z "${{ secrets.O2SWITCH_DEPLOY_PATH }}" ]; then
+            echo "::error::Missing secrets. Define O2SWITCH_SSH_HOST, O2SWITCH_SSH_USER, O2SWITCH_SSH_KEY and O2SWITCH_DEPLOY_PATH in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Emscripten
+        uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: latest
+
+      - name: Build WASM solver
+        run: tools/build_wasm.sh
+
+      - name: Assemble static site
+        run: python3 tools/build_webapp.py
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.O2SWITCH_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.O2SWITCH_SSH_PORT || '22' }}" "${{ secrets.O2SWITCH_SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      # --delete keeps the target directory an exact mirror of web-dist/:
+      # point O2SWITCH_DEPLOY_PATH at a directory dedicated to this site.
+      - name: Deploy with rsync
+        run: |
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.O2SWITCH_SSH_PORT || '22' }}" \
+            web-dist/ \
+            "${{ secrets.O2SWITCH_SSH_USER }}@${{ secrets.O2SWITCH_SSH_HOST }}:${{ secrets.O2SWITCH_DEPLOY_PATH }}/"
