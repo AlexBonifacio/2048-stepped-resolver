@@ -58,16 +58,12 @@
         <p>1. In Screen capture below, click Calibrate and drag a square around the game grid (the selection stays square by itself). This is needed once, as long as the game window does not move.</p>
         <p>2. Click Watch game. The board follows the game screen by itself: a fresh game starts automatically, and for a game in progress you just confirm the estimated score.</p>
         <p>3. Play the suggested move in the game. The board and the next suggestion update on their own.</p>
+        <p class="warning">Always check that the score shown here matches the game. If the score or the board looks wrong, click New game to reset and detect again.</p>
         <p>Manual mode (no capture): build the board by clicking cells (right click lowers), enter the score, press Start. Move with the arrow keys, click the cell where the new tile spawned, press Enter to confirm. Undo reverts a mistake.</p>
       </section>
 
       <section class="controls">
-        <select id="existingSessionSelect" aria-label="Existing sessions">
-          <option value="">Open session...</option>
-        </select>
-        <button id="openSessionButton" type="button" title="Open the selected session">Open</button>
-        <input id="newSessionName" type="text" autocomplete="off" placeholder="new session">
-        <button id="newSessionButton" type="button" title="Create an empty session">New</button>
+        <button id="newGameButton" type="button" title="Reset the board and detect the game again">New game</button>
         <button id="commitSpawnButton" type="button" title="Confirm the spawned tile">Confirm tile</button>
       </section>
 

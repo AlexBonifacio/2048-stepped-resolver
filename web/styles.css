@@ -201,6 +201,11 @@ button:disabled {
   line-height: 1.45;
 }
 
+.getting-started p.warning {
+  color: var(--danger);
+  font-weight: 800;
+}
+
 .hud {
   display: flex;
   align-items: end;

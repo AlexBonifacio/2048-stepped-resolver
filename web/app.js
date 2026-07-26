@@ -1,7 +1,7 @@
 const SIZE = 4;
 
 const params = new URLSearchParams(window.location.search);
-const sessionName = params.get("session") || "try2";
+const sessionName = params.get("session") || "main";
 
 const boardEl = document.querySelector("#board");
 const statusEl = document.querySelector("#status");
@@ -9,10 +9,6 @@ const scoreEl = document.querySelector("#score");
 const movesEl = document.querySelector("#moves");
 const highestEl = document.querySelector("#highest");
 const sessionNameEl = document.querySelector("#sessionName");
-const existingSessionSelectEl = document.querySelector("#existingSessionSelect");
-const openSessionButton = document.querySelector("#openSessionButton");
-const newSessionNameEl = document.querySelector("#newSessionName");
-const newSessionButton = document.querySelector("#newSessionButton");
 const undoButton = document.querySelector("#undoButton");
 const commitSpawnButton = document.querySelector("#commitSpawnButton");
 const suggestionDirectionEl = document.querySelector("#suggestionDirection");
@@ -434,40 +430,6 @@ async function loadSession() {
   }
 }
 
-function sessionOptionLabel(session) {
-  const details = [];
-  if (Number(session.score) > 0) details.push(`score ${session.score}`);
-  if (Number(session.moves) > 0) details.push(`${session.moves} moves`);
-  if (Number(session.highest) > 0) details.push(`max ${session.highest}`);
-  return details.length > 0 ? `${session.name} (${details.join(", ")})` : session.name;
-}
-
-async function loadSessionList() {
-  try {
-    const payload = await backend.listSessions();
-    if (!payload.httpOk || !payload.ok) {
-      return;
-    }
-
-    existingSessionSelectEl.replaceChildren();
-    const placeholder = document.createElement("option");
-    placeholder.value = "";
-    placeholder.textContent = "Open session...";
-    existingSessionSelectEl.append(placeholder);
-
-    payload.sessions.forEach((session) => {
-      const option = document.createElement("option");
-      option.value = session.name;
-      option.textContent = sessionOptionLabel(session);
-      option.selected = session.name === sessionName;
-      existingSessionSelectEl.append(option);
-    });
-    openSessionButton.disabled = !existingSessionSelectEl.value || existingSessionSelectEl.value === sessionName;
-  } catch (error) {
-    openSessionButton.disabled = true;
-  }
-}
-
 async function estimateMoves(score) {
   if (score === 0) {
     return 0;
@@ -510,31 +472,6 @@ async function applyContext() {
   await saveSession();
   await refreshSuggestion();
   setStatus(`Started with score ${score}.`);
-}
-
-async function createNewSession() {
-  const rawName = newSessionNameEl.value.trim();
-  if (!rawName) {
-    setStatus("Give the new session a name.", "warn");
-    newSessionNameEl.focus();
-    return;
-  }
-
-  const payload = await backend.newSession(rawName);
-  if (!payload.httpOk) {
-    setStatus(payload.error || "Could not create the session.", "warn");
-    return;
-  }
-
-  window.location.href = `?session=${encodeURIComponent(rawName)}`;
-}
-
-function openSelectedSession() {
-  const selected = existingSessionSelectEl.value;
-  if (!selected || selected === sessionName) {
-    return;
-  }
-  window.location.href = `?session=${encodeURIComponent(selected)}`;
 }
 
 function setStatus(text, mode = "") {
@@ -699,6 +636,24 @@ undoButton.addEventListener("click", async () => {
   }
 });
 
+const newGameButton = document.querySelector("#newGameButton");
+newGameButton.addEventListener("click", async () => {
+  pushHistory();
+  state = emptySession();
+  pendingSpawn = null;
+  watchCandidateSignature = "";
+  syncContextInputs();
+  setSuggestion("...", "");
+  setSuggestionRanking();
+  render();
+  await saveSession();
+  if (isWatching()) {
+    setStatus("New game: waiting for the game screen to detect the board again.");
+  } else {
+    setStatus("New game: board reset. Click Watch game to detect it, or copy it by hand.");
+  }
+});
+
 commitSpawnButton.addEventListener("click", async () => {
   await commitPendingSpawn();
 });
@@ -712,23 +667,6 @@ contextScoreEl.addEventListener("keydown", (event) => {
 });
 contextScoreEl.addEventListener("input", () => {
   applyContextButton.disabled = !scoreIsFilled();
-});
-newSessionButton.addEventListener("click", createNewSession);
-openSessionButton.addEventListener("click", openSelectedSession);
-existingSessionSelectEl.addEventListener("change", () => {
-  openSessionButton.disabled = !existingSessionSelectEl.value || existingSessionSelectEl.value === sessionName;
-});
-existingSessionSelectEl.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    openSelectedSession();
-  }
-});
-newSessionNameEl.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    createNewSession();
-  }
 });
 
 // --- Screen capture calibration ---
@@ -1313,6 +1251,5 @@ capturePreviewButton.addEventListener("click", async () => {
 (async function init() {
   backend = await detectBackend();
   await loadSession();
-  loadSessionList();
   refreshCaptureStatus();
 })();
