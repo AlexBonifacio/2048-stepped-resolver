@@ -1,0 +1,6 @@
+AddType application/wasm .wasm
+AddType text/javascript .mjs
+AddType application/json .json
+<FilesMatch "\.(wasm|mjs)$">
+  Header set Cache-Control "public, max-age=86400"
+</FilesMatch>

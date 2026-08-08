@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2048 ranks</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <section class="hud">
+        <div>
+          <p class="label">Session</p>
+          <h1 id="sessionName">try2</h1>
+        </div>
+        <div class="hud-side">
+          <div class="stats" aria-label="Stats">
+            <div>
+              <span>Score</span>
+              <strong id="score">0</strong>
+            </div>
+            <div>
+              <span>Moves</span>
+              <strong id="moves">0</strong>
+            </div>
+            <div>
+              <span>Max</span>
+              <strong id="highest">0</strong>
+            </div>
+          </div>
+          <a class="donate-button" href="https://www.paypal.com/donate/?business=N7UBJDAX8DL5A&no_recurring=0&currency_code=EUR" target="_blank" rel="noopener">&#10084; Support my work</a>
+        </div>
+      </section>
+	  <section>
+		  <p id="status" class="status"></p>
+	  </section>
+
+      <section class="board-shell">
+        <div id="board" class="board" aria-label="2048 grid" role="grid"></div>
+      </section>
+
+      <section class="suggestion" aria-label="AI suggestion">
+        <div>
+          <span>Move</span>
+          <strong id="suggestionDirection">...</strong>
+        </div>
+        <p id="suggestionMeta"></p>
+        <button id="suggestionRefreshButton" type="button" title="Calculate the suggested move">Calculate</button>
+        <ol id="suggestionRanking" class="ranking"></ol>
+      </section>
+
+      <section class="context-controls" aria-label="Game context">
+        <label for="contextScore">Current score</label>
+        <input id="contextScore" type="number" min="0" step="1" inputmode="numeric" required>
+        <button id="applyContextButton" type="button" title="Start with this score">Start</button>
+      </section>
+
+      <section class="getting-started" aria-label="Getting started">
+        <div class="getting-started-header">
+          <h2>Getting started</h2>
+          <button id="tutorialButton" type="button" title="Watch a short video showing how to use the tool">&#9654; Watch tutorial</button>
+        </div>
+        <p>1. In Screen capture below, click Calibrate and drag a square around the game grid (the selection stays square by itself). This is needed once, as long as the game window does not move.</p>
+        <p>2. Click Watch game. The board follows the game screen by itself: a fresh game starts automatically, and for a game in progress you just confirm the estimated score.</p>
+        <p>3. Play the suggested move in the game. The board and the next suggestion update on their own.</p>
+        <p class="warning">Always check that the score shown here matches the game. If the score or the board looks wrong, click New game to reset and detect again.</p>
+        <p>Manual mode (no capture): build the board by clicking cells (right click lowers), enter the score, press Start. Move with the arrow keys, click the cell where the new tile spawned, press Enter to confirm.</p>
+      </section>
+
+      <section class="controls">
+        <button id="newGameButton" type="button" title="Reset the board and detect the game again">New game</button>
+        <button id="commitSpawnButton" type="button" title="Confirm the spawned tile">Confirm tile</button>
+      </section>
+
+      <section class="capture" aria-label="Screen capture">
+        <h2>Screen capture</h2>
+        <p id="captureStatus" class="capture-status">Checking screen capture support...</p>
+        <div class="capture-actions">
+          <button id="calibrateButton" type="button" title="Select the game grid on a screenshot" disabled>Calibrate</button>
+          <button id="capturePreviewButton" type="button" title="Show the captured board region" disabled>Preview</button>
+          <button id="readBoardButton" type="button" title="Read the board from the game screen once" disabled>Read board</button>
+          <button id="watchButton" type="button" title="Keep reading the game screen and refresh the suggestion automatically" disabled>Watch game</button>
+        </div>
+        <img id="capturePreviewImage" class="capture-preview" alt="Captured board region" hidden>
+      </section>
+
+    </main>
+
+    <div id="captureModal" class="capture-modal" hidden>
+      <div class="capture-modal-inner">
+        <div class="capture-modal-header">
+          <p id="captureModalHint">Drag a square around the 4x4 grid.</p>
+          <select id="captureMonitorSelect" aria-label="Monitor"></select>
+          <button id="captureRefreshButton" type="button" title="Take a new screenshot">Refresh</button>
+          <button id="captureCancelButton" type="button">Cancel</button>
+        </div>
+        <div id="captureStage" class="capture-stage">
+          <img id="captureModalImage" alt="Screen capture" draggable="false">
+          <div id="captureBoardRect" class="capture-rect saved" hidden></div>
+          <div id="captureDragRect" class="capture-rect drag" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="videoModal" class="video-modal" hidden>
+      <div class="video-modal-inner">
+        <div class="video-modal-header">
+          <p>How to use the tool</p>
+          <button id="videoCloseButton" type="button">Close</button>
+        </div>
+        <div id="videoFrameHolder" class="video-frame"></div>
+      </div>
+    </div>
+
+    <script src="recognize.js"></script>
+    <script src="backend.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
