@@ -460,6 +460,39 @@ h1 {
   background: rgba(163, 60, 47, 0.10);
 }
 
+.support {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.support p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.donate-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 0 16px;
+  color: #fffaf2;
+  background: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.donate-button:hover {
+  filter: brightness(1.1);
+}
+
 .status {
   min-height: 24px;
   margin: 0;
