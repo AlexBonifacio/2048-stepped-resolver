@@ -13,19 +13,22 @@
           <p class="label">Session</p>
           <h1 id="sessionName">try2</h1>
         </div>
-        <div class="stats" aria-label="Stats">
-          <div>
-            <span>Score</span>
-            <strong id="score">0</strong>
+        <div class="hud-side">
+          <div class="stats" aria-label="Stats">
+            <div>
+              <span>Score</span>
+              <strong id="score">0</strong>
+            </div>
+            <div>
+              <span>Moves</span>
+              <strong id="moves">0</strong>
+            </div>
+            <div>
+              <span>Max</span>
+              <strong id="highest">0</strong>
+            </div>
           </div>
-          <div>
-            <span>Moves</span>
-            <strong id="moves">0</strong>
-          </div>
-          <div>
-            <span>Max</span>
-            <strong id="highest">0</strong>
-          </div>
+          <a class="donate-button" href="https://www.paypal.com/donate/?business=N7UBJDAX8DL5A&no_recurring=0&currency_code=EUR" target="_blank" rel="noopener">&#10084; Support my work</a>
         </div>
       </section>
 	  <section>
@@ -43,7 +46,6 @@
         </div>
         <p id="suggestionMeta"></p>
         <button id="suggestionRefreshButton" type="button" title="Calculate the suggested move">Calculate</button>
-        <button id="undoButton" type="button" title="Undo">Undo</button>
         <ol id="suggestionRanking" class="ranking"></ol>
       </section>
 
@@ -62,7 +64,7 @@
         <p>2. Click Watch game. The board follows the game screen by itself: a fresh game starts automatically, and for a game in progress you just confirm the estimated score.</p>
         <p>3. Play the suggested move in the game. The board and the next suggestion update on their own.</p>
         <p class="warning">Always check that the score shown here matches the game. If the score or the board looks wrong, click New game to reset and detect again.</p>
-        <p>Manual mode (no capture): build the board by clicking cells (right click lowers), enter the score, press Start. Move with the arrow keys, click the cell where the new tile spawned, press Enter to confirm. Undo reverts a mistake.</p>
+        <p>Manual mode (no capture): build the board by clicking cells (right click lowers), enter the score, press Start. Move with the arrow keys, click the cell where the new tile spawned, press Enter to confirm.</p>
       </section>
 
       <section class="controls">
@@ -80,11 +82,6 @@
           <button id="watchButton" type="button" title="Keep reading the game screen and refresh the suggestion automatically" disabled>Watch game</button>
         </div>
         <img id="capturePreviewImage" class="capture-preview" alt="Captured board region" hidden>
-      </section>
-
-      <section class="support" aria-label="Support">
-        <p>Enjoying this tool?</p>
-        <a class="donate-button" href="https://www.paypal.com/donate/?business=N7UBJDAX8DL5A&no_recurring=0&currency_code=EUR" target="_blank" rel="noopener">&#10084; Support my work on PayPal</a>
       </section>
 
     </main>

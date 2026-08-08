@@ -92,7 +92,7 @@ button:disabled {
 
 .suggestion {
   display: grid;
-  grid-template-columns: minmax(116px, auto) 1fr auto auto;
+  grid-template-columns: minmax(116px, auto) 1fr auto;
   align-items: center;
   width: 100%;
   gap: 12px;
@@ -439,6 +439,7 @@ h1 {
 
 .capture-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -530,20 +531,10 @@ h1 {
   background: rgba(255, 45, 149, 0.12);
 }
 
-.support {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  border-top: 1px solid var(--line);
-  padding-top: 14px;
-}
-
-.support p {
-  margin: 0;
-  color: var(--muted);
-  font-weight: 700;
+.hud-side {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
 }
 
 .donate-button {
@@ -644,6 +635,14 @@ h1 {
 
   .stats {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hud-side {
+    justify-items: stretch;
+  }
+
+  .donate-button {
+    justify-content: center;
   }
 
   .board-shell {

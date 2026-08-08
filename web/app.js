@@ -9,7 +9,6 @@ const scoreEl = document.querySelector("#score");
 const movesEl = document.querySelector("#moves");
 const highestEl = document.querySelector("#highest");
 const sessionNameEl = document.querySelector("#sessionName");
-const undoButton = document.querySelector("#undoButton");
 const commitSpawnButton = document.querySelector("#commitSpawnButton");
 const suggestionDirectionEl = document.querySelector("#suggestionDirection");
 const suggestionMetaEl = document.querySelector("#suggestionMeta");
@@ -558,7 +557,6 @@ function render() {
   scoreEl.textContent = state.score;
   movesEl.textContent = state.moves;
   highestEl.textContent = highestRank();
-  undoButton.disabled = history.length === 0;
   commitSpawnButton.disabled = !pendingSpawn;
   suggestionRefreshButton.disabled = Boolean(pendingSpawn);
   contextControlsEl.classList.toggle("is-hidden", gameHasStarted());
@@ -618,21 +616,6 @@ document.addEventListener("keydown", async (event) => {
       }
     }
     move(direction);
-  }
-});
-
-undoButton.addEventListener("click", async () => {
-  const snap = history.pop();
-  if (!snap) {
-    return;
-  }
-  restore(snap);
-  if (!pendingSpawn) {
-    await saveSession();
-    await refreshSuggestion();
-  } else {
-    setStatus("Undo applied. Place the new tile when ready.");
-    setSuggestion("...", "Place the new tile");
   }
 });
 
