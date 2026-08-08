@@ -184,6 +184,18 @@ button:disabled {
   padding-top: 12px;
 }
 
+.getting-started-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 6px;
+}
+
+.getting-started-header h2 {
+  margin: 0;
+}
+
 .getting-started h2 {
   margin: 0 0 6px;
   color: var(--muted);
@@ -491,6 +503,55 @@ h1 {
 
 .donate-button:hover {
   filter: brightness(1.1);
+}
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(42, 41, 38, 0.6);
+}
+
+.video-modal[hidden] {
+  display: none;
+}
+
+.video-modal-inner {
+  display: grid;
+  gap: 12px;
+  width: min(960px, calc(100vw - 36px));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: var(--panel);
+}
+
+.video-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.video-modal-header p {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.video-frame {
+  aspect-ratio: 16 / 9;
+}
+
+.video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 6px;
 }
 
 .status {

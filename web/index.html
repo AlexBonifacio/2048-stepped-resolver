@@ -54,7 +54,10 @@
       </section>
 
       <section class="getting-started" aria-label="Getting started">
-        <h2>Getting started</h2>
+        <div class="getting-started-header">
+          <h2>Getting started</h2>
+          <button id="tutorialButton" type="button" title="Watch a short video showing how to use the tool">&#9654; Watch tutorial</button>
+        </div>
         <p>1. In Screen capture below, click Calibrate and drag a square around the game grid (the selection stays square by itself). This is needed once, as long as the game window does not move.</p>
         <p>2. Click Watch game. The board follows the game screen by itself: a fresh game starts automatically, and for a game in progress you just confirm the estimated score.</p>
         <p>3. Play the suggested move in the game. The board and the next suggestion update on their own.</p>
@@ -99,6 +102,16 @@
           <div id="captureBoardRect" class="capture-rect saved" hidden></div>
           <div id="captureDragRect" class="capture-rect drag" hidden></div>
         </div>
+      </div>
+    </div>
+
+    <div id="videoModal" class="video-modal" hidden>
+      <div class="video-modal-inner">
+        <div class="video-modal-header">
+          <p>How to use the tool</p>
+          <button id="videoCloseButton" type="button">Close</button>
+        </div>
+        <div id="videoFrameHolder" class="video-frame"></div>
       </div>
     </div>
 

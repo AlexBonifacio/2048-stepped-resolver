@@ -669,6 +669,40 @@ contextScoreEl.addEventListener("input", () => {
   applyContextButton.disabled = !scoreIsFilled();
 });
 
+// --- Tutorial video ---
+
+const TUTORIAL_VIDEO_ID = "OXPX9hyA8xk";
+const tutorialButton = document.querySelector("#tutorialButton");
+const videoModalEl = document.querySelector("#videoModal");
+const videoFrameHolderEl = document.querySelector("#videoFrameHolder");
+const videoCloseButton = document.querySelector("#videoCloseButton");
+
+function closeTutorial() {
+  videoModalEl.hidden = true;
+  videoFrameHolderEl.innerHTML = "";
+}
+
+tutorialButton.addEventListener("click", () => {
+  const iframe = document.createElement("iframe");
+  iframe.src = `https://www.youtube-nocookie.com/embed/${TUTORIAL_VIDEO_ID}?autoplay=1`;
+  iframe.title = "Tutorial video";
+  iframe.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
+  iframe.allowFullscreen = true;
+  videoFrameHolderEl.replaceChildren(iframe);
+  videoModalEl.hidden = false;
+});
+videoCloseButton.addEventListener("click", closeTutorial);
+videoModalEl.addEventListener("click", (event) => {
+  if (event.target === videoModalEl) {
+    closeTutorial();
+  }
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !videoModalEl.hidden) {
+    closeTutorial();
+  }
+});
+
 // --- Screen capture calibration ---
 
 const captureStatusEl = document.querySelector("#captureStatus");
